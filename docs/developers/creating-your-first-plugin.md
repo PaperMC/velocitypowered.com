@@ -1,10 +1,24 @@
+
+This section is intended for developers who seek to develop plugins for Velocity.
+While this section will cover the basics for developing a plugin, not every concept will be covered. 
+
 # Creating Your First Plugin
 
 So you've decided to take the plunge and create your first Velocity plugin? That's awesome! This page will help you get you going
 
 ## Set up your environment
 
-You're going to need the [JDK](https://adoptopenjdk.net) and an IDE
+You're going to need the [JDK](https://adoptopenjdk.net) and an IDE. If you don't have an IDE, IntelliJ IDEA is recommended.
+
+## Creating your IDE project
+
+* Open your IDE
+* Click `Create New Project` or the equivalent
+* Select either `Gradle` or `Maven`
+* Make sure your **Project JDK** is Java 8 or later
+* **Finish** the dialog and open the project.
+
+Now we have created our project, we need configure our build system. 
 
 ## I know how to do this. Give me what I need!
 
@@ -23,7 +37,7 @@ You're going to need the [JDK](https://adoptopenjdk.net) and an IDE
 
 ### Javadocs
 
-Javadocs are available at https://jd.velocitypowered.com.
+Javadocs are available at [jd.velocitypowered.com](https://jd.velocitypowered.com).
 
 ## Setting up your first project
 
