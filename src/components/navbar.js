@@ -26,6 +26,9 @@ const NavbarItem = styled.li`
   float: right;
   padding: 18px 10px;
   
+  &:hover{
+      background-color: #0288d1
+    }
   a {
     color: ${theme.colors.foreground};
   }
