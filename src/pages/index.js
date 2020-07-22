@@ -93,10 +93,14 @@ export default function Home() {
           </ul>
         </ExplainerSection>
         <ExplainerSection>
-          <FullWidthButton title={"Documentation"} subtitle={"Learn how to configure and effectively set up Velocity. Fully revamped."} />
-          <FullWidthButton title={"GitHub"} subtitle={"Look at the Velocity source code, report bugs, and contribute to the project."} />
-          <FullWidthButton title={"Forums"} subtitle={"Talk about Velocity and discover plugins developed for Velocity."} />
-          <FullWidthButton title={"Discord"} subtitle={"Join 600 others on Discord to talk about Velocity and ask questions."} />
+          <FullWidthButton title={"Documentation"} subtitle={"Learn how to configure and effectively set up" +
+          " Velocity. Fully revamped."} link={"/wiki"} />
+          <FullWidthButton title={"GitHub"} subtitle={"Look at the Velocity source code, report bugs, and contribute" +
+          " to the project."} link={"https://github.com/velocitypowered/Velocity"} />
+          <FullWidthButton title={"Forums"} subtitle={"Talk about Velocity and discover plugins developed for" +
+          " Velocity."} link={"https://forums.velocitypowered.com"} />
+          <FullWidthButton title={"Discord"} subtitle={"Join 600 others on Discord to talk about Velocity and ask" +
+          " questions."} link={"https://discord.gg/8cB9Bgf"}/>
         </ExplainerSection>
       </Explainer>
     </Layout>
