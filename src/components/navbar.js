@@ -27,7 +27,7 @@ const NavbarItem = styled.li`
   padding: 18px 10px;
   
   a {
-    color: ${theme.colors.foreground};
+    color: ${theme.colors.foreground} !important;
   }
 `
 

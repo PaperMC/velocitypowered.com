@@ -1,5 +1,6 @@
 import React from "react"
 import {graphql} from "gatsby";
+import SEO from "../components/seo";
 import styled from "@emotion/styled"
 import Layout from "../components/layout";
 import Sidebar from "../components/docs-sidebar";
@@ -22,10 +23,10 @@ const Content = styled.section`
 `
 
 export default function Documentation({ data }) {
-  console.log(wikiSidebar)
   const article = data.markdownRemark
   return (
     <Layout>
+      <SEO title={article.frontmatter.title} description={article.excerpt} />
       <DocumentationContainer>
         <Sidebar sidebar={wikiSidebar} />
         <ContentWrapper>
@@ -46,6 +47,7 @@ export const query = graphql`
       frontmatter {
         title
       }
+      excerpt
     }
   }
 `
