@@ -97,29 +97,15 @@ lobby = "127.0.0.1:30066
 factions = "127.0.0.1:30067"
 minigames = "127.0.0.1:30068"
 ``` 
-When adding servers to this list, it is critical that you set `online-mode` to `false` in each of your server(s) 
-`server.properties`.
 
-#### Running Sponge servers with Velocity
+Go ahead and put your servers in this file, and then restart Velocity. Once you've done that, you will need to open
+ the `server.properties` file for each of your servers and set the `online-mode` setting to `false`. This allows
+  Velocity to connect to your server. Once you're done, restart your server. Velocity should now be ready for use.
+  
 
-To run a Sponge server on Velocity there are two extra steps that you must complete before connection will succeed. 
+This is a minimal setup. Since we're not forwarding IPs and player information, the Minecraft server will
+ assume you connected from offline mode and will use a different UUID and display only the default Steve and Alex
+ skins. However, Velocity can forward this information onto your Minecraft servers with some extra configuration. See
+ [Configuring player information forwarding]() to learn how to configure this feature.
 
-Head over to your sponge server, and navigate to `/config/sponge/` and open the `global.conf`. In the config file you
-will need to search for the following sections
 
-```plain
-bungeecord {
-        # If 'true', allows BungeeCord to forward IP address, UUID, and Game Profile to this server.
-        ip-forwarding=false
-    }
-
-```
-
-```plain
-modules {
-        bungeecord=false
-}
-```
-
-Once you have found both of these options in the `global.conf`, set each one to `true`. If you have trouble finding
-these, try using `ctrl+f`.
