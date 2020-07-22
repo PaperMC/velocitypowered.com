@@ -85,3 +85,41 @@ Go ahead and type `end` at the console and press enter. The proxy shuts down:
 ### Configuring your servers
 
 We now need to configure each server to accept connections from the proxy.
+
+Open up `velocity.toml` and navigate to the `[servers]` section. 
+This section of the config is very crucial as is what allows connection to your backend servers.
+
+Here's a sample of what the `[servers]` section should look like initially.
+
+```plain
+[servers]
+lobby = "127.0.0.1:30066
+factions = "127.0.0.1:30067"
+minigames = "127.0.0.1:30068"
+``` 
+When adding servers to this list, it is critical that you set `online-mode` to `false` in each of your server(s) 
+`server.properties`.
+
+#### Running Sponge servers with Velocity
+
+To run a Sponge server on Velocity there are two extra steps that you must complete before connection will succeed. 
+
+Head over to your sponge server, and navigate to `/config/sponge/` and open the `global.conf`. In the config file you
+will need to search for the following sections
+
+```plain
+bungeecord {
+        # If 'true', allows BungeeCord to forward IP address, UUID, and Game Profile to this server.
+        ip-forwarding=false
+    }
+
+```
+
+```plain
+modules {
+        bungeecord=false
+}
+```
+
+Once you have found both of these options in the `global.conf`, set each one to `true`. If you have trouble finding
+these, try using `ctrl+f`.
