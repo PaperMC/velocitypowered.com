@@ -12,12 +12,16 @@
         "url": "/wiki/users/built-in-commands/"
       },
       {
+        "title": "Configuring Velocity",
+        "url": "/wiki/users/configuration/"
+      },
+      {
         "title": "Server Compatibility",
         "url": "/wiki/users/server-compatibility/"
       },
       {
         "title": "Player Information Forwarding",
-        "url": "/wiki/users/forwarding"
+        "url": "/wiki/users/forwarding/"
       }
     ]
   },
