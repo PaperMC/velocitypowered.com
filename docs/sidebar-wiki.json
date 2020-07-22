@@ -14,6 +14,10 @@
       {
         "title": "Server Compatibility",
         "url": "/wiki/users/server-compatibility/"
+      },
+      {
+        "title": "Player Information Forwarding",
+        "url": "/wiki/users/forwarding"
       }
     ]
   },
