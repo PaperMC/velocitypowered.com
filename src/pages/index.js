@@ -7,6 +7,7 @@ import theme from '../styles/theme';
 
 import velocityWhite from '../assets/img/velocity-white.png';
 import velocityBlue from '../assets/img/velocity-blue.png';
+import SEO from "../components/seo";
 
 const Jumbotron = styled.div`
   background: ${theme.colors.jumbotron};
@@ -51,6 +52,7 @@ function getLogoShown() {
 export default function Home() {
   return (
     <Layout>
+      <SEO title="Welcome to Velocity" />
       <Jumbotron>
         <JumbotronLogo>
           <VelocityLogo src={getLogoShown()} alt={"Velocity"} height={"200px"} width={"200px"}/>

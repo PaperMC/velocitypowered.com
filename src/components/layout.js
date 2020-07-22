@@ -10,12 +10,6 @@ const Container = styled.main`
   margin-top: 60px;
 `
 
-const UnderConstruction = styled.div`
-  color: white;
-  background: red;
-  padding: 1rem;
-`
-
 export default function Layout({ children }) {
   return (
     <>

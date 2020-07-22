@@ -30,7 +30,7 @@ const NavbarItem = styled.li`
       background-color: #0288d1
     }
   a {
-    color: ${theme.colors.foreground};
+    color: ${theme.colors.foreground} !important;
   }
 `
 

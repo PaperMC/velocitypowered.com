@@ -5,6 +5,7 @@ import theme from '../styles/theme';
 
 import mineteriaLogo from "../assets/img/sponsors/mineteria.png";
 import voldexLogo from "../assets/img/sponsors/voldex.png";
+import SEO from "../components/seo";
 
 const SponsorJumbotron = styled.div`
   background: ${theme.colors.jumbotron};
@@ -40,6 +41,7 @@ const Why = styled.section`
 export default function Sponsors() {
   return (
     <Layout>
+      <SEO title="Our Sponsors" />
       <SponsorJumbotron>
         <SponsorJumbotronHeader>Meet Our Sponsors</SponsorJumbotronHeader>
         <SponsorsStart>

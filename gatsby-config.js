@@ -6,6 +6,11 @@
 
 module.exports = {
   /* Your site config here */
+  siteMetadata: {
+    title: `Velocity`,
+    description: `The ridiculously scalable, flexible Minecraft proxy.`,
+    author: `Velocity Contributors`,
+  },
   plugins: [
     'gatsby-plugin-emotion',
     {
@@ -35,6 +40,7 @@ module.exports = {
           }
         ],
       },
-    }
+    },
+    `gatsby-plugin-react-helmet`,
   ],
 }
