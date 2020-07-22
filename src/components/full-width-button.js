@@ -1,13 +1,16 @@
 import React from "react"
 import styled from "@emotion/styled"
-import theme from "../styles/theme"
 import {Link} from "gatsby";
 
 const FullWidthButtonContainer = styled.div`
-  background-color: ${theme.colors.jumbotron};
-  padding: 1rem;
-  width: 100%;
-  margin-bottom: 2rem;
+  padding: .75em;
+  background: linear-gradient(to right, #0288d1, #0288d1);
+  background-repeat: no-repeat;
+  background-size: 0 100%;
+  transition: background-size 1s 0s;
+  &:hover{
+  background-size: 100% 100%;
+  }
 `
 
 const FullWidthButtonTitle = styled.div`
@@ -18,7 +21,7 @@ const FullWidthButtonTitle = styled.div`
 
 export default function FullWidthButton({ title, subtitle, link }) {
   return <FullWidthButtonContainer>
-    <FullWidthButtonTitle>{<Link to={link}>{title}</Link>}</FullWidthButtonTitle>
+    <FullWidthButtonTitle>{<Link to={link} style={{color: '#fff'}}>{title}</Link>}</FullWidthButtonTitle>
     <div>{subtitle}</div>
   </FullWidthButtonContainer>
 }
