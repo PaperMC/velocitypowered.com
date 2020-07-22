@@ -7,9 +7,10 @@ const SidebarContainer = styled.section`
   position: fixed;
   bottom: 0;
   top: 60px;
-  height: calc(100vh - 80px);
+  height: calc(100vh - 9rem);
   width: 20rem;
-  border-right: 2px solid ${theme.colors.navbg};
+  background: ${theme.colors.navbg};
+  border-right: 1px solid ${theme.colors.navbgBorder};
   padding: 1rem;
 `
 

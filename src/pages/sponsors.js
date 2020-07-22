@@ -40,7 +40,7 @@ const Why = styled.section`
 
 export default function Sponsors() {
   return (
-    <Layout>
+    <Layout jumbotron>
       <SEO title="Our Sponsors" />
       <SponsorJumbotron>
         <SponsorJumbotronHeader>Meet Our Sponsors</SponsorJumbotronHeader>

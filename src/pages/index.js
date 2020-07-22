@@ -51,7 +51,7 @@ function getLogoShown() {
 
 export default function Home() {
   return (
-    <Layout>
+    <Layout jumbotron>
       <SEO title="Welcome to Velocity" />
       <Jumbotron>
         <JumbotronLogo>
