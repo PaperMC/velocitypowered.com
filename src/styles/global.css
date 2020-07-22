@@ -1,0 +1,24 @@
+/**
+ * A global CSS style file. Place general, theme-agnostic styles here. If in doubt, you *probably* shouldn't be
+ * putting the style in here.
+ *
+ * This file:
+ * - Includes normalize.css to give us a sane cross-browser setup for styling
+ * - Adds Roboto font as default font
+ */
+
+@import '~normalize.css';
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5;
+}
+
+pre, tt, code {
+    font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+}
+
+pre {
+    white-space: pre-wrap;
+}

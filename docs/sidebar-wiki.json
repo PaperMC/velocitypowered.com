@@ -1,0 +1,34 @@
+[
+  {
+    "title": "Velocity User's Guide",
+    "url": "/wiki/",
+    "children": [
+      {
+        "title": "Getting Started",
+        "url": "/wiki/users/getting-started/"
+      },
+      {
+        "title": "Built-In Commands",
+        "url": "/wiki/users/built-in-commands/"
+      },
+      {
+        "title": "Server Compatibility",
+        "url": "/wiki/users/server-compatibility/"
+      }
+    ]
+  },
+  {
+    "title": "Technical Wiki",
+    "url": "/wiki/technical/",
+    "children": [
+      {
+        "title": "Why Not Fork BungeeCord?",
+        "url": "/wiki/technical/why-not-fork-bungeecord/"
+      },
+      {
+        "title": "Tuning Velocity",
+        "url": "/wiki/technical/tuning-velocity/"
+      }
+    ]
+  }
+]
