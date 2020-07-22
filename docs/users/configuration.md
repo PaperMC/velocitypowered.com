@@ -17,19 +17,32 @@ Velocity's configuration file.
 These settings mostly cover the basic, most essential settings of the proxy
 
 <style>
-.sane-table table {
-  border-collapse: collapse;
-  width: 100%;
+.main-table table {
+  width: 150%;
+  padding: 2rem;
+  background-color: #323232;
 }
-.sane-table th,
-.sane-table td {
-  padding: 0.25rem;
+.main-table th,
+.main-table td {
   text-align: left;
-  border: 1px solid #ccc;
+  padding: .5rem;
+}
+</style>
+<style>
+.secondary-table table {
+  width: 150%;
+  padding: 2rem;
+  background-color: #323232;
+}
+.secondary-table th,
+.secondary-table td {
+  text-align: left;
+  width: 4px;
+  padding: .5rem;
 }
 </style>
 
-<div class="ox-hugo-table sane-table">
+<div class="ox-hugo-table main-table">
 <div></div>
 
 | Setting Name          | Type    | Default                   | Description                                                                                                                                                                                                      |
@@ -44,20 +57,8 @@ These settings mostly cover the basic, most essential settings of the proxy
 </div>
 
 ##`server` section
-<style>
-.sane-table table {
-  border-collapse: collapse;
-  width: 100%;
-}
-.sane-table th,
-.sane-table td {
-  padding: 0.25rem;
-  text-align: left;
-  border: 1px solid #ccc;
-}
-</style>
 
-<div class="ox-hugo-table sane-table">
+<div class="ox-hugo-table secondary-table">
 <div></div>
 
 | Setting Name  | Type    | Default                             | Description                                                                                                                |
@@ -68,20 +69,7 @@ These settings mostly cover the basic, most essential settings of the proxy
 </div>
 
 ##`forced-hosts` section
-<style>
-.sane-table table {
-  border-collapse: collapse;
-  width: 100%;
-}
-.sane-table th,
-.sane-table td {
-  padding: 0.25rem;
-  text-align: left;
-  border: 1px solid #ccc;
-}
-</style>
-
-<div class="ox-hugo-table sane-table">
+<div class="ox-hugo-table secondary-table">
 <div></div>
 
 | Setting Name 	| Type     	| Default                              	| Description                                                                                                                                        	|
@@ -92,20 +80,7 @@ These settings mostly cover the basic, most essential settings of the proxy
 
 ##`advanced` section
 
-<style>
-.sane-table table {
-  border-collapse: collapse;
-  width: 100%;
-}
-.sane-table th,
-.sane-table td {
-  padding: 0.25rem;
-  text-align: left;
-  border: 1px solid #ccc;
-}
-</style>
-
-<div class="ox-hugo-table sane-table">
+<div class="ox-hugo-table main-table">
 <div></div>
 
 | Setting name            	| Type    	| Default 	| Description                                                                                                                                                                                                                                                                                   	|
@@ -121,20 +96,7 @@ These settings mostly cover the basic, most essential settings of the proxy
 
 ##`query` section
 
-<style>
-.sane-table table {
-  border-collapse: collapse;
-  width: 100%;
-}
-.sane-table th,
-.sane-table td {
-  padding: 0.25rem;
-  text-align: left;
-  border: 1px solid #ccc;
-}
-</style>
-
-<div class="ox-hugo-table sane-table">
+<div class="ox-hugo-table main-table">
 <div></div>
 
 | Setting name   	| Type    	| Default  	| Description                                                                                                              	|
@@ -148,20 +110,7 @@ These settings mostly cover the basic, most essential settings of the proxy
 
 ##`metrics` section
 
-<style>
-.sane-table table {
-  border-collapse: collapse;
-  width: 100%;
-}
-.sane-table th,
-.sane-table td {
-  padding: 0.25rem;
-  text-align: left;
-  border: 1px solid #ccc;
-}
-</style>
-
-<div class="ox-hugo-table sane-table">
+<div class="ox-hugo-table main-table">
 <div></div>
 
 | Setting name  	| Type    	| Default                 	| Description                                                                                                 	|
