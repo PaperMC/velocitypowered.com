@@ -81,3 +81,21 @@ public void onProxyInitialization(ProxyInitializeEvent event) {
     server.getEventManager().register(this, new PluginListener());
 }
 ```
+
+### Getting your Plugin's Directory
+
+At some point you may need your plugin's directory. To do this, add `@DataDirectory Path dataDirectory` to your plugin's constructor
+parameters:
+
+```java
+private final Path dataDirectory;
+
+@Inject
+public VelocityTest(ProxyServer server, Logger logger, @DataDirectory Path dataDirectory) {
+    this.server = server;
+    this.logger = logger;
+    this.dataDirectory = dataDirectory;
+}
+```
+
+This will get you a `java.nio.file.Path` of your plugin directory. If you absolutely need a `java.io.File`, you may use `Path#toFile()`.
