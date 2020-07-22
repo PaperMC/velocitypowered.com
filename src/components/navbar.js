@@ -13,7 +13,6 @@ const NavbarList = styled.ul`
   top: 0;
   width: 100%;
   background-color: ${theme.colors.navbg};
-  border-bottom: 1px solid ${theme.colors.navbg};
   z-index: 100;
 `
 const NavbarLogo = styled.li`
@@ -38,10 +37,12 @@ function getLogoShown() {
   return theme.logoVariant === 'blue' ? velocityBlueCropped : velocityWhiteCropped
 }
 
-export default function Navbar() {
+export default function Navbar({ jumbotron }) {
   return (
     <nav>
-      <NavbarList>
+      <NavbarList style={{
+        borderBottom: !jumbotron ? `1px solid ${theme.colors.navbgBorder}` : 'none'
+      }}>
         <NavbarLogo>
           <Link
             to={"/"}

@@ -10,7 +10,7 @@ const Container = styled.main`
   margin-top: 60px;
 `
 
-export default function Layout({ children }) {
+export default function Layout({ jumbotron, children }) {
   return (
     <>
       <Global styles={css`
@@ -24,13 +24,13 @@ export default function Layout({ children }) {
           text-decoration: none;
         }
       `} />
-      <Navbar />
+      <Navbar jumbotron={jumbotron} />
       {/* page contents */}
       <Container>
         {children}
       </Container>
       {/* footer */}
-      <Footer />
+      <Footer jumbotron={jumbotron} />
     </>
   )
 }

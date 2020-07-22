@@ -6,7 +6,7 @@ import theme from '../styles/theme';
 const FooterContainer = styled.footer`
   position: fixed;
   bottom: 0;
-  background: ${theme.colors.jumbotron};
+  background: ${theme.colors.navbg};
   font-size: .8rem;
   width: 100%;
 `
@@ -15,9 +15,11 @@ const FooterInner = styled.div`
   padding: 1rem;
 `
 
-export default function Footer() {
+export default function Footer({ jumbotron }) {
   return (
-    <FooterContainer>
+    <FooterContainer style={{
+      borderTop: !jumbotron ? `1px solid ${theme.colors.navbgBorder}` : 'none'
+    }}>
       <FooterInner>
         Copyright &copy; 2018-2020 Velocity Contributors.
         This wouldn't be possible without our <Link to={"/sponsors"}>generous sponsors</Link>.
