@@ -14,36 +14,7 @@ Velocity's configuration file.
 
 ##Root section
 
-These settings mostly cover the basic, most essential settings of the proxy
-
-<style>
-.main-table table {
-  width: 150%;
-  padding: 2rem;
-  background-color: #323232;
-}
-.main-table th,
-.main-table td {
-  text-align: left;
-  padding: .5rem;
-}
-</style>
-<style>
-.secondary-table table {
-  width: 150%;
-  padding: 2rem;
-  background-color: #323232;
-}
-.secondary-table th,
-.secondary-table td {
-  text-align: left;
-  width: 4px;
-  padding: .5rem;
-}
-</style>
-
-<div class="ox-hugo-table main-table">
-<div></div>
+These settings mostly cover the basic, most essential settings of the proxy.
 
 | Setting Name          | Type    | Default                   | Description                                                                                                                                                                                                      |
 |-----------------------|---------|---------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -54,34 +25,23 @@ These settings mostly cover the basic, most essential settings of the proxy
 | ``forwarding-secret`` | String  | Randomly generated string | This setting is used as a secret to ensure that player info forwarded by Velocity comes from your proxy and not from someone pretending to run Velocity. See the "Player info forwarding" section for more info. |
 | ``announce-forge``    | Boolean | ``false``                 | This setting determines whether Velocity should present itself as a Forge/FML-compatible server. By default, this is disabled.                                                                                   |
 
-</div>
 
 ##`server` section
-
-<div class="ox-hugo-table secondary-table">
-<div></div>
 
 | Setting Name  | Type    | Default                             | Description                                                                                                                |
 |---------------|---------|-------------------------------------|----------------------------------------------------------------------------------------------------------------------------|
 | A server name | Address | See the default configuration below | This makes the proxy aware of a server that it can connect to.                                                             |
 | `try`         | Array   | ["lobby"]                           | This specifies what servers Velocity should try to connect to upon player login and when a player is kicked from a server. |
 
-</div>
 
 ##`forced-hosts` section
-<div class="ox-hugo-table secondary-table">
-<div></div>
 
 | Setting Name 	| Type     	| Default                              	| Description                                                                                                                                        	|
 |--------------	|----------	|--------------------------------------	|----------------------------------------------------------------------------------------------------------------------------------------------------	|
 | A host name  	| Hostname 	| See the default configuration below. 	| This configures the proxy to create a forced host for the specified hostname. An array of servers to try for the specified hostname is the value.  	|
 
-</div>
 
 ##`advanced` section
-
-<div class="ox-hugo-table main-table">
-<div></div>
 
 | Setting name            	| Type    	| Default 	| Description                                                                                                                                                                                                                                                                                   	|
 |-------------------------	|---------	|---------	|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
@@ -92,12 +52,7 @@ These settings mostly cover the basic, most essential settings of the proxy
 | `read-timeout`          	| Integer 	| 300000  	| This setting determines how long the proxy will wait to receive data from the server before timing out. If you use Forge, you may need to increase this setting.                                                                                                                              	|
 | `proxy-protocol`        	| Boolean 	| false   	| This setting determines whether or not Velocity should receive HAProxy PROXY messages. If you don't use HAProxy, leave this setting off.                                                                                                                                                      	|
 
-</div>
-
 ##`query` section
-
-<div class="ox-hugo-table main-table">
-<div></div>
 
 | Setting name   	| Type    	| Default  	| Description                                                                                                              	|
 |----------------	|---------	|----------	|--------------------------------------------------------------------------------------------------------------------------	|
@@ -106,12 +61,7 @@ These settings mostly cover the basic, most essential settings of the proxy
 | `map`          	| String  	| Velocity 	| Specifies the map name to be shown to clients.                                                                           	|
 | `show-plugins` 	| Boolean 	| false    	| Whether or not Velocity plugins are included in the query responses.                                                     	|
 
-</div>
-
 ##`metrics` section
-
-<div class="ox-hugo-table main-table">
-<div></div>
 
 | Setting name  	| Type    	| Default                 	| Description                                                                                                 	|
 |---------------	|---------	|-------------------------	|-------------------------------------------------------------------------------------------------------------	|
@@ -119,7 +69,6 @@ These settings mostly cover the basic, most essential settings of the proxy
 | `id`          	| UUID    	| Randomly generated UUID 	| A randomly generated UUID that uniquely identifies your Velocity server. You should not alter this setting. 	|
 | `log-failure` 	| Boolean 	| `false`                 	| Whether or not Velocity should log whenever it fails to connect to bStats.                                  	|
 
-</div>
 
 ##The default configuration
 

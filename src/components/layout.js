@@ -23,6 +23,12 @@ export default function Layout({ jumbotron, children }) {
           color: ${theme.colors.primary};
           text-decoration: none;
         }
+        
+        table {
+         width: 150%;
+         padding: 2rem;
+         background-color: ${theme.tableBackground};
+        }
       `} />
       <Navbar jumbotron={jumbotron} />
       {/* page contents */}
