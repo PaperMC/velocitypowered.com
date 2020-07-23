@@ -74,7 +74,7 @@ These settings mostly cover the basic, most essential settings of the proxy.
 
 Below is the default configuration file for Velocity, `velocity.toml`.
 
-```plain
+```toml
 
 # Config version. Do not change this
 config-version = "1.0"
