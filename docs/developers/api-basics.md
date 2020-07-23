@@ -1,6 +1,9 @@
 
 ## Velocity Plugin Basics
 
+Now you will lay the groundwork for your plugin. This page will teach you the first things to do when creating
+a Velocity plugin.
+
 ### Create the plugin class
 
 Create a new class (let's say `com.example.velocityplugin.VelocityTest`) and paste this in:

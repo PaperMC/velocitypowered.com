@@ -1,10 +1,10 @@
 
-This section is intended for developers who seek to develop plugins for Velocity.
-While this section will cover the basics for developing a plugin, not every concept will be covered. 
+---
+title: Creating your First Plugin
+---
 
-# Creating Your First Plugin
-
-So you've decided to take the plunge and create your first Velocity plugin? That's awesome! This page will help you get you going
+Writing plugins for Velocity is not complicated. This section will teach you how to setup your IDE, your plugin
+identifiers, and the basics of the API.
 
 ## Set up your environment
 
@@ -82,7 +82,8 @@ dependencies {
 **Setting up the dependency with Maven**
 
 Add the following to your `pom.xml`:
-```
+
+```xml
 <repositories>
     <repository>
         <id>velocity</id>
@@ -99,3 +100,4 @@ Add the following to your `pom.xml`:
     </dependency>
 </dependencies>
 ```
+

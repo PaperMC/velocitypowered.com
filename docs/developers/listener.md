@@ -1,7 +1,7 @@
 
 ## Creating listeners
 
-You've already seen one example of creating a listener - using the ProxyInitializeEvent. It's straightforward.
+Listening to events with Velocity's `@Subscribe` annotation is straightforward. You've already seen one such listener, using the ProxyInitializeEvent in your main class.
 
 ### Adding listening methods
 
