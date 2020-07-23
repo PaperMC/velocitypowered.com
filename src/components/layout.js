@@ -29,6 +29,10 @@ export default function Layout({ jumbotron, children }) {
          padding: 2rem;
          background-color: ${theme.tableBackground};
         }
+        td {
+         text-align: left;
+         padding: .5rem;
+        }
       `} />
       <Navbar jumbotron={jumbotron} />
       {/* page contents */}

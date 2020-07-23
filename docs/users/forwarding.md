@@ -10,8 +10,8 @@ employs a MAC code to make it much more difficult to trick the server into imper
 However, it is only available for Minecraft 1.13 or higher.
 
 To use modern forwarding with any supported server implementation, set the `player-info-forwarding` setting in
-`velocity.toml` to `modern`. You must also change the `forwarding-secret` setting to a unique secret. You then need
-to ensure your server is properly configured to use Velocity forwarding. 
+`velocity.toml` to `modern`. You then need to ensure your server is properly configured to use velocity forwarding by
+ following the steps in the appropriate section below:
 
 ```css
 Caution: Modern forwarding, while more secure than the legacy 
@@ -22,7 +22,7 @@ or rely on any of these, you will need to use legacy
 BungeeCord-compatible forwarding instead
 ```
 
-## Paper
+## Configuring Paper
 
 You will need build 377 and above for Paper 1.13+ to use modern forwarding.
 
@@ -31,7 +31,7 @@ To allow Paper to understand the forwarding player data, in your `paper.yml`, se
 `settings.velocity-support.online-mode` to the `online-mode` setting in your `velocity.toml`. Once you're done
 editing `paper.yml`, reboot your server.
  
-## Fabric
+## Configuring Fabric
 
 A mod called _[FabricProxy](https://www.curseforge.com/minecraft/mc-mods/fabricproxy)_ allows you to use Velocity
  modern forwarding with a modded server using Fabric.
@@ -48,12 +48,12 @@ If you need to use BungeeCord-compatible forwarding, simply set your `player-inf
 .toml` to `legacy`. You will also need to make sure your server is properly configured to understand the data sent by
 Velocity.
 
-## Spigot / Paper
+## Configuring Spigot / Paper
 
 To make Spigot or Paper understand the data forwarded from Velocity, set `settings.bungeecord` to `true` in your
  `spigot.yml` and then reboot your server.
  
-## Sponge
+## Configuring Sponge
 
 To configure Sponge to understand the data forwarded from Velocity, set `modules.bungecord` to `true` and 
 `bungeecord.ip-forwarding` to true in your `config/sponge/global.conf` file, and then restart your Sponge server.
