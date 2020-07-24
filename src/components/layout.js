@@ -25,13 +25,29 @@ export default function Layout({ jumbotron, children }) {
         }
         
         table {
-         width: 150%;
-         padding: 2rem;
-         background-color: ${theme.tableBackground};
+          width: 150%;
+          padding: 2rem;
+          background-color: ${theme.tableBackground};
         }
+        
         td {
-         text-align: left;
-         padding: .5rem;
+          text-align: left;
+          padding: .5rem;
+        }
+        
+        .caution-header {
+          font-weight: bold;
+          background: rgb(184, 134, 11);
+          color: black;
+          padding: .5rem;
+          border: rgb(184, 134, 11);
+        }
+        
+        .caution {
+          display: inline-block;
+          background: rgb(222, 184, 135);
+          color: black;
+          padding: .5rem;
         }
       `} />
       <Navbar jumbotron={jumbotron} />

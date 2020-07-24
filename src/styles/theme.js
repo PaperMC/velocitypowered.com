@@ -2,6 +2,7 @@ const themes = {
   dark: {
     logoVariant: 'white',
     tableBackground: '#323232',
+    titleButton: 'white',
     colors: {
       background: '#111',
       foreground: '#eee',
@@ -15,6 +16,7 @@ const themes = {
   light: {
     logoVariant: 'blue',
     tableBackground: '#e1e1e1',
+    titleButton: 'black',
     colors: {
       background: '#fff',
       foreground: '#222',

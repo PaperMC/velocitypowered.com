@@ -24,12 +24,12 @@ const NavbarItem = styled.li`
   display: inline;
   float: right;
   padding: 18px 10px;
-   background: linear-gradient(to right, #0288d1, #0288d1);
+  background: linear-gradient(to right, #0288d1, #0288d1);
   background-repeat: no-repeat;
   background-size: 0 100%;
   transition: background-size 1s 0s;
   &:hover{
-  background-size: 100% 100%;
+    background-size: 100% 100%;
   }
   a {
     color: ${theme.colors.foreground} !important;

@@ -13,14 +13,20 @@ To use modern forwarding with any supported server implementation, set the `play
 `velocity.toml` to `modern`. You then need to ensure your server is properly configured to use velocity forwarding by
  following the steps in the appropriate section below:
 
-```css
-Caution: Modern forwarding, while more secure than the legacy 
-BungeeCord forwarding scheme, is incompatible with Minecraft versions
-below 1.13, Minecraft Forge (both versions for Minecraft 1.12.2 and
-below and for 1.14 and above), and ProtocolSupport. If you support 
-or rely on any of these, you will need to use legacy
-BungeeCord-compatible forwarding instead
-```
+<div>
+<div class="caution-header">
+    <img src="https://cdn.discordapp.com/attachments/734487433621668011/736277965142491276/warning_icon.png"></img>
+     Caution
+</div>
+  <div class="caution">
+      Modern forwarding, while more secure than the legacy 
+      BungeeCord forwarding scheme, is incompatible with Minecraft versions
+      below 1.13, Minecraft Forge (both versions for Minecraft 1.12.2 and
+      below and for 1.14 and above), and ProtocolSupport. If you support 
+      or rely on any of these, you will need to use legacy
+      BungeeCord-compatible forwarding instead
+  </div>
+</div>
 
 ## Configuring Paper
 
@@ -55,7 +61,7 @@ To make Spigot or Paper understand the data forwarded from Velocity, set `settin
  
 ## Configuring Sponge
 
-To configure Sponge to understand the data forwarded from Velocity, set `modules.bungecord` to `true` and 
+To configure Sponge to understand the data forwarded from Velocity, set `modules.bungeecord` to `true` and 
 `bungeecord.ip-forwarding` to true in your `config/sponge/global.conf` file, and then restart your Sponge server.
                                                                                                               
 

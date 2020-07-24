@@ -104,7 +104,7 @@ online-mode = true
 player-info-forwarding-mode = "NONE"
 
 # If you are using modern IP forwarding, configure an unique secret here.
-forwarding-secret = "5L7eb15i6yie"
+forwarding-secret = "redacted"
 
 # Announce whether or not your server supports Forge. If you run a modded server, we
 # suggest turning this on.
