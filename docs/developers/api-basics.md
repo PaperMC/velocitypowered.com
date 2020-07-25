@@ -56,12 +56,12 @@ public VelocityTest(ProxyServer server, Logger logger) {
 }
 ```
 
-This looks like magic! How is Velocity doing this? The answer lies in the @Inject, which indicates that Velocity should
+This looks like magic! How is Velocity doing this? The answer lies in the `@Inject`, which indicates that Velocity should
 inject a ProxyServer and the Logger when constructing your plugin. These two interfaces will help you out as you begin
 working with Velocity. We won't talk too much about dependency injection: all you need to know is that Velocity will
 do this.
 
-All you need to do is build your plugin, put it in your plugins/ directory, and try it! Isn't that nice? In the next
+All you need to do is build your plugin, put it in your `plugins/` directory, and try it! Isn't that nice? In the next
 section you'll learn more about how to use the API.
 
 ### A word of caution

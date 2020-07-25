@@ -37,13 +37,9 @@ Now we have created our project, we need configure our build system.
 
 ### Javadocs
 
-Javadocs are available at [jd.velocitypowered.com](https://jd.velocitypowered.com).
+Javadocs are available at [jd.velocitypowered.com/1.1.0](https://jd.velocitypowered.com/1.1.0).
 
-## Setting up your first project
-
-If you need help setting up your project, don't worry!
-
-### Set up your build system
+## Set up your build system
 
 You will need to setup a build system before you continue. While it is possible to write Velocity plugins without one,
 having a build system will make your life a lot less difficult.
@@ -52,7 +48,7 @@ How to set up a build system is outside the scope of this page, but you can look
 ([Gradle](https://docs.gradle.org/current/userguide/userguide.html) or [Maven](https://maven.apache.org/guides/getting-started/index.html))
 for assistance.
 
-**Setting up the dependency with Gradle**
+### Setting up the dependency with Gradle
 
 Add the following to your `build.gradle`:
 
@@ -79,7 +75,7 @@ dependencies {
 }
 ```
 
-**Setting up the dependency with Maven**
+### Setting up the dependency with Maven
 
 Add the following to your `pom.xml`:
 
