@@ -88,9 +88,8 @@ We now need to configure each server to accept connections from the proxy.
 
 Velocity is a highly configurable proxy. While most users will not need to change everything in the config, there
 are tons of options covered [here](https://www.velocitypowered.com/wiki/users/configuration/) along with an explanation
- on 
-how each option works. To get started, simply open your `velocity.toml` and search for the `[servers]` section. Here is
- where you will begin adding your servers to Velocity, allowing them to be seen by Velocity.
+on how each option works. To get started, simply open your `velocity.toml` and search for the `[servers]` section. 
+Here is where you will begin adding your servers to Velocity, allowing them to be seen by Velocity.
 
 Here's a sample of what the `[servers]` section should look like initially.
 
