@@ -1,7 +1,10 @@
 
-## Dependency Management
+---
+title: Dependency Management
+---
 
-Reinventing the wheel takes too long, so dependencies are common. Also, you may want your plugin to hook into another.
+You may want your plugin to hook into another. Reinventing the wheel takes too long. Either way, dependencies are common,
+but they need to be managed wisely, lest you fall into dependency hell.
 
 ### Plugin dependencies
 
