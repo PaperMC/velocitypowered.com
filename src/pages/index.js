@@ -70,7 +70,7 @@ export default function Home() {
             owners to link together multiple Minecraft servers so they may appear as one.
           </p>
           <p>
-            <strong>Velocity is an independently-developed code base, and is not a fork or an reimplementation of BungeeCord</strong>.
+            <strong>Velocity is an independently-developed code base, and is not a fork or a reimplementation of BungeeCord</strong>.
             There are many similarities but also many differences. You may find this article on our technical wiki to be useful reading.
           </p>
           <p>Velocity is:</p>
