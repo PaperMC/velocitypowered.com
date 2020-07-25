@@ -1,7 +1,10 @@
 
-## Using the scheduler
+---
+title: Using the Scheduler
+---
 
 The Velocity Scheduler lets you decide when and how your plugin tasks run, allowing fine control over execution.
+On Velocity, there is no main thread. All tasks run using the Velocity Scheduler are thus async.
 
 ### Running a delayed task
 
@@ -58,8 +61,4 @@ task.cancel();
 // ...
 System.out.println(task.status());
 ```
-
-### Synchronicity / Asynchronicity
-
-On Velocity, there is no main thread. All tasks run using the Velocity Scheduler are thus async.
 
