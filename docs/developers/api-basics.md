@@ -1,5 +1,7 @@
 
-## Velocity Plugin Basics
+---
+title: Velocity Plugin Basics
+---
 
 Now you will lay the groundwork for your plugin. This page will teach you the first things to do when creating
 a Velocity plugin.
