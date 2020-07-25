@@ -23,6 +23,32 @@ export default function Layout({ jumbotron, children }) {
           color: ${theme.colors.primary};
           text-decoration: none;
         }
+        
+        table {
+          width: 150%;
+          padding: 2rem;
+          background-color: ${theme.tableBackground};
+        }
+        
+        td {
+          text-align: left;
+          padding: .5rem;
+        }
+        
+        .caution-header {
+          font-weight: bold;
+          background: rgb(184, 134, 11);
+          color: black;
+          padding: .5rem;
+          border: rgb(184, 134, 11);
+        }
+        
+        .caution {
+          display: inline-block;
+          background: rgb(222, 184, 135);
+          color: black;
+          padding: .5rem;
+        }
       `} />
       <Navbar jumbotron={jumbotron} />
       {/* page contents */}
