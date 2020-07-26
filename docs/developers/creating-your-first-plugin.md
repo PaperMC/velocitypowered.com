@@ -10,7 +10,7 @@ identifiers, and the basics of the API.
 
 You're going to need the [JDK](https://adoptopenjdk.net) and an IDE. If you don't have an IDE, IntelliJ IDEA is recommended.
 
-## Creating your IDE project
+## Creating the project in your IDE
 
 * Open your IDE
 * Click `Create New Project` or the equivalent

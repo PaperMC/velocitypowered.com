@@ -176,6 +176,6 @@ public class PrivateMessageEvent {
 
 ```
 
-Now you can check `isCancelled` after you fire the event.
+Now you can check `isCancelled` after you fire the event. Remember, again, to handle any consequential logic inside the callback of the `CompletableFuture` you get.
 
 

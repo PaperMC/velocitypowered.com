@@ -8,7 +8,7 @@ but they need to be managed wisely, lest you fall into dependency hell.
 
 ### Plugin dependencies
 
-Adding a dependency on another plugin is done in the `@Plugin` annotation on your main class. Let's revisit that:
+Adding a dependency on another plugin is done in the `@Plugin` annotation on your main class. Let's revisit that briefly:
 
 ```java
 @Plugin(id = "myfirstplugin", name = "My Plugin", version = "0.1.0")
@@ -26,7 +26,7 @@ public class VelocityTest {
 }
 ```
 
-The id of the dependency is the same as the other plugin's `id` from its `@Plugin` annotation.
+The id of the dependency is the same as the other plugin's `id` from its `@Plugin` annotation. This is why having a stable plugin ID is important.
 
 That's it! Now, your plugin will require *wonderplugin* to load, and when it does, it will load *after* wonderplugin.
 
