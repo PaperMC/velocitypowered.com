@@ -23,7 +23,7 @@ public void onPlayerChat(PlayerChatEvent event) {
      Caution
 </div>
   <div class="caution">
-      Note well that the import is `com.velocitypowered.api.event.Subscribe` and *NOT* `com.google.common.eventbus`.
+      Note well that the import is `com.velocitypowered.api.event.Subscribe` and *NOT* in `com.google.common.eventbus`.
   </div>
 </div>
 
@@ -140,18 +140,20 @@ server.getEventManager().fire(new PrivateMessageEvent(sender, recipient, message
 });
 ```
 
-### Making it Cancellable
+### Adding event state
 
-To make your event cancellable, simply add `isCancelled` and `setCancelled` methods to the event class:
+Velocity uses the generalised `ResultedEvent` for events which have some sort of 'result'.
+
+Suppose we want to allow listeners to mark the event as 'allowed' or 'denied'. In that case, implement `ResultedEvent` using `GenericResult` as the result type:
 
 ```java
-public class PrivateMessageEvent {
+public class PrivateMessageEvent implements ResultedEvent<GenericResult> {
 
   private final Player sender;
   private final Player recipient;
   private final String message;
   
-  private boolean cancelled;
+  private GenericResult result;
   
   public PrivateMessageEvent(Player sender, Player recipient, String message) {
     this.sender = sender;
@@ -171,20 +173,21 @@ public class PrivateMessageEvent {
     return message;
   }
   
-  public boolean isCancelled() {
-    return cancelled;
+  @Override
+  public GenericResult getResult() {
+    return result;
   }
   
-  public void setCancelled(boolean cancelled) {
-    this.cancelled = cancelled;
+  @Override
+  public void setResult(GenericResult result) {
+    this.result = result;
   }
-  
-  // toString, equals, and hashCode may be added as needed
 
 }
 
 ```
 
-Now you can check `isCancelled` after you fire the event. Remember, again, to handle any consequential logic inside the callback of the `CompletableFuture` you get.
+Now, listeners may 'deny' the event by using `event.setResult(GenericResult.denied())`, and you may check the result
+with `event.getResult()`.
 
 

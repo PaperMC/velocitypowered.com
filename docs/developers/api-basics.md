@@ -66,7 +66,7 @@ do this.
 All you need to do is build your plugin, put it in your `plugins/` directory, and try it! Isn't that nice? In the next
 section you'll learn more about how to use the API.
 
-### Choosing @Plugin Information
+### Choosing `@Plugin` Information
 
 Choose your plugin's ID wisely. Other plugins will use this ID to depend on yours. If you change it, you could break compatibility.
 
