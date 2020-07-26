@@ -4,12 +4,12 @@ import { Link } from "gatsby"
 import velocityWhiteCropped from "../assets/img/velocity-white-cropped.png";
 import velocityBlueCropped from "../assets/img/velocity-blue-cropped.png";
 import theme from '../styles/theme'
+import { IconContext } from "react-icons"
+import { FiMenu } from "react-icons/fi"
 
 import stylingGlobals from "../styles/styling-globals"
 
-const NavbarList = styled.div`
-  display: flex;
-  
+const NavbarContainer = styled.nav`
   margin: 0;
   padding: 0;
   position: fixed;
@@ -17,6 +17,10 @@ const NavbarList = styled.div`
   width: 100%;
   background-color: ${theme.colors.navbg};
   z-index: 100;
+`
+
+const NavbarList = styled.div`
+  display: flex;
 `
 const NavbarLogo = styled.div`
   padding: 15px;
@@ -34,6 +38,11 @@ const NavbarItem = styled.div`
   a {
     color: ${theme.colors.foreground} !important;
   }
+  
+  @media (max-width: ${stylingGlobals.viewportSizes.phone}) {
+    padding: 8px;
+    border-bottom: 1px solid ${theme.colors.navbgBorder};
+  }
 `
 
 const NavbarItems = styled.div`
@@ -44,23 +53,50 @@ const NavbarItems = styled.div`
   }
 `
 
-const NavbarExpand = styled.div`
+const MobileNavbarItems = styled.div`
+  display: none;
+  background-color: ${theme.colors.navbg};
   
+  @media (max-width: ${stylingGlobals.viewportSizes.phone}) {
+    margin-bottom: -60px;
+    display: ${( { mobileShown }) => mobileShown ? 'block' : 'none'};
+  }
+`
+
+const NavbarExpand = styled.div`
+  padding: 18px 10px 0 10px;
 `
 
 function getLogoShown() {
   return theme.logoVariant === 'blue' ? velocityBlueCropped : velocityWhiteCropped
 }
 
+function NavbarItemContents({ location }) {
+  return <>
+    <NavbarItem active={location.pathname.startsWith("/wiki")}>
+      <Link to={"/wiki"}>Documentation</Link>
+    </NavbarItem>
+    <NavbarItem active={location.pathname.startsWith("/downloads")}>
+      <Link to={"/downloads"}>Downloads</Link>
+    </NavbarItem>
+    <NavbarItem>
+      <Link to={"https://forums.velocitypowered.com"}>Forums</Link>
+    </NavbarItem>
+    <NavbarItem>
+      <Link to={"https://discord.gg/8cB9Bgf"}>Discord</Link>
+    </NavbarItem>
+  </>
+}
+
 export default function Navbar({ location, jumbotron }) {
-  const [ expanded, setExpanded ] = useState(null)
+  const [ expanded, setExpanded ] = useState(false)
 
   function flipExpanded() {
     setExpanded(!expanded)
   }
 
   return (
-    <nav>
+    <NavbarContainer>
       <NavbarList style={{
         borderBottom: !jumbotron ? `1px solid ${theme.colors.navbgBorder}` : 'none'
       }}>
@@ -80,22 +116,20 @@ export default function Navbar({ location, jumbotron }) {
           </Link>
         </NavbarLogo>
 
-        <NavbarExpand onClick={flipExpanded} />
+        <NavbarExpand onClick={flipExpanded}>
+          <IconContext.Provider value={{ size: "1.5rem" }}>
+            <FiMenu />
+          </IconContext.Provider>
+        </NavbarExpand>
+
         <NavbarItems>
-          <NavbarItem active={location.pathname.startsWith("/wiki")}>
-            <Link to={"/wiki"}>Documentation</Link>
-          </NavbarItem>
-          <NavbarItem active={location.pathname.startsWith("/downloads")}>
-            <Link to={"/downloads"}>Downloads</Link>
-          </NavbarItem>
-          <NavbarItem>
-            <Link to={"https://forums.velocitypowered.com"}>Forums</Link>
-          </NavbarItem>
-          <NavbarItem>
-            <Link to={"https://discord.gg/8cB9Bgf"}>Discord</Link>
-          </NavbarItem>
+          <NavbarItemContents location={location} />
         </NavbarItems>
       </NavbarList>
-    </nav>
+
+      <MobileNavbarItems mobileShown={expanded}>
+        <NavbarItemContents location={location} />
+      </MobileNavbarItems>
+    </NavbarContainer>
   )
 }
