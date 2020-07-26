@@ -19,7 +19,7 @@ import com.velocitypowered.api.proxy.ProxyServer;
 import org.slf4j.Logger;
 
 @Plugin(id = "myfirstplugin", name = "My First Plugin", version = "0.1.0-SNAPSHOT",
-        description = "I did it!", authors = {"Me"})
+        url = "awesome.org", description = "I did it!", authors = {"Me"})
 public class VelocityTest {
 
     private final ProxyServer server;
@@ -39,7 +39,7 @@ What did you just do there? There's quite a bit to unpack, so let's focus on the
 
 ```
 @Plugin(id = "myfirstplugin", name = "My First Plugin", version = "0.1.0-SNAPSHOT",
-        description = "I did it!", authors = {"Me"})
+        url = "awesome.org", description = "I did it!", authors = {"Me"})
 public class VelocityTest {
 ```
 
@@ -74,7 +74,7 @@ The plugin name is somewhat less important. It will be shown to users as the dis
 
 For the version, we recommend sticking to semantic versioning - you can read more about this concept at [semver.org](https://semver.org/). Basically, use 3 numbers in your version, such as 1.4.25. Increment the major number when you make a backwards-incompatible breaking change, increment the minor number when you add functionality in a compatible manner, and increment the patch number when you fix a bug or make an otherwise unnoticeable change in the implementation.
 
-You can also describe your plugin's URL, authors, and description in your `@Plugin` annotation. We'll get to plugin dependencies later.
+You can also describe your plugin's URL, authors, and description in your `@Plugin` annotation. Plugin dependencies are also be specified there, but we'll get to that later.
 
 ### A word of caution
 
