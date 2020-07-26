@@ -4,10 +4,13 @@ title: Securing Your Servers
 
 It is vital that you secure your backend servers. As part of setting up Velocity,
 you will put your server into offline mode, which means in theory, someone could
-impersonate any server on your server. This is extremely dangerous, and it is important
-to make sure only the proxy can connect to the server. This guide will explore
-the various options for securing your backend servers so only your proxy can
-connect to them.
+impersonate any player on your server. This is extremely dangerous, so it is
+important to make sure only the proxy can connect to your servers.
+
+This guide will explore the various options for securing your backend servers so
+only your proxy can connect to them. Note that this is an _exploration_ of options,
+aiming to review the various options and give you advantages and disadvantages to
+them so you can make an informed decision.
 
 This list is not in any particular order, and almost all of these methods can be
 combined as needed.
@@ -30,9 +33,9 @@ Instructions for your operating system may vary. Solutions for major server OSes
 
 **Disadvantages**:
 
-* Can be difficult to configure
+* Tricky first-time setup
 * May be difficult to use with multiple proxies
-* Firewall configuration must be kept in sync
+* Firewall configuration must be kept in sync with new servers and proxies
 * Not viable on a shared host
 
 ## Velocity Modern Forwarding
@@ -51,6 +54,7 @@ servers.
 
 * Only works for Minecraft 1.13 and above
 * Requires Paper 1.13 or above, or FabricProxy if you use Fabric
+* Relies on the forwarding secret being kept secret
 
 ## Binding To `localhost`
 
@@ -68,7 +72,7 @@ Afterwards, open your `velocity.toml` file and ensure all the servers are pointi
 
 **Advantages**:
 
-* Trivial setup
+* Relatively trivial setup compared to other methods discussed
 * Fool-proof if you do not give untrusted servers access to your servers
 
 **Disadvantages**:
