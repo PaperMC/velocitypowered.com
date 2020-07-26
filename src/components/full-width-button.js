@@ -2,6 +2,7 @@ import React from "react"
 import styled from "@emotion/styled"
 import {Link} from "gatsby";
 import theme from '../styles/theme'
+import {css} from "@emotion/core";
 
 const FullWidthButtonContainer = styled.div`
   padding: .75em;
@@ -20,9 +21,15 @@ const FullWidthButtonTitle = styled.div`
   font-weight: bold;
 `
 
+const linkStyle = css`
+  color: ${theme.colors.foreground} !important;
+`
+
 export default function FullWidthButton({ title, subtitle, link }) {
-  return <FullWidthButtonContainer>
-    <FullWidthButtonTitle>{<Link to={link} style={{color: theme.titleButton}}>{title}</Link>}</FullWidthButtonTitle>
-    <div>{subtitle}</div>
-  </FullWidthButtonContainer>
+  return <Link to={link} css={linkStyle}>
+    <FullWidthButtonContainer>
+      <FullWidthButtonTitle>{title}</FullWidthButtonTitle>
+      <div>{subtitle}</div>
+    </FullWidthButtonContainer>
+  </Link>
 }
