@@ -3,12 +3,12 @@
 title: Dependency Management
 ---
 
-You may want your plugin to hook into another. Reinventing the wheel takes too long. Either way, dependencies are common,
-but they need to be managed wisely, lest you fall into dependency hell.
+Dependencies are common. You need to hook into another plugin. You don't want to write the same code
+someone else has already solved. Whatever you do, you need a way to manage your dependencies effectively.
 
 ### Plugin dependencies
 
-Adding a dependency on another plugin is done in the `@Plugin` annotation on your main class. Let's revisit that briefly:
+Adding a dependency on another plugin is done with the `@Plugin` annotation on your main class. Let's revisit that briefly:
 
 ```java
 @Plugin(id = "myfirstplugin", name = "My Plugin", version = "0.1.0")
