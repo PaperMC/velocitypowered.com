@@ -3,6 +3,8 @@ import Layout from "../components/layout";
 import styled from "@emotion/styled"
 import theme from '../styles/theme';
 
+import stylingGlobals from "../styles/styling-globals";
+
 import mineteriaLogo from "../assets/img/sponsors/mineteria.png";
 import voldexLogo from "../assets/img/sponsors/voldex.png";
 import SEO from "../components/seo";
@@ -12,12 +14,14 @@ const SponsorJumbotron = styled.div`
   width: 100%;
   padding: 1rem 0;
   padding-bottom: 2rem;
+  
+  @media (max-width: ${stylingGlobals.viewportSizes.phone}) {
+    padding: 1rem 0;
+  }
 `
 
 const SponsorJumbotronHeader = styled.h1`
   text-align: center;
-  font-size: 3.25rem;
-  margin-bottom: 1.5rem;
 `
 
 const SponsorsStart = styled.section`
@@ -26,11 +30,25 @@ const SponsorsStart = styled.section`
   flex-direction: row;
   justify-content: center;
   margin-bottom: 1rem;
+  
+  @media (max-width: ${stylingGlobals.viewportSizes.desktop}) {
+    flex-direction: column;
+    text-align: center;
+    
+    img {
+      max-width: 70vw;
+    }
+  }
 `
 
 const Sponsor = styled.aside`
   text-align: center;
   margin-right: 2rem;
+  
+  @media (max-width: ${stylingGlobals.viewportSizes.desktop}) {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
 `
 
 const Why = styled.section`
@@ -43,7 +61,7 @@ export default function Sponsors({ location }) {
     <Layout jumbotron location={location}>
       <SEO title="Our Sponsors" />
       <SponsorJumbotron>
-        <SponsorJumbotronHeader>Meet Our Sponsors</SponsorJumbotronHeader>
+        <SponsorJumbotronHeader>Our Sponsors</SponsorJumbotronHeader>
         <SponsorsStart>
           <Sponsor>
             <a href={"https://mineteria.com"}>
