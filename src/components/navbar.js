@@ -65,6 +65,10 @@ const MobileNavbarItems = styled.div`
 
 const NavbarExpand = styled.div`
   padding: 18px 10px 0 10px;
+  
+  @media (min-width: ${stylingGlobals.viewportSizes.phone}) {
+    display: none;
+  }
 `
 
 function getLogoShown() {
