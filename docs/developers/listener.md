@@ -17,11 +17,19 @@ public void onPlayerChat(PlayerChatEvent event) {
 }
 ```
 
-Note well that the import is `com.velocitypowered.api.event.Subscribe` and *NOT* `com.google.common.eventbus`.
+<div>
+<div class="caution-header">
+    <img src="https://cdn.discordapp.com/attachments/734487433621668011/736277965142491276/warning_icon.png"></img>
+     Caution
+</div>
+  <div class="caution">
+      Note well that the import is `com.velocitypowered.api.event.Subscribe` and *NOT* `com.google.common.eventbus`.
+  </div>
+</div>
 
 ** Orders **
 
-Every listener has a `PostOrder`. When an event is fired, listeners are invoked as ordered by their orders. Listeners using
+Every listener has a `PostOrder`. When an event is fired, the order in which listeners are invoked is defined by their `PostOrder`. Listeners using
 `PostOrder.FIRST` are called first, then EARLY, NORMAL, etc.
 
 State the desired order in the `@Subscribe` annotation:
@@ -81,12 +89,11 @@ As an alternative to `@Subscribe`, you can also use the functional `EventHandler
 
 ## Creating Events
 
-Creating events on Velocity is somewhat different than on other platforms. Your events don't need to extend or implement
-anything. They just work.
+Creating events on Velocity is somewhat different than on other platforms. However, it is very similar for the most part.
 
 ### Creating the Event Class
 
-First we need to create a class for our event. In this tutorial we'll assume your making a private messaging plugin, and thus use
+First we need to create a class for our event. In this tutorial we'll assume you're making a private messaging plugin, and thus use
 a `PrivateMessageEvent`. Most of this part is boilerplate.
 
 ```java
@@ -119,6 +126,8 @@ public class PrivateMessageEvent {
 }
 
 ```
+
+You'll notice that your events don't need to extend or implement anything. They just work.
 
 ### Firing the Event
 
