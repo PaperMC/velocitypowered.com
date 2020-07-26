@@ -6,8 +6,13 @@ import Navbar from "./navbar"
 import theme from '../styles/theme';
 import '../styles/global.css';
 
+import stylingGlobals from "../styles/styling-globals"
+
 const Container = styled.main`
-  margin: 60px 0;
+  margin-top: 60px;
+  @media (min-width: ${stylingGlobals.viewportSizes.phone}) {
+    margin-bottom: 60px 0;
+  }
 `
 
 export default function Layout({ location, jumbotron, children }) {
@@ -25,7 +30,7 @@ export default function Layout({ location, jumbotron, children }) {
         }
         
         table {
-          width: 150%;
+          width: 100%;
           padding: 2rem;
           background-color: ${theme.tableBackground};
         }

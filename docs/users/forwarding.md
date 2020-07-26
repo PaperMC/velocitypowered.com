@@ -24,7 +24,7 @@ To use modern forwarding with any supported server implementation, set the `play
       below 1.13, Minecraft Forge (both versions for Minecraft 1.12.2 and
       below and for 1.14 and above), and ProtocolSupport. If you support 
       or rely on any of these, you will need to use legacy
-      BungeeCord-compatible forwarding instead
+      BungeeCord-compatible forwarding instead.
   </div>
 </div>
 
@@ -39,7 +39,7 @@ editing `paper.yml`, reboot your server.
  
 ## Configuring Fabric
 
-A mod called _[FabricProxy](https://www.curseforge.com/minecraft/mc-mods/fabricproxy)_ allows you to use Velocity
+A mod called [FabricProxy](https://www.curseforge.com/minecraft/mc-mods/fabricproxy) allows you to use Velocity
  modern forwarding with a modded server using Fabric.
  
 # Configuring legacy BungeeCord-compatible forwarding

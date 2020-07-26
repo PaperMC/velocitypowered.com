@@ -26,16 +26,26 @@
     ]
   },
   {
+    "title": "Deployment Guide",
+    "url": "/wiki/deployment/",
+    "children": [
+      {
+        "title": "Securing Your Servers",
+        "url": "/wiki/deployment/security/"
+      },
+      {
+        "title": "Tuning Velocity",
+        "url": "/wiki/deployment/tuning/"
+      }
+    ]
+  },
+  {
     "title": "Technical Wiki",
     "url": "/wiki/technical/",
     "children": [
       {
         "title": "Why Not Fork BungeeCord?",
         "url": "/wiki/technical/why-not-fork-bungeecord/"
-      },
-      {
-        "title": "Tuning Velocity",
-        "url": "/wiki/technical/tuning-velocity/"
       }
     ]
   }

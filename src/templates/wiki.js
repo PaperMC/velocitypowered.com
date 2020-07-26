@@ -15,11 +15,14 @@ const DocumentationContainer = styled.article`
   @media (max-width: ${stylingGlobals.viewportSizes.desktop}) {
     flex-direction: column-reverse;
   }
+  
+  @media (min-width: ${stylingGlobals.viewportSizes.phone}) {
+    margin-bottom: 60px;
+  }
 `
 
 const ContentWrapper = styled.div`
   margin-left: 22rem;
-  margin-bottom: 60px;
   width: calc(100vw - 22rem);
   
   @media (max-width: ${stylingGlobals.viewportSizes.tablet}) {
