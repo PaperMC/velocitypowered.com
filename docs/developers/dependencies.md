@@ -8,7 +8,7 @@ someone else has already solved. Whatever you do, you need a way to manage your 
 
 ### Plugin dependencies
 
-Adding a dependency on another plugin is done with the `@Plugin` annotation on your main class. Let's revisit that briefly:
+Adding a dependency on another plugin is done with the `@Plugin` annotation in your main class. Let's revisit that briefly:
 
 ```java
 @Plugin(id = "myfirstplugin", name = "My Plugin", version = "0.1.0")
