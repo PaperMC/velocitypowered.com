@@ -10,7 +10,7 @@ const Container = styled.main`
   margin-top: 60px;
 `
 
-export default function Layout({ jumbotron, children }) {
+export default function Layout({ location, jumbotron, children }) {
   return (
     <>
       <Global styles={css`
@@ -50,7 +50,7 @@ export default function Layout({ jumbotron, children }) {
           padding: .5rem;
         }
       `} />
-      <Navbar jumbotron={jumbotron} />
+      <Navbar jumbotron={jumbotron} location={location} />
       {/* page contents */}
       <Container>
         {children}

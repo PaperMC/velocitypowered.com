@@ -38,9 +38,9 @@ const Why = styled.section`
   margin: 2rem auto;
 `
 
-export default function Sponsors() {
+export default function Sponsors({ location }) {
   return (
-    <Layout jumbotron>
+    <Layout jumbotron location={location}>
       <SEO title="Our Sponsors" />
       <SponsorJumbotron>
         <SponsorJumbotronHeader>Meet Our Sponsors</SponsorJumbotronHeader>

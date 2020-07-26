@@ -22,10 +22,10 @@ const Content = styled.section`
   margin: 0 auto;
 `
 
-export default function Documentation({ data }) {
+export default function Documentation({ location, data }) {
   const article = data.markdownRemark
   return (
-    <Layout>
+    <Layout location={location}>
       <SEO title={article.frontmatter.title} description={article.excerpt} />
       <DocumentationContainer>
         <Sidebar sidebar={wikiSidebar} />

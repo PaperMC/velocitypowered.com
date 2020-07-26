@@ -49,9 +49,9 @@ function getLogoShown() {
   return theme.logoVariant === 'blue' ? velocityBlue : velocityWhite
 }
 
-export default function Home() {
+export default function Home({ location }) {
   return (
-    <Layout jumbotron>
+    <Layout jumbotron location={location}>
       <SEO title="Welcome to Velocity" />
       <Jumbotron>
         <JumbotronLogo>

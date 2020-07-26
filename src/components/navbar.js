@@ -26,8 +26,8 @@ const NavbarItem = styled.li`
   padding: 18px 10px;
   background: linear-gradient(to right, #0288d1, #0288d1);
   background-repeat: no-repeat;
-  background-size: 0 100%;
-  transition: background-size 1s 0s;
+  background-size: ${( {active} ) => active ? '100% 100%' : '0 100%'};
+  transition: ${( {active} ) => active ? 'none' : 'background-size 1s 0s'};
   &:hover{
     background-size: 100% 100%;
   }
@@ -40,7 +40,7 @@ function getLogoShown() {
   return theme.logoVariant === 'blue' ? velocityBlueCropped : velocityWhiteCropped
 }
 
-export default function Navbar({ jumbotron }) {
+export default function Navbar({ location, jumbotron }) {
   return (
     <nav>
       <NavbarList style={{
@@ -68,10 +68,10 @@ export default function Navbar({ jumbotron }) {
         <NavbarItem>
           <Link to={"https://forums.velocitypowered.com"}>Forums</Link>
         </NavbarItem>
-        <NavbarItem>
+        <NavbarItem active={location.pathname.startsWith("/downloads")}>
           <Link to={"/downloads"}>Downloads</Link>
         </NavbarItem>
-        <NavbarItem>
+        <NavbarItem active={location.pathname.startsWith("/wiki")}>
           <Link to={"/wiki"}>Documentation</Link>
         </NavbarItem>
       </NavbarList>
