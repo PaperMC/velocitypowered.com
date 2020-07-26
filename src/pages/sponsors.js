@@ -92,12 +92,14 @@ export default function Sponsors({ location }) {
           strongly vested in its success.
         </p>
 
-        <h2>Who are the sponsors, exactly?</h2>
+        <h2>Who are the sponsors, exactly, and what are they providing?</h2>
 
         <p>
           The main thing we ask of our sponsors is that they must be <strong>strongly committed</strong> to the success
           of the Velocity project.
         </p>
+
+        <h3>Mineteria</h3>
 
         <p>
           <strong>Mineteria</strong> is the social Minecraft network with minigames and housing. Mineteria has been
@@ -107,7 +109,17 @@ export default function Sponsors({ location }) {
         </p>
 
         <p>
+          Mineteria has kindly provided us with the opportunity to test new Velocity features using a real-world test
+          and production environment. In addition, by employing one of the Velocity developers (Andrew/Tux), they allow
+          him to work on Velocity at least part-time.
+        </p>
+
+        <h3>Voldex Services</h3>
+
+        <p>
           <strong>Voldex Services</strong> is the operator of Minecraft networks such as TheArchon and PrimeMC.
+          Voldex Services kindly pays for all the infrastructure hosting Velocity's project services, such as our
+          forums and Jenkins instance, hosted on DigitalOcean.
         </p>
 
         <h2>Want to sponsor Velocity?</h2>
