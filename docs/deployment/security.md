@@ -28,7 +28,7 @@ Instructions for your operating system may vary. Solutions for major server OSes
 **Advantages**:
 
 * Fool-proof if you do not give untrusted servers access to your servers
-* Does not require extra configuration on each Minecraft server
+* Does not require any extra Minecraft server configuration
 * Part of good system hardening advice for any operating system
 
 **Disadvantages**:
@@ -72,13 +72,14 @@ Afterwards, open your `velocity.toml` file and ensure all the servers are pointi
 
 **Advantages**:
 
-* Relatively trivial setup compared to other methods discussed
-* Fool-proof if you do not give untrusted servers access to your servers
+* A relatively trivial setup compared to other methods discussed
+* Fool-proof if you do not give untrusted users access to your server
 
 **Disadvantages**:
 
-* Setup must be reversed (and an alternate method used) if you move the servers to a
-  different physical server
+* Setup must be reversed (and an alternate method used) if you move any of the
+  servers to a different physical server (such that the proxy and the server
+  are not on the same physical server)
 * Not viable on a shared host
 
 ## Using an Encrypted Tunnel
@@ -123,8 +124,8 @@ This common-sense general advice goes without saying:
 
 * Keep frequent backups of your server
 * Set up a firewall on your server
-* Run your servers as an unprivileged user (this means no `sudo` or running as `root` for
-  Linux users!)
+* Run your servers as an unprivileged user (this means no `sudo` access or running as
+  `root` for Linux users!)
 * Update Velocity, your Minecraft server and server plugins, and your server's operating
   system frequently
 * Use strong passwords
