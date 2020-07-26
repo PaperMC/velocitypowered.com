@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../components/layout";
 import styled from "@emotion/styled"
 import theme from '../styles/theme';
+import { FiAtSign } from "react-icons/fi";
 
 import stylingGlobals from "../styles/styling-globals";
 
@@ -86,12 +87,17 @@ export default function Sponsors({ location }) {
         </p>
 
         <p>
-          Velocity is open source and will always remain open source. <strong>That will never change</strong> - but we
-          need to rely on others to help keep funding the development of Velocity. We have not lost focus of what we are
-          focusing on. Our sponsors help make Velocity stronger and are strongly vested in its success.
+          Velocity <strong>will always remain open source</strong> - but we need help to allow us to keep developing
+          Velocity. We have not lost focus of what we are focusing on. Our sponsors help make Velocity stronger and are
+          strongly vested in its success.
         </p>
 
         <h2>Who are the sponsors, exactly?</h2>
+
+        <p>
+          The main thing we ask of our sponsors is that they must be <strong>strongly committed</strong> to the success
+          of the Velocity project.
+        </p>
 
         <p>
           <strong>Mineteria</strong> is the social Minecraft network with minigames and housing. Mineteria has been
@@ -107,7 +113,15 @@ export default function Sponsors({ location }) {
         <h2>Want to sponsor Velocity?</h2>
 
         <p>
-          We welcome sponsorship offers from others, but we expect our sponsors to be vested in the success of the project,
+          We welcome sponsorship offers from others. All sponsorship offers will be carefully considered, but only those
+          we judge as beneficial to the project and whom we believe are strongly committed to the success of Velocity will
+          be accepted. In essence, <strong>the onus is on you</strong> to prove your sponsorship will help us.
+        </p>
+
+        <p>
+          If you think you meet our requirements and would like to be considered, email velocity<FiAtSign />steinborn.me.
+          Tell us who you are, and how you can assist the project (whether that is by providing resources or monetary
+          contributions).
         </p>
       </Why>
     </Layout>
