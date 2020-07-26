@@ -5,6 +5,8 @@ import Layout from "../components/layout";
 import FullWidthButton from "../components/full-width-button";
 import theme from '../styles/theme';
 
+import stylingGlobals from "../styles/styling-globals";
+
 import velocityWhite from '../assets/img/velocity-white.png';
 import velocityBlue from '../assets/img/velocity-blue.png';
 import SEO from "../components/seo";
@@ -13,6 +15,10 @@ const Jumbotron = styled.div`
   background: ${theme.colors.jumbotron};
   display: flex;
   padding: 2rem 5rem;
+  
+  @media (max-width: ${stylingGlobals.viewportSizes.phone}) {
+    padding: 1rem;
+  }
 `
 
 const JumbotronLogo = styled.div`
@@ -30,20 +36,44 @@ const JumbotronLogo = styled.div`
     margin-top: 0;
     font-size: 1.25rem;
   }
+  
+  @media (max-width: ${stylingGlobals.viewportSizes.phone}) {
+    flex-direction: column;
+    text-align: center;
+    
+    h1 {
+      margin: 0;
+    }
+  }
 `
 
 const Explainer = styled.section`
   display: flex;
   width: 95%;
   margin: 0 auto;
+  
+  @media (max-width: ${stylingGlobals.viewportSizes.phone}) {
+    flex-direction: column;
+  }
 `
 
 const ExplainerSection = styled.section`
   width: 50%;
   margin: 1rem;
+  
+  @media (max-width: ${stylingGlobals.viewportSizes.phone}) {
+    width: auto;
+  }
 `
 
-const VelocityLogo = styled.img`margin-right: 2rem`
+const VelocityLogo = styled.img`
+  display: none;
+
+  @media (min-width: ${stylingGlobals.viewportSizes.phone}) {
+    display: block;
+    margin-right: 2rem;
+  }
+`
 
 function getLogoShown() {
   return theme.logoVariant === 'blue' ? velocityBlue : velocityWhite

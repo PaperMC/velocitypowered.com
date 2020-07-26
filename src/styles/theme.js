@@ -26,7 +26,7 @@ const themes = {
       primary: '#0288d1',
       gray: '#e1e1e1',
     }
-  }
+  },
 }
 
 export default themes.dark

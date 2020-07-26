@@ -3,12 +3,16 @@ import {Link} from "gatsby";
 import styled from "@emotion/styled"
 import theme from '../styles/theme';
 
+import stylingGlobals from "../styles/styling-globals"
+
 const FooterContainer = styled.footer`
-  position: fixed;
-  bottom: 0;
-  background: ${theme.colors.navbg};
-  font-size: .8rem;
-  width: 100%;
+  @media (min-width: ${stylingGlobals.viewportSizes.phone}) {
+    position: fixed;
+    bottom: 0;
+    background: ${theme.colors.navbg};
+    font-size: .8rem;
+    width: 100%;
+  }
 `
 
 const FooterInner = styled.div`

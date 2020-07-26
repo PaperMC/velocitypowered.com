@@ -1,12 +1,15 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "@emotion/styled"
 import { Link } from "gatsby"
 import velocityWhiteCropped from "../assets/img/velocity-white-cropped.png";
 import velocityBlueCropped from "../assets/img/velocity-blue-cropped.png";
 import theme from '../styles/theme'
 
-const NavbarList = styled.ul`
-  list-style-type: none;
+import stylingGlobals from "../styles/styling-globals"
+
+const NavbarList = styled.div`
+  display: flex;
+  
   margin: 0;
   padding: 0;
   position: fixed;
@@ -15,14 +18,11 @@ const NavbarList = styled.ul`
   background-color: ${theme.colors.navbg};
   z-index: 100;
 `
-const NavbarLogo = styled.li`
-  display: inline;
-  float: left;
+const NavbarLogo = styled.div`
   padding: 15px;
+  flex: 1;
 `
-const NavbarItem = styled.li`
-  display: inline;
-  float: right;
+const NavbarItem = styled.div`
   padding: 18px 10px;
   background: linear-gradient(to right, #0288d1, #0288d1);
   background-repeat: no-repeat;
@@ -36,11 +36,29 @@ const NavbarItem = styled.li`
   }
 `
 
+const NavbarItems = styled.div`
+  display: flex;
+  
+  @media (max-width: ${stylingGlobals.viewportSizes.phone}) {
+    display: none;
+  }
+`
+
+const NavbarExpand = styled.div`
+  
+`
+
 function getLogoShown() {
   return theme.logoVariant === 'blue' ? velocityBlueCropped : velocityWhiteCropped
 }
 
 export default function Navbar({ location, jumbotron }) {
+  const [ expanded, setExpanded ] = useState(null)
+
+  function flipExpanded() {
+    setExpanded(!expanded)
+  }
+
   return (
     <nav>
       <NavbarList style={{
@@ -61,19 +79,22 @@ export default function Navbar({ location, jumbotron }) {
             <span>Velocity</span>
           </Link>
         </NavbarLogo>
-        {/* WTF?!? These show in reverse order... */}
-        <NavbarItem>
-          <Link to={"https://discord.gg/8cB9Bgf"}>Discord</Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link to={"https://forums.velocitypowered.com"}>Forums</Link>
-        </NavbarItem>
-        <NavbarItem active={location.pathname.startsWith("/downloads")}>
-          <Link to={"/downloads"}>Downloads</Link>
-        </NavbarItem>
-        <NavbarItem active={location.pathname.startsWith("/wiki")}>
-          <Link to={"/wiki"}>Documentation</Link>
-        </NavbarItem>
+
+        <NavbarExpand onClick={flipExpanded} />
+        <NavbarItems>
+          <NavbarItem active={location.pathname.startsWith("/wiki")}>
+            <Link to={"/wiki"}>Documentation</Link>
+          </NavbarItem>
+          <NavbarItem active={location.pathname.startsWith("/downloads")}>
+            <Link to={"/downloads"}>Downloads</Link>
+          </NavbarItem>
+          <NavbarItem>
+            <Link to={"https://forums.velocitypowered.com"}>Forums</Link>
+          </NavbarItem>
+          <NavbarItem>
+            <Link to={"https://discord.gg/8cB9Bgf"}>Discord</Link>
+          </NavbarItem>
+        </NavbarItems>
       </NavbarList>
     </nav>
   )

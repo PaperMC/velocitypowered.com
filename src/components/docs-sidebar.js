@@ -1,17 +1,21 @@
 import React from "react"
 import {Link} from "gatsby"
 import styled from "@emotion/styled"
-import theme from '../styles/theme';
+import theme from '../styles/theme'
+
+import stylingGlobals from "../styles/styling-globals"
 
 const SidebarContainer = styled.section`
-  position: fixed;
-  bottom: 0;
-  top: 60px;
-  height: calc(100vh - 9rem);
-  width: 20rem;
-  background: ${theme.colors.navbg};
-  border-right: 1px solid ${theme.colors.navbgBorder};
-  padding: 1rem;
+  @media (min-width: ${stylingGlobals.viewportSizes.desktop}) {
+    position: fixed;
+    bottom: 0;
+    top: 60px;
+    height: calc(100vh - 9rem);
+    width: 20rem;
+    background: ${theme.colors.navbg};
+    border-right: 1px solid ${theme.colors.navbgBorder};
+    padding: 1rem;
+  }
 `
 
 const SidebarHeader = styled.div`

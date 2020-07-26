@@ -6,15 +6,26 @@ import Layout from "../components/layout";
 import Sidebar from "../components/docs-sidebar";
 import wikiSidebar from "../../docs/sidebar-wiki.json"
 
+import stylingGlobals from "../styles/styling-globals"
+
 const DocumentationContainer = styled.article`
   display: flex;
   margin: auto;
+  
+  @media (max-width: ${stylingGlobals.viewportSizes.desktop}) {
+    flex-direction: column-reverse;
+  }
 `
 
 const ContentWrapper = styled.div`
   margin-left: 22rem;
-  width: calc(100vw - 22rem);
   margin-bottom: 60px;
+  width: calc(100vw - 22rem);
+  
+  @media (max-width: ${stylingGlobals.viewportSizes.tablet}) {
+    margin: 0 1rem;
+    width: auto;
+  }
 `
 
 const Content = styled.section`

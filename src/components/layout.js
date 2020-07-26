@@ -7,7 +7,7 @@ import theme from '../styles/theme';
 import '../styles/global.css';
 
 const Container = styled.main`
-  margin-top: 60px;
+  margin: 60px 0;
 `
 
 export default function Layout({ location, jumbotron, children }) {
