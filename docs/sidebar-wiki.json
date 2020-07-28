@@ -40,6 +40,36 @@
     ]
   },
   {
+    "title": "Developer Guide",
+    "url": "/wiki/developers/",
+    "children": [
+      {
+        "title": "Creating Your First Plugin",
+        "url": "/wiki/developers/creating-your-first-plugin/"
+      },
+      {
+        "title": "API Basics",
+        "url": "/wiki/developers/api-basics/"
+      },
+      {
+        "title": "The Event API",
+        "url": "/wiki/developers/listener/"
+      },
+      {
+        "title": "The Command API",
+        "url": "/wiki/developers/command-api/"
+      },
+      {
+        "title": "Plugin Dependencies",
+        "url": "/wiki/developers/dependencies/"
+      },
+      {
+        "title": "Task Scheduling",
+        "url": "/wiki/developers/task-scheduling/"
+      }
+    ]
+  },
+  {
     "title": "Technical Wiki",
     "url": "/wiki/technical/",
     "children": [
