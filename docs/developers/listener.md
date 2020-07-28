@@ -140,11 +140,13 @@ server.getEventManager().fire(new PrivateMessageEvent(sender, recipient, message
 });
 ```
 
-### Adding event state
+### Using ResultedEvent
 
-Velocity uses the generalised `ResultedEvent` for events which have some sort of 'result'.
+Velocity uses the generalised `ResultedEvent` for events which have some sort of 'result'. The result type of the event is defined by its generic type; for example, `PrivateMessageEvent implements ResultedEvent<ResultType>`.
 
-Suppose we want to allow listeners to mark the event as 'allowed' or 'denied'. In that case, implement `ResultedEvent` using `GenericResult` as the result type:
+Some common result types are `GenericResult`, for simple allowed/denied results, and component results, used for events where the result may be denied with an accompanying reason (such as in a login event).
+
+Using a general result is far more encompassing than `isCancelled/setCancelled` methods you may be used to on other platforms, whose meaning is vague and limited to a simple boolean. In this example, we'll use `GenericResult`, so listeners will be able to mark our `PrivateMessageEvent` as either allowed or denied.
 
 ```java
 public class PrivateMessageEvent implements ResultedEvent<GenericResult> {
@@ -153,7 +155,7 @@ public class PrivateMessageEvent implements ResultedEvent<GenericResult> {
   private final Player recipient;
   private final String message;
   
-  private GenericResult result;
+  private GenericResult result = GenericResult.allowed(); // Allowed by default
   
   public PrivateMessageEvent(Player sender, Player recipient, String message) {
     this.sender = sender;
@@ -180,14 +182,16 @@ public class PrivateMessageEvent implements ResultedEvent<GenericResult> {
   
   @Override
   public void setResult(GenericResult result) {
-    this.result = result;
+    this.result = Objects.requireNonNull(result);
   }
 
 }
 
 ```
 
-Now, listeners may 'deny' the event by using `event.setResult(GenericResult.denied())`, and you may check the result
+Per convention, the result of a `ResultedEvent` should never be null. Here, we assure that using `Objects.requireNonNull`.
+
+Listeners may 'deny' the event by using `event.setResult(GenericResult.denied())`, and you may check the result
 with `event.getResult()`.
 
 
