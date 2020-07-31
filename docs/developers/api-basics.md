@@ -1,4 +1,3 @@
-
 ---
 title: Velocity Plugin Basics
 ---

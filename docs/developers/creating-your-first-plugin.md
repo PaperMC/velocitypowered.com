@@ -1,4 +1,3 @@
-
 ---
 title: Creating your First Plugin
 ---

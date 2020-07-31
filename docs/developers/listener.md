@@ -1,4 +1,3 @@
-
 ---
 title: Working With Events
 ---
