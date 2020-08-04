@@ -39,21 +39,6 @@ export default function Layout({ location, jumbotron, children }) {
           text-align: left;
           padding: .5rem;
         }
-        
-        .caution-header {
-          font-weight: bold;
-          background: rgb(184, 134, 11);
-          color: black;
-          padding: .5rem;
-          border: rgb(184, 134, 11);
-        }
-        
-        .caution {
-          display: inline-block;
-          background: rgb(222, 184, 135);
-          color: black;
-          padding: .5rem;
-        }
       `} />
       <Navbar jumbotron={jumbotron} location={location} />
       {/* page contents */}

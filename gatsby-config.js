@@ -21,13 +21,14 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
-        plugins: [
+        gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-prismjs`,
           }
-        ]
+        ],
+        extensions: [`.mdx`, `.md`],
       }
     },
     {

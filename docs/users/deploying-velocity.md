@@ -17,7 +17,9 @@ file you can deploy.
 
 ## Deploying Velocity on Pterodactyl
 
-**Caution**: The egg provided is not provided by the Velocity team. Use the egg at your own risk.
+<Caution>
+    The egg provided is not provided by the Velocity team. Use the egg at your own risk.
+</Caution>
 
 ## Deploying Velocity on PufferPanel
 

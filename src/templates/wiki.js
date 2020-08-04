@@ -1,10 +1,15 @@
 import React from "react"
-import {graphql} from "gatsby";
+import {graphql, Link} from "gatsby";
+import { MDXProvider } from "@mdx-js/react"
+import { MDXRenderer } from "gatsby-plugin-mdx"
+
 import SEO from "../components/seo";
 import styled from "@emotion/styled"
 import Layout from "../components/layout";
 import Sidebar from "../components/docs-sidebar";
 import wikiSidebar from "../../docs/sidebar-wiki.json"
+
+import Caution from "../components/warnings/caution";
 
 import stylingGlobals from "../styles/styling-globals"
 
@@ -36,8 +41,10 @@ const Content = styled.section`
   margin: 0 auto;
 `
 
+const shortlinks = { Caution, Link }
+
 export default function Documentation({ location, data }) {
-  const article = data.markdownRemark
+  const article = data.mdx
   return (
     <Layout location={location}>
       <SEO title={article.frontmatter.title} description={article.excerpt} />
@@ -46,7 +53,9 @@ export default function Documentation({ location, data }) {
         <ContentWrapper>
           <Content>
             <h1>{article.frontmatter.title}</h1>
-            <div dangerouslySetInnerHTML={{ __html: article.html }} />
+            <MDXProvider components={shortlinks}>
+              <MDXRenderer>{article.body}</MDXRenderer>
+            </MDXProvider>
           </Content>
         </ContentWrapper>
       </DocumentationContainer>
@@ -56,8 +65,8 @@ export default function Documentation({ location, data }) {
 
 export const query = graphql`
   query($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
+    mdx(fields: { slug: { eq: $slug } }) {
+      body
       frontmatter {
         title
       }

@@ -5,6 +5,7 @@ Velocity supports two different methods for forwarding player information to you
  appropriate sections.
  
 ## Configuring modern forwarding
+
 `modern` forwarding is a Velocity-native format. It forwards all player information in an efficient binary format and
 employs a MAC code to make it much more difficult to trick the server into impersonating your Velocity proxy.
 However, it is only available for Minecraft 1.13 or higher.
@@ -13,20 +14,13 @@ To use modern forwarding with any supported server implementation, set the `play
 `velocity.toml` to `modern`. You then need to ensure your server is properly configured to use velocity forwarding by
  following the steps in the appropriate section below:
 
-<div>
-<div class="caution-header">
-    <img src="https://cdn.discordapp.com/attachments/734487433621668011/736277965142491276/warning_icon.png"></img>
-     Caution
-</div>
-  <div class="caution">
-      Modern forwarding, while more secure than the legacy 
-      BungeeCord forwarding scheme, is incompatible with Minecraft versions
-      below 1.13, Minecraft Forge (both versions for Minecraft 1.12.2 and
-      below and for 1.14 and above), and ProtocolSupport. If you support 
-      or rely on any of these, you will need to use legacy
-      BungeeCord-compatible forwarding instead.
-  </div>
-</div>
+<Caution>
+   Modern forwarding, while more secure than the legacy  BungeeCord forwarding scheme,
+   is incompatible with Minecraft versions below 1.13, Minecraft Forge (both versions
+   for Minecraft 1.12.2 and below and for 1.14 and above), and ProtocolSupport. If you
+   support or rely on any of these, you will need to use legacy BungeeCord-compatible
+   forwarding instead.
+</Caution>
 
 ## Configuring Paper
 
@@ -53,6 +47,13 @@ Velocity forwarding.
 If you need to use BungeeCord-compatible forwarding, simply set your `player-infor-forwarding` setting in `velocity
 .toml` to `legacy`. You will also need to make sure your server is properly configured to understand the data sent by
 Velocity.
+
+<Caution>
+   Legacy forwarding is <strong>fundamentally insecure</strong>. If you must use it,
+   you should understand <Link to="/wiki/deployment/security/">how to secure your server properly</Link>.
+   That page reviews all the possible options to secure your server so that nothing
+   aside from the proxy can connect to your server.
+</Caution>
 
 ## Configuring Spigot / Paper
 

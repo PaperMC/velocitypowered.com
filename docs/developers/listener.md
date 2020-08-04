@@ -16,15 +16,9 @@ public void onPlayerChat(PlayerChatEvent event) {
 }
 ```
 
-<div>
-<div class="caution-header">
-    <img src="https://cdn.discordapp.com/attachments/734487433621668011/736277965142491276/warning_icon.png"></img>
-     Caution
-</div>
-  <div class="caution">
-      Note well that the import is `com.velocitypowered.api.event.Subscribe` and *NOT* in `com.google.common.eventbus`.
-  </div>
-</div>
+<Caution>
+    Note well that the import is <code>com.velocitypowered.api.event.Subscribe</code> and <strong>not</strong> in <code>com.google.common.eventbus</code>.
+</Caution>
 
 ** Orders **
 
