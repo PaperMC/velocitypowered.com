@@ -1,18 +1,21 @@
-#Configuring Velocity
-Velocity has been designed to be simple and unambiguous to configure.
+---
+title: Configuring Velocity
+---
 
-##The configuration file
+Velocity is simple and unambiguous to configure.
 
-Velocity is largely configured from the `velocity.toml` file. This file is created in the directory where you started
- the proxy.
+## The configuration file
+
+All Velocity settings in the `velocity.toml` file. This file is located in the directory where you started
+the proxy.
  
-##The configuration format
+## The configuration format
 
 Before we continue, it is useful to take a step back and note that Velocity uses the [TOML](https://github.com/toml-lang/toml) format for its
-configuration. TOML was designed to be easy to understand, so you should not have difficulty understanding
+configuration. TOML is easy to understand, so you should not have difficulty understanding
 Velocity's configuration file.
 
-##Root section
+## Root section
 
 These settings mostly cover the basic, most essential settings of the proxy.
 
@@ -26,22 +29,22 @@ These settings mostly cover the basic, most essential settings of the proxy.
 | ``announce-forge``    | Boolean | ``false``                 | This setting determines whether Velocity should present itself as a Forge/FML-compatible server. By default, this is disabled.                                                                                   |
 
 
-##`server` section
+## `server` section
 
 | Setting Name  | Type    | Default                             | Description                                                                                                                |
 |---------------|---------|-------------------------------------|----------------------------------------------------------------------------------------------------------------------------|
 | A server name | Address | See the default configuration below | This makes the proxy aware of a server that it can connect to.                                                             |
-| `try`         | Array   | ["lobby"]                           | This specifies what servers Velocity should try to connect to upon player login and when a player is kicked from a server. |
+| `try`         | Array   | `["lobby"]`                         | This specifies what servers Velocity should try to connect to upon player login and when a player is kicked from a server. |
 
 
-##`forced-hosts` section
+## `forced-hosts` section
 
 | Setting Name 	| Type     	| Default                              	| Description                                                                                                                                        	|
 |--------------	|----------	|--------------------------------------	|----------------------------------------------------------------------------------------------------------------------------------------------------	|
 | A host name  	| Hostname 	| See the default configuration below. 	| This configures the proxy to create a forced host for the specified hostname. An array of servers to try for the specified hostname is the value.  	|
 
 
-##`advanced` section
+## `advanced` section
 
 | Setting name            	| Type    	| Default 	| Description                                                                                                                                                                                                                                                                                   	|
 |-------------------------	|---------	|---------	|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
@@ -52,7 +55,7 @@ These settings mostly cover the basic, most essential settings of the proxy.
 | `read-timeout`          	| Integer 	| 300000  	| This setting determines how long the proxy will wait to receive data from the server before timing out. If you use Forge, you may need to increase this setting.                                                                                                                              	|
 | `proxy-protocol`        	| Boolean 	| false   	| This setting determines whether or not Velocity should receive HAProxy PROXY messages. If you don't use HAProxy, leave this setting off.                                                                                                                                                      	|
 
-##`query` section
+## `query` section
 
 | Setting name   	| Type    	| Default  	| Description                                                                                                              	|
 |----------------	|---------	|----------	|--------------------------------------------------------------------------------------------------------------------------	|
@@ -61,7 +64,7 @@ These settings mostly cover the basic, most essential settings of the proxy.
 | `map`          	| String  	| Velocity 	| Specifies the map name to be shown to clients.                                                                           	|
 | `show-plugins` 	| Boolean 	| false    	| Whether or not Velocity plugins are included in the query responses.                                                     	|
 
-##`metrics` section
+## `metrics` section
 
 | Setting name  	| Type    	| Default                 	| Description                                                                                                 	|
 |---------------	|---------	|-------------------------	|-------------------------------------------------------------------------------------------------------------	|
@@ -70,7 +73,7 @@ These settings mostly cover the basic, most essential settings of the proxy.
 | `log-failure` 	| Boolean 	| `false`                 	| Whether or not Velocity should log whenever it fails to connect to bStats.                                  	|
 
 
-##The default configuration
+## The default configuration
 
 Below is the default configuration file for Velocity, `velocity.toml`.
 
