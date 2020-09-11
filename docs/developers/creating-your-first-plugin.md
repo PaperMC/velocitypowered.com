@@ -1,9 +1,14 @@
 ---
-title: Creating your First Plugin
+title: Creating Your First Plugin
 ---
 
-Writing plugins for Velocity is not complicated. This section will teach you how to setup your IDE, your plugin
-identifiers, and the basics of the API.
+It is very simple to create a plugin for Velocity. This section will teach you how to setup your IDE, your plugin
+identifiers, and give you an introduction to the basics of the Velocity API.
+
+## Before you continue...
+
+You will need proficiency in the Java programming language. If you don't know Java yet, we strongly recommend
+you learn some basic Java before you continue.
 
 ## Set up your environment
 

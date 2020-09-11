@@ -66,6 +66,10 @@
       {
         "title": "Task Scheduling",
         "url": "/wiki/developers/task-scheduling/"
+      },
+      {
+        "title": "Common Pitfalls",
+        "url": "/wiki/developers/pitfalls/"
       }
     ]
   },

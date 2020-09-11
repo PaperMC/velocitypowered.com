@@ -2,8 +2,8 @@
 title: Velocity Plugin Basics
 ---
 
-Now you will lay the groundwork for your plugin. This page will teach you the first things to do when creating
-a Velocity plugin.
+Now we will lay the groundwork for your first plugin. We will cover how to create your very first
+Velocity plugin.
 
 ### Create the plugin class
 
@@ -18,7 +18,7 @@ import com.velocitypowered.api.proxy.ProxyServer;
 import org.slf4j.Logger;
 
 @Plugin(id = "myfirstplugin", name = "My First Plugin", version = "0.1.0-SNAPSHOT",
-        url = "awesome.org", description = "I did it!", authors = {"Me"})
+        url = "https://example.org", description = "I did it!", authors = {"Me"})
 public class VelocityTest {
 
     private final ProxyServer server;
