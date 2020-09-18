@@ -3,16 +3,17 @@ import {Link} from "gatsby";
 import styled from "@emotion/styled"
 import Layout from "../components/layout";
 import FullWidthButton from "../components/full-width-button";
-import theme from '../styles/theme';
 
 import stylingGlobals from "../styles/styling-globals";
 
 import velocityWhite from '../assets/img/velocity-white.png';
 import velocityBlue from '../assets/img/velocity-blue.png';
 import SEO from "../components/seo";
+import {useTheme} from "emotion-theming";
+import {css} from "@emotion/core";
 
 const Jumbotron = styled.div`
-  background: ${theme.colors.jumbotron};
+  background: ${({ theme }) => theme.colors.jumbotron};
   display: flex;
   padding: 2rem 5rem;
   
@@ -66,7 +67,7 @@ const ExplainerSection = styled.section`
   }
 `
 
-const VelocityLogo = styled.img`
+const velocityLogoCss = css`
   display: none;
 
   @media (min-width: ${stylingGlobals.viewportSizes.phone}) {
@@ -75,8 +76,11 @@ const VelocityLogo = styled.img`
   }
 `
 
-function getLogoShown() {
-  return theme.logoVariant === 'blue' ? velocityBlue : velocityWhite
+function VelocityLogo() {
+  const theme = useTheme()
+  const variant = theme.logoVariant === 'blue' ? velocityBlue : velocityWhite
+
+  return <img css={velocityLogoCss} src={variant} alt={"Velocity"} height={"200px"} width={"200px"}/>
 }
 
 export default function Home({ location }) {
@@ -85,7 +89,7 @@ export default function Home({ location }) {
       <SEO title="Welcome to Velocity" />
       <Jumbotron>
         <JumbotronLogo>
-          <VelocityLogo src={getLogoShown()} alt={"Velocity"} height={"200px"} width={"200px"}/>
+          <VelocityLogo />
           <div>
             <h1>Velocity</h1>
             <p>The ridiculously scalable, flexible Minecraft proxy.</p>
@@ -134,14 +138,6 @@ export default function Home({ location }) {
           <FullWidthButton title={"Discord"} subtitle={"Join 600 others on Discord to talk about Velocity and ask" +
           " questions."} link={"https://discord.gg/8cB9Bgf"}/>
         </ExplainerSection>
-      </Explainer>
-      <Explainer>
-        <div>
-          <h2>Who trusts Velocity?</h2>
-          <p>Networks big and small trust Velocity. Here's just a few:</p>
-
-          <p>Velocity powered </p>
-        </div>
       </Explainer>
     </Layout>
   )

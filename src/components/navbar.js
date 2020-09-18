@@ -3,11 +3,12 @@ import styled from "@emotion/styled"
 import { Link } from "gatsby"
 import velocityWhiteCropped from "../assets/img/velocity-white-cropped.png";
 import velocityBlueCropped from "../assets/img/velocity-blue-cropped.png";
-import theme from '../styles/theme'
 import { IconContext } from "react-icons"
 import { FiMenu } from "react-icons/fi"
 
+import ThemeSwitcher from './theme-switcher'
 import stylingGlobals from "../styles/styling-globals"
+import {useTheme} from "emotion-theming";
 
 const NavbarContainer = styled.nav`
   margin: 0;
@@ -15,8 +16,8 @@ const NavbarContainer = styled.nav`
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: ${theme.colors.navbarBg};
-  color: ${theme.colors.navbarText};
+  background-color: ${({ theme }) => theme.colors.navbarBg};
+  color: ${({ theme }) => theme.colors.navbarText};
   z-index: 100;
 `
 
@@ -33,7 +34,7 @@ const NavbarItem = styled.a`
   background-color: rgba(2, 136, 209, ${( {active} ) => active ? '1' : '0'});
   background-repeat: no-repeat;
   transition: background-color .25s 0s;
-  color: ${theme.colors.navbarText} !important;
+  color: ${({ theme }) => theme.colors.navbarText} !important;
   display: block;
   
   &:hover{
@@ -42,7 +43,7 @@ const NavbarItem = styled.a`
   
   @media (max-width: ${stylingGlobals.viewportSizes.phone}) {
     padding: 8px;
-    border-bottom: ${theme.skipMobileNavbarBorders ? 'none' : `1px solid ${theme.colors.navbgBorder}`};
+    border-bottom: ${({ theme }) => theme.skipMobileNavbarBorders ? 'none' : `1px solid ${theme.colors.navbgBorder}`};
   }
 `
 const NavbarLink = NavbarItem.withComponent(Link)
@@ -57,7 +58,7 @@ const NavbarItems = styled.div`
 
 const MobileNavbarItems = styled.div`
   display: none;
-  background-color: ${theme.colors.navbarBg};
+  background-color: ${({ theme }) => theme.colors.navbarBg};
   
   @media (max-width: ${stylingGlobals.viewportSizes.phone}) {
     margin-bottom: -60px;
@@ -73,20 +74,21 @@ const NavbarExpand = styled.div`
   }
 `
 
-function getLogoShown() {
+function getLogoShown(theme) {
   return theme.logoVariant === 'blue' ? velocityBlueCropped : velocityWhiteCropped
 }
 
 function NavbarItemContents({ location }) {
   return <>
-    <NavbarLink to={"/wiki"} active={location.pathname.startsWith("/wiki")}>Documentation</NavbarLink>
-    <NavbarLink to={"/downloads"} active={location.pathname.startsWith("/downloads")}>Downloads</NavbarLink>
+    <NavbarLink to={"/wiki"} active={location.pathname.startsWith("/wiki") ? true : undefined}>Documentation</NavbarLink>
+    <NavbarLink to={"/downloads"} active={location.pathname.startsWith("/downloads") ? true : undefined}>Downloads</NavbarLink>
     <NavbarItem href={"https://forums.velocitypowered.com"}>Forums</NavbarItem>
     <NavbarItem href={"https://discord.gg/8cB9Bgf"}>Discord</NavbarItem>
   </>
 }
 
-export default function Navbar({ location, jumbotron }) {
+export default function Navbar({ location, jumbotron, themeName, setThemeName }) {
+  const theme = useTheme()
   const [ expanded, setExpanded ] = useState(false)
 
   function flipExpanded() {
@@ -109,7 +111,7 @@ export default function Navbar({ location, jumbotron }) {
               fontWeight: 'bold'
             }
           }>
-            <img src={getLogoShown()} alt={"Velocity"} height={"30"} style={{ paddingRight: '.3rem' }}/>
+            <img src={getLogoShown(theme)} alt={"Velocity"} height={"30"} style={{ paddingRight: '.3rem' }}/>
             <span>Velocity</span>
           </Link>
         </NavbarLogo>
@@ -122,6 +124,9 @@ export default function Navbar({ location, jumbotron }) {
 
         <NavbarItems>
           <NavbarItemContents location={location} />
+          <div css={{ padding: '15px 10px', display: 'block' }}>
+            <ThemeSwitcher themeName={themeName} setThemeName={setThemeName}/>
+          </div>
         </NavbarItems>
       </NavbarList>
 

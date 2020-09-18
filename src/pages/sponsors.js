@@ -1,7 +1,6 @@
 import React from "react"
 import Layout from "../components/layout";
 import styled from "@emotion/styled"
-import theme from '../styles/theme';
 import { FiAtSign } from "react-icons/fi";
 
 import stylingGlobals from "../styles/styling-globals";
@@ -11,7 +10,7 @@ import voldexLogo from "../assets/img/sponsors/voldex.png";
 import SEO from "../components/seo";
 
 const SponsorJumbotron = styled.div`
-  background: ${theme.colors.jumbotron};
+  background: ${({ theme }) => theme.colors.jumbotron};
   width: 100%;
   padding: 1rem 0;
   padding-bottom: 2rem;

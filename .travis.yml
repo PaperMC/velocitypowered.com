@@ -6,10 +6,10 @@ before_script:
 node_js:
   - "12"
 script:
-  - npm run build
+  - yarn build
 deploy:
   provider: script
-  script: npm run deploy
+  script: yarn run deploy
   skip_cleanup: true
   on:
     branch: master

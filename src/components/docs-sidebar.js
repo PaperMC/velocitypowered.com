@@ -1,7 +1,6 @@
 import React from "react"
 import {Link} from "gatsby"
 import styled from "@emotion/styled"
-import theme from '../styles/theme'
 
 import stylingGlobals from "../styles/styling-globals"
 
@@ -12,8 +11,8 @@ const SidebarContainer = styled.section`
     top: 60px;
     height: calc(100vh - 9rem);
     width: 12rem;
-    background: ${theme.colors.sidebarBackground};
-    border-right: 1px solid ${theme.colors.navbgBorder};
+    background: ${({ theme }) => theme.colors.sidebarBackground};
+    border-right: 1px solid ${({ theme }) => theme.colors.navbgBorder};
     padding: 1rem;
   }
   

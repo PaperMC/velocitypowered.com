@@ -1,15 +1,15 @@
 import React from "react"
 import {Link} from "gatsby";
 import styled from "@emotion/styled"
-import theme from '../styles/theme';
 
 import stylingGlobals from "../styles/styling-globals"
+import {useTheme} from "emotion-theming";
 
 const FooterContainer = styled.footer`
   @media (min-width: ${stylingGlobals.viewportSizes.phone}) {
     position: fixed;
     bottom: 0;
-    background: ${theme.colors.sidebarBackground};
+    background: ${({ theme }) => theme.colors.sidebarBackground};
     font-size: .8rem;
     width: 100%;
   }
@@ -20,6 +20,7 @@ const FooterInner = styled.div`
 `
 
 export default function Footer({ jumbotron }) {
+  const theme = useTheme()
   return (
     <FooterContainer style={{
       borderTop: !jumbotron ? `1px solid ${theme.colors.navbgBorder}` : 'none'
