@@ -10,7 +10,7 @@ const iconCommonCss = css`
 `
 
 export default function ThemeSwitcher({ themeName, setThemeName }) {
-  if (typeof themeName === 'undefined') return <></>;
+  if (typeof themeName === 'undefined') return null
   const checked = themeName === "light"
 
   function flipTheme() {
