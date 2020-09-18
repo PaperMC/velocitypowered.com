@@ -16,10 +16,10 @@ We recommend using the HotSpot-based Java 11 builds from [AdoptOpenJDK](https://
 There are two versions of Velocity available for download.
 
 * Velocity 1.0.x is the stable version and only receives protocol updates. It
-  supports Minecraft 1.8 to 1.16.1. The latest version is Velocity 1.0.8. You
+  supports Minecraft 1.8 to 1.16.3. The latest version is Velocity 1.0.8. You
   can download Velocity 1.0.8 from [our Jenkins](https://ci.velocitypowered.com/job/velocity/222/artifact/proxy/build/libs/velocity-proxy-1.0.8-all.jar).
 * Velocity 1.1.0 is the current development version and receives new features
-  and enhancements. It supports Minecraft 1.7.2 to 1.16.1 You can download Velocity
+  and enhancements. It supports Minecraft 1.7.2 to 1.16.3. You can download Velocity
   1.1.0 from [our Jenkins](https://ci.velocitypowered.com/job/velocity-1.1.0/lastSuccessfulBuild/artifact/proxy/build/libs/velocity-proxy-1.1.0-SNAPSHOT-all.jar).
 
 ## Launching Velocity for the first time

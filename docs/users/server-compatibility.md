@@ -8,8 +8,8 @@ modded setups where we can.
 
 ## Compatible game versions
 
-As of this writing, Velocity is compatible with Minecraft 1.7.2 through 1.16.1 (for Velocity 1.1.0).
-For Velocity 1.0.x, Velocity supports Minecraft 1.8 through 1.16.1.
+As of this writing, Velocity is compatible with Minecraft 1.7.2 through 1.16.3 (for Velocity 1.1.0).
+For Velocity 1.0.x, Velocity supports Minecraft 1.8 through 1.16.3.
 
 ## Vanilla setups
 
@@ -39,7 +39,7 @@ forwarding.
 ### Paper
 
 We actively test Velocity with Paper. Velocity works with all versions of Paper from 1.7.10 to
-the latest 1.16.1 version.
+the latest 1.16.3 version.
 
 You can use Velocity's modern forwarding if you run Paper 1.13.2 or higher. If you use Paper
 1.12.2 or lower, you must use legacy BungeeCord-style forwarding.
