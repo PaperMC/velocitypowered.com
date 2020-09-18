@@ -10,4 +10,6 @@ export function setupThemeProperties(theme) {
   root.style.setProperty('--primary', theme.colors.primary);
   root.style.setProperty('--gray', theme.colors.gray);
   root.style.setProperty('--table-background', theme.tableBackground);
+  root.style.setProperty('--jumbotron-logo-url', `url(${theme.logos.jumbotron})`);
+  root.style.setProperty('--navbar-logo-url', `url(${theme.logos.navbar})`);
 }

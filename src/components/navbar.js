@@ -1,14 +1,11 @@
 import React, { useState } from "react"
 import styled from "@emotion/styled"
 import { Link } from "gatsby"
-import velocityWhiteCropped from "../assets/img/velocity-white-cropped.png";
-import velocityBlueCropped from "../assets/img/velocity-blue-cropped.png";
 import { IconContext } from "react-icons"
 import { FiMenu } from "react-icons/fi"
 
 import ThemeSwitcher from './theme-switcher'
 import stylingGlobals from "../styles/styling-globals"
-import {useTheme} from "emotion-theming";
 
 const NavbarContainer = styled.nav`
   margin: 0;
@@ -27,6 +24,14 @@ const NavbarList = styled.div`
 const NavbarLogo = styled.div`
   padding: 15px;
   flex: 1;
+`
+
+const VelocityNavbarLogo = styled.div`
+  width: 68.5px;
+  height: 30px;
+  background-image: var(--navbar-logo-url);
+  background-size: cover;
+  margin-right: .3rem;
 `
 
 const NavbarItem = styled.a`
@@ -74,10 +79,6 @@ const NavbarExpand = styled.div`
   }
 `
 
-function getLogoShown(theme) {
-  return theme.logoVariant === 'blue' ? velocityBlueCropped : velocityWhiteCropped
-}
-
 function NavbarItemContents({ location }) {
   return <>
     <NavbarLink to={"/wiki"} active={location.pathname.startsWith("/wiki") ? true : undefined}>Documentation</NavbarLink>
@@ -87,8 +88,7 @@ function NavbarItemContents({ location }) {
   </>
 }
 
-export default function Navbar({ location, themeName, setThemeName }) {
-  const theme = useTheme()
+export default function Navbar({ location }) {
   const [ expanded, setExpanded ] = useState(false)
 
   function flipExpanded() {
@@ -101,15 +101,15 @@ export default function Navbar({ location, themeName, setThemeName }) {
         <NavbarLogo>
           <Link
             to={"/"}
-            style={{
+            css={{
               display: 'flex',
               flexDirection: 'row',
               alignItems: 'center',
-              color: theme.colors.navbarText,
+              color: `var(--navbar-text) !important`,
               fontWeight: 'bold'
             }
           }>
-            <img src={getLogoShown(theme)} alt={"Velocity"} height={"30"} style={{ paddingRight: '.3rem' }}/>
+            <VelocityNavbarLogo />
             <span>Velocity</span>
           </Link>
         </NavbarLogo>
@@ -123,7 +123,7 @@ export default function Navbar({ location, themeName, setThemeName }) {
         <NavbarItems>
           <NavbarItemContents location={location} />
           <div css={{ padding: '15px 10px' }}>
-            <ThemeSwitcher themeName={themeName} setThemeName={setThemeName}/>
+            <ThemeSwitcher />
           </div>
         </NavbarItems>
       </NavbarList>

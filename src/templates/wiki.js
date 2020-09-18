@@ -49,7 +49,7 @@ const Content = styled.section`
 
 const shortlinks = { Caution, Link }
 
-export default function Documentation({ location, data }) {
+export default function Documentation({ data }) {
   const article = data.mdx
   return (
     <>

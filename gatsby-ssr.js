@@ -3,22 +3,23 @@ import themes from './src/styles/theme'
 import {setupThemeProperties} from './src/theme-util'
 
 const FallbackColors = () => {
-  return <style>
-    {`
-        html {
-         --background: ${themes.dark.colors.background};
-         --foreground: ${themes.dark.colors.foreground};
-         --jumbotron: ${themes.dark.colors.jumbotron};
-         --navbg-border: ${themes.dark.colors.navbgBorder};
-         --sidebar-background: ${themes.dark.colors.sidebarBackground};
-         --navbar-background: ${themes.dark.colors.navbarBg};
-         --navbar-text: ${themes.dark.colors.navbarText};
-         --primary: ${themes.dark.colors.primary};
-         --gray: ${themes.dark.colors.gray};
-         --table-background: ${themes.dark.tableBackground};
-        }
-    `}
-  </style>
+  const defaultStyles = `
+    html {
+       --background: ${themes.dark.colors.background};
+       --foreground: ${themes.dark.colors.foreground};
+       --jumbotron: ${themes.dark.colors.jumbotron};
+       --navbg-border: ${themes.dark.colors.navbgBorder};
+       --sidebar-background: ${themes.dark.colors.sidebarBackground};
+       --navbar-background: ${themes.dark.colors.navbarBg};
+       --navbar-text: ${themes.dark.colors.navbarText};
+       --primary: ${themes.dark.colors.primary};
+       --gray: ${themes.dark.colors.gray};
+       --table-background: ${themes.dark.tableBackground};
+       --jumbotron-logo-url: url(${themes.dark.logos.jumbotron});
+       --navbar-logo-url: url(${themes.dark.logos.navbar});
+    }
+  `;
+  return <style dangerouslySetInnerHTML={{ __html: defaultStyles}} />
 }
 
 const MagicScriptTag = () => {

@@ -1,5 +1,9 @@
 export default {
   dark: {
+    logos: {
+      navbar: require('../assets/img/velocity-white-cropped.png'),
+      jumbotron: require('../assets/img/velocity-white.png'),
+    },
     logoVariant: 'white',
     tableBackground: '#323232',
     titleButton: 'white',
@@ -21,6 +25,10 @@ export default {
     }
   },
   light: {
+    logos: {
+      navbar: require('../assets/img/velocity-blue-cropped.png'),
+      jumbotron: require('../assets/img/velocity-blue.png'),
+    },
     logoVariant: 'blue',
     tableBackground: '#e1e1e1',
     titleButton: 'black',

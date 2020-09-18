@@ -5,11 +5,7 @@ import FullWidthButton from "../components/full-width-button";
 
 import stylingGlobals from "../styles/styling-globals";
 
-import velocityWhite from '../assets/img/velocity-white.png';
-import velocityBlue from '../assets/img/velocity-blue.png';
 import SEO from "../components/seo";
-import {useTheme} from "emotion-theming";
-import {css} from "@emotion/core";
 
 const Jumbotron = styled.div`
   background: var(--jumbotron);
@@ -66,23 +62,20 @@ const ExplainerSection = styled.section`
   }
 `
 
-const velocityLogoCss = css`
+const VelocityLogo = styled.div`
   display: none;
-
+  
   @media (min-width: ${stylingGlobals.viewportSizes.phone}) {
     display: block;
+    width: 200px;
+    height: 200px;
+    background-image: var(--jumbotron-logo-url);
+    background-size: cover;
     margin-right: 2rem;
   }
 `
 
-function VelocityLogo() {
-  const theme = useTheme()
-  const variant = theme.logoVariant === 'blue' ? velocityBlue : velocityWhite
-
-  return <img css={velocityLogoCss} src={variant} alt={"Velocity"} height={"200px"} width={"200px"}/>
-}
-
-export default function Home({ location }) {
+export default function Home() {
   return (
     <>
       <SEO title="Welcome to Velocity" />
