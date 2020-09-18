@@ -1,13 +1,14 @@
-import React, {useEffect, useState} from "react"
+import React, { useLayoutEffect, useState } from "react"
 import { Global, css } from "@emotion/core"
 import styled from "@emotion/styled"
-import { ThemeProvider, useTheme } from 'emotion-theming'
+import { ThemeProvider } from 'emotion-theming'
 import Footer from "./footer"
 import Navbar from "./navbar"
 import themes from '../styles/theme';
 import '../styles/global.css';
 
 import stylingGlobals from "../styles/styling-globals"
+import {setupThemeProperties} from "../theme-util";
 
 const Container = styled.main`
   margin-top: 60px;
@@ -17,24 +18,23 @@ const Container = styled.main`
 `
 
 function LayoutChildren({ location, jumbotron, children, themeName, setThemeName }) {
-  const theme = useTheme();
   return (
     <>
       <Global styles={css`
         body {
-          background: ${theme.colors.background};
-          color: ${theme.colors.foreground};
+          background: var(--background);
+          color: var(--foreground);
         }
         
         a, a:visited {
-          color: ${theme.colors.primary};
+          color: var(--primary);
           text-decoration: none;
         }
         
         table {
           width: 100%;
           padding: 1rem;
-          background-color: ${theme.tableBackground};
+          background-color: var(--table-background);
         }
         
         td {
@@ -42,44 +42,34 @@ function LayoutChildren({ location, jumbotron, children, themeName, setThemeName
           padding: .5rem;
         }
       `} />
-      <Navbar jumbotron={jumbotron} location={location} themeName={themeName} setThemeName={setThemeName} />
+      <Navbar location={location} themeName={themeName} setThemeName={setThemeName} />
       {/* page contents */}
       <Container>
         {children}
       </Container>
       {/* footer */}
-      <Footer jumbotron={jumbotron} />
+      <Footer />
     </>
   )
 }
 
 export default function Layout(props) {
   const [ themeName, setThemeName ] = useState('dark')
+  const theme = themes[themeName]
 
-  // Check for localStorage. If we don't have localStorage, we're probably not even in a browser.
-  useEffect(() => {
-    let storedTheme = 'dark'
-    if (typeof localStorage !== 'undefined') {
-      storedTheme = localStorage.getItem('__velocity_preferred_theme')
-      if (storedTheme == null || !themes.hasOwnProperty(storedTheme)) {
-        if (typeof window !== 'undefined' && window.matchMedia && !window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          // User prefers to be blinded by a light theme. We only aim to please!
-          storedTheme = 'light'
-        } else {
-          storedTheme = 'dark'
-        }
-      }
-    }
-
-    if (storedTheme !== themeName) {
-      setThemeName(storedTheme)
+  useLayoutEffect(() => {
+    const root = window.document.documentElement;
+    const seenColorMode = root.style.getPropertyValue('--initial-color-mode');
+    if (seenColorMode) {
+      setThemeName(seenColorMode);
+      setupThemeProperties(themes[seenColorMode])
     }
   }, [])
-  const theme = themes[themeName]
 
   function savePreferredTheme(themeName) {
     setThemeName(themeName)
     localStorage.setItem('__velocity_preferred_theme', themeName)
+    setupThemeProperties(themes[themeName])
   }
 
   const injectedProps = {themeName, setThemeName: savePreferredTheme, ...props}

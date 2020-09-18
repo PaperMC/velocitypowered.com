@@ -3,13 +3,12 @@ import {Link} from "gatsby";
 import styled from "@emotion/styled"
 
 import stylingGlobals from "../styles/styling-globals"
-import {useTheme} from "emotion-theming";
 
 const FooterContainer = styled.footer`
   @media (min-width: ${stylingGlobals.viewportSizes.phone}) {
     position: fixed;
     bottom: 0;
-    background: ${({ theme }) => theme.colors.sidebarBackground};
+    background: var(--sidebar-background);
     font-size: .8rem;
     width: 100%;
   }
@@ -19,12 +18,9 @@ const FooterInner = styled.div`
   padding: 1rem;
 `
 
-export default function Footer({ jumbotron }) {
-  const theme = useTheme()
+export default function Footer() {
   return (
-    <FooterContainer style={{
-      borderTop: !jumbotron ? `1px solid ${theme.colors.navbgBorder}` : 'none'
-    }}>
+    <FooterContainer>
       <FooterInner>
         Copyright &copy; 2018-2020 Velocity Contributors.
         This wouldn't be possible without our <Link to={"/sponsors"}>generous sponsors</Link>.

@@ -1,7 +1,6 @@
 import React from "react"
 import {Link} from "gatsby";
 import styled from "@emotion/styled"
-import Layout from "../components/layout";
 import FullWidthButton from "../components/full-width-button";
 
 import stylingGlobals from "../styles/styling-globals";
@@ -13,7 +12,7 @@ import {useTheme} from "emotion-theming";
 import {css} from "@emotion/core";
 
 const Jumbotron = styled.div`
-  background: ${({ theme }) => theme.colors.jumbotron};
+  background: var(--jumbotron);
   display: flex;
   padding: 2rem 5rem;
   
@@ -85,7 +84,7 @@ function VelocityLogo() {
 
 export default function Home({ location }) {
   return (
-    <Layout jumbotron location={location}>
+    <>
       <SEO title="Welcome to Velocity" />
       <Jumbotron>
         <JumbotronLogo>
@@ -139,6 +138,6 @@ export default function Home({ location }) {
           " questions."} link={"https://discord.gg/8cB9Bgf"}/>
         </ExplainerSection>
       </Explainer>
-    </Layout>
+    </>
   )
 }

@@ -16,8 +16,8 @@ const NavbarContainer = styled.nav`
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: ${({ theme }) => theme.colors.navbarBg};
-  color: ${({ theme }) => theme.colors.navbarText};
+  background-color: var(--navbar-background);
+  color: var(--navbar-text);
   z-index: 100;
 `
 
@@ -34,7 +34,7 @@ const NavbarItem = styled.a`
   background-color: rgba(2, 136, 209, ${( {active} ) => active ? '1' : '0'});
   background-repeat: no-repeat;
   transition: background-color .25s 0s;
-  color: ${({ theme }) => theme.colors.navbarText} !important;
+  color: var(--navbar-text) !important;
   display: block;
   
   &:hover{
@@ -43,7 +43,7 @@ const NavbarItem = styled.a`
   
   @media (max-width: ${stylingGlobals.viewportSizes.phone}) {
     padding: 8px;
-    border-bottom: ${({ theme }) => theme.skipMobileNavbarBorders ? 'none' : `1px solid ${theme.colors.navbgBorder}`};
+    border-bottom: ${({ theme }) => theme.skipMobileNavbarBorders ? 'none' : `1px solid var(--navbg-border)`};
   }
 `
 const NavbarLink = NavbarItem.withComponent(Link)
@@ -58,7 +58,7 @@ const NavbarItems = styled.div`
 
 const MobileNavbarItems = styled.div`
   display: none;
-  background-color: ${({ theme }) => theme.colors.navbarBg};
+  background-color: var(--navbar-background);
   
   @media (max-width: ${stylingGlobals.viewportSizes.phone}) {
     margin-bottom: -60px;
@@ -87,7 +87,7 @@ function NavbarItemContents({ location }) {
   </>
 }
 
-export default function Navbar({ location, jumbotron, themeName, setThemeName }) {
+export default function Navbar({ location, themeName, setThemeName }) {
   const theme = useTheme()
   const [ expanded, setExpanded ] = useState(false)
 
@@ -97,9 +97,7 @@ export default function Navbar({ location, jumbotron, themeName, setThemeName })
 
   return (
     <NavbarContainer>
-      <NavbarList style={{
-        borderBottom: !jumbotron ? `1px solid ${theme.colors.navbgBorder}` : 'none'
-      }}>
+      <NavbarList>
         <NavbarLogo>
           <Link
             to={"/"}
@@ -124,7 +122,7 @@ export default function Navbar({ location, jumbotron, themeName, setThemeName })
 
         <NavbarItems>
           <NavbarItemContents location={location} />
-          <div css={{ padding: '15px 10px', display: 'block' }}>
+          <div css={{ padding: '15px 10px' }}>
             <ThemeSwitcher themeName={themeName} setThemeName={setThemeName}/>
           </div>
         </NavbarItems>

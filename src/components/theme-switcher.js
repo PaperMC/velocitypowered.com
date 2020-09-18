@@ -20,7 +20,7 @@ export default function ThemeSwitcher({ themeName, setThemeName }) {
     }
   }
 
-  return <label>
+  return <div>
     <Switch onChange={flipTheme}
             checked={checked}
             offColor={"#222"}
@@ -34,5 +34,5 @@ export default function ThemeSwitcher({ themeName, setThemeName }) {
               <FiSun css={iconCommonCss} color={"#222"} />
             }
     />
-  </label>
+  </div>
 }

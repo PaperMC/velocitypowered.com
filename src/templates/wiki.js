@@ -5,7 +5,6 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 
 import SEO from "../components/seo";
 import styled from "@emotion/styled"
-import Layout from "../components/layout";
 import Sidebar from "../components/docs-sidebar";
 import wikiSidebar from "../../docs/sidebar-wiki.json"
 
@@ -53,7 +52,7 @@ const shortlinks = { Caution, Link }
 export default function Documentation({ location, data }) {
   const article = data.mdx
   return (
-    <Layout location={location}>
+    <>
       <SEO title={article.frontmatter.title} description={article.excerpt} />
       <DocumentationContainer>
         <Sidebar sidebar={wikiSidebar} />
@@ -66,7 +65,7 @@ export default function Documentation({ location, data }) {
           </Content>
         </ContentWrapper>
       </DocumentationContainer>
-    </Layout>
+    </>
   )
 }
 

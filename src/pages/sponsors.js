@@ -1,5 +1,4 @@
 import React from "react"
-import Layout from "../components/layout";
 import styled from "@emotion/styled"
 import { FiAtSign } from "react-icons/fi";
 
@@ -10,7 +9,7 @@ import voldexLogo from "../assets/img/sponsors/voldex.png";
 import SEO from "../components/seo";
 
 const SponsorJumbotron = styled.div`
-  background: ${({ theme }) => theme.colors.jumbotron};
+  background: var(--jumbotron);
   width: 100%;
   padding: 1rem 0;
   padding-bottom: 2rem;
@@ -58,7 +57,7 @@ const Why = styled.section`
 
 export default function Sponsors({ location }) {
   return (
-    <Layout jumbotron location={location}>
+    <>
       <SEO title="Our Sponsors" />
       <SponsorJumbotron>
         <SponsorJumbotronHeader>Our Sponsors</SponsorJumbotronHeader>
@@ -135,6 +134,6 @@ export default function Sponsors({ location }) {
           contributions).
         </p>
       </Why>
-    </Layout>
+    </>
   )
 }

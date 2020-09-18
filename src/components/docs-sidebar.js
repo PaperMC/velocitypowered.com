@@ -11,8 +11,8 @@ const SidebarContainer = styled.section`
     top: 60px;
     height: calc(100vh - 9rem);
     width: 12rem;
-    background: ${({ theme }) => theme.colors.sidebarBackground};
-    border-right: 1px solid ${({ theme }) => theme.colors.navbgBorder};
+    background: var(--sidebar-background);
+    border-right: 1px solid var(--navbg-order);
     padding: 1rem;
   }
   
