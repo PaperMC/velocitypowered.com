@@ -88,11 +88,11 @@ function NavbarItemContents({ location }) {
   </>
 }
 
-export default function Navbar({ location }) {
-  const [ expanded, setExpanded ] = useState(false)
+export default function Navbar({ location, themeName, setThemeName }) {
+  const [ mobileMenuExpanded, setMobileMenuExpanded ] = useState(false)
 
   function flipExpanded() {
-    setExpanded(!expanded)
+    setMobileMenuExpanded(!mobileMenuExpanded)
   }
 
   return (
@@ -123,12 +123,12 @@ export default function Navbar({ location }) {
         <NavbarItems>
           <NavbarItemContents location={location} />
           <div css={{ padding: '15px 10px' }}>
-            <ThemeSwitcher />
+            <ThemeSwitcher themeName={themeName} setThemeName={setThemeName} />
           </div>
         </NavbarItems>
       </NavbarList>
 
-      <MobileNavbarItems mobileShown={expanded}>
+      <MobileNavbarItems mobileShown={mobileMenuExpanded}>
         <NavbarItemContents location={location} />
       </MobileNavbarItems>
     </NavbarContainer>

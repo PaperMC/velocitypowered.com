@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useEffect, useState} from "react"
 import styled from "@emotion/styled"
 import { ThemeProvider } from 'emotion-theming'
 import Footer from "./footer"
@@ -7,7 +7,7 @@ import themes from '../styles/theme';
 import '../styles/global.css';
 
 import stylingGlobals from "../styles/styling-globals"
-import ThemeNameProvider, {ThemeNameConsumer} from "../contexts/theme-name";
+import {setupThemeProperties} from "../theme-util";
 
 const Container = styled.main`
   margin-top: 60px;
@@ -16,10 +16,10 @@ const Container = styled.main`
   }
 `
 
-function LayoutChildren({ location, children }) {
+function LayoutChildren({ children, ...props }) {
   return (
     <>
-      <Navbar location={location} />
+      <Navbar {...props} />
       {/* page contents */}
       <Container>
         {children}
@@ -31,16 +31,26 @@ function LayoutChildren({ location, children }) {
 }
 
 export default function Layout(props) {
+  const [themeName, setThemeName] = useState(undefined)
+  useEffect(() => {
+    const root = window.document.documentElement;
+    const seenColorMode = root.style.getPropertyValue('--initial-color-mode');
+    if (seenColorMode) {
+      setThemeName(seenColorMode);
+    }
+  }, [])
+  useEffect(() => {
+    if (typeof themeName !== 'undefined') {
+      setupThemeProperties(themes[themeName]);
+      localStorage.setItem('__velocity_preferred_theme', themeName);
+    }
+  }, [themeName])
+
+  const theme = themes[typeof themeName === 'undefined' ? 'dark' : themeName]
+  const injectedProps = { themeName, setThemeName, ...props }
   return (
-    <ThemeNameProvider>
-      <ThemeNameConsumer>
-        {({ themeName }) => {
-          const theme = themes[themeName]
-          return <ThemeProvider theme={theme}>
-            <LayoutChildren {...props} />
-          </ThemeProvider>
-        }}
-      </ThemeNameConsumer>
-    </ThemeNameProvider>
+    <ThemeProvider theme={theme} >
+      <LayoutChildren {...injectedProps} />
+    </ThemeProvider>
   )
 }

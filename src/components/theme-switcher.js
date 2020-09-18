@@ -2,7 +2,6 @@ import React from "react"
 import Switch from "react-switch"
 import {FiMoon, FiSun} from "react-icons/fi";
 import {css} from "@emotion/core";
-import {useThemeName} from "../contexts/theme-name";
 
 const iconCommonCss = css`
   vertical-align: middle;
@@ -10,13 +9,8 @@ const iconCommonCss = css`
   padding-left: 6px;
 `
 
-export default function ThemeSwitcher() {
-  const { themeName, setThemeName } = useThemeName()
-  if (typeof themeName === 'undefined') {
-    // Don't render anything
-    return <></>
-  }
-
+export default function ThemeSwitcher({ themeName, setThemeName }) {
+  if (typeof themeName === 'undefined') return <></>;
   const checked = themeName === "light"
 
   function flipTheme() {
