@@ -1,6 +1,7 @@
 import React from 'react'
 import themes from './src/styles/theme'
 import {setupThemeProperties} from './src/theme-util'
+import Layout from "./src/components/layout";
 
 const FallbackColors = () => {
   const defaultStyles = `
@@ -61,3 +62,9 @@ export const onRenderBody = ({ setHeadComponents, setPreBodyComponents }) => {
   setHeadComponents(<FallbackColors key={"fallback-colors"} />)
   setPreBodyComponents(<MagicScriptTag key="dark-theme-hax" />);
 };
+
+export const wrapPageElement = ({ element, props }) => {
+  // props provide same data to Layout as Page element will get
+  // including location, data, etc - you don't need to pass it
+  return <Layout {...props}>{element}</Layout>
+}
