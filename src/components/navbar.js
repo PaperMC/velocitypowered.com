@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import { css } from '@emotion/core'
 import styled from "@emotion/styled"
 import { Link } from "gatsby"
 import velocityWhiteCropped from "../assets/img/velocity-white-cropped.png";
@@ -16,7 +15,8 @@ const NavbarContainer = styled.nav`
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: ${theme.colors.navbg};
+  background-color: ${theme.colors.navbarBg};
+  color: ${theme.colors.navbarText};
   z-index: 100;
 `
 
@@ -33,7 +33,7 @@ const NavbarItem = styled.a`
   background-color: rgba(2, 136, 209, ${( {active} ) => active ? '1' : '0'});
   background-repeat: no-repeat;
   transition: background-color .25s 0s;
-  color: ${theme.colors.foreground} !important;
+  color: ${theme.colors.navbarText} !important;
   display: block;
   
   &:hover{
@@ -42,7 +42,7 @@ const NavbarItem = styled.a`
   
   @media (max-width: ${stylingGlobals.viewportSizes.phone}) {
     padding: 8px;
-    border-bottom: 1px solid ${theme.colors.navbgBorder};
+    border-bottom: ${theme.skipMobileNavbarBorders ? 'none' : `1px solid ${theme.colors.navbgBorder}`};
   }
 `
 const NavbarLink = NavbarItem.withComponent(Link)
@@ -57,7 +57,7 @@ const NavbarItems = styled.div`
 
 const MobileNavbarItems = styled.div`
   display: none;
-  background-color: ${theme.colors.navbg};
+  background-color: ${theme.colors.navbarBg};
   
   @media (max-width: ${stylingGlobals.viewportSizes.phone}) {
     margin-bottom: -60px;
@@ -105,7 +105,7 @@ export default function Navbar({ location, jumbotron }) {
               display: 'flex',
               flexDirection: 'row',
               alignItems: 'center',
-              color: theme.colors.foreground,
+              color: theme.colors.navbarText,
               fontWeight: 'bold'
             }
           }>

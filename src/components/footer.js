@@ -9,7 +9,7 @@ const FooterContainer = styled.footer`
   @media (min-width: ${stylingGlobals.viewportSizes.phone}) {
     position: fixed;
     bottom: 0;
-    background: ${theme.colors.navbg};
+    background: ${theme.colors.sidebarBackground};
     font-size: .8rem;
     width: 100%;
   }

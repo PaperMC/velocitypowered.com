@@ -6,15 +6,19 @@ import theme from '../styles/theme'
 import stylingGlobals from "../styles/styling-globals"
 
 const SidebarContainer = styled.section`
-  @media (min-width: ${stylingGlobals.viewportSizes.desktop}) {
+  @media (min-width: ${stylingGlobals.viewportSizes.tablet}) {
     position: fixed;
     bottom: 0;
     top: 60px;
     height: calc(100vh - 9rem);
-    width: 20rem;
-    background: ${theme.colors.navbg};
+    width: 12rem;
+    background: ${theme.colors.sidebarBackground};
     border-right: 1px solid ${theme.colors.navbgBorder};
     padding: 1rem;
+  }
+  
+  @media (min-width: ${stylingGlobals.viewportSizes.desktop}) {
+    width: 18rem;
   }
 `
 

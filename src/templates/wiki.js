@@ -17,7 +17,7 @@ const DocumentationContainer = styled.article`
   display: flex;
   margin: auto;
   
-  @media (max-width: ${stylingGlobals.viewportSizes.desktop}) {
+  @media (max-width: ${stylingGlobals.viewportSizes.tablet}) {
     flex-direction: column-reverse;
   }
   
@@ -27,12 +27,19 @@ const DocumentationContainer = styled.article`
 `
 
 const ContentWrapper = styled.div`
-  margin-left: 22rem;
-  width: calc(100vw - 22rem);
+  margin: 0 1rem;
+  width: auto;
   
-  @media (max-width: ${stylingGlobals.viewportSizes.tablet}) {
-    margin: 0 1rem;
-    width: auto;
+  @media (min-width: ${stylingGlobals.viewportSizes.tablet}) {
+    margin-left: 15rem;
+    margin-right: 1rem;
+    width: calc(100vw - 16rem);
+  }
+  
+  @media (min-width: ${stylingGlobals.viewportSizes.desktop}) {
+    margin-left: 20rem;
+    margin-right: 0;
+    width: calc(100vw - 20rem);
   }
 `
 
