@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { css } from '@emotion/core'
 import styled from "@emotion/styled"
 import { Link } from "gatsby"
 import velocityWhiteCropped from "../assets/img/velocity-white-cropped.png";
@@ -26,17 +27,17 @@ const NavbarLogo = styled.div`
   padding: 15px;
   flex: 1;
 `
-const NavbarItem = styled.div`
+
+const NavbarItem = styled.a`
   padding: 18px 10px;
-  background: linear-gradient(to right, #0288d1, #0288d1);
+  background-color: rgba(2, 136, 209, ${( {active} ) => active ? '1' : '0'});
   background-repeat: no-repeat;
-  background-size: ${( {active} ) => active ? '100% 100%' : '0 100%'};
-  transition: ${( {active} ) => active ? 'none' : 'background-size 1s 0s'};
+  transition: background-color .25s 0s;
+  color: ${theme.colors.foreground} !important;
+  display: block;
+  
   &:hover{
-    background-size: 100% 100%;
-  }
-  a {
-    color: ${theme.colors.foreground} !important;
+    background-color: rgba(2, 136, 209, 1);
   }
   
   @media (max-width: ${stylingGlobals.viewportSizes.phone}) {
@@ -44,6 +45,7 @@ const NavbarItem = styled.div`
     border-bottom: 1px solid ${theme.colors.navbgBorder};
   }
 `
+const NavbarLink = NavbarItem.withComponent(Link)
 
 const NavbarItems = styled.div`
   display: flex;
@@ -77,18 +79,10 @@ function getLogoShown() {
 
 function NavbarItemContents({ location }) {
   return <>
-    <NavbarItem active={location.pathname.startsWith("/wiki")}>
-      <Link to={"/wiki"}>Documentation</Link>
-    </NavbarItem>
-    <NavbarItem active={location.pathname.startsWith("/downloads")}>
-      <Link to={"/downloads"}>Downloads</Link>
-    </NavbarItem>
-    <NavbarItem>
-      <Link to={"https://forums.velocitypowered.com"}>Forums</Link>
-    </NavbarItem>
-    <NavbarItem>
-      <Link to={"https://discord.gg/8cB9Bgf"}>Discord</Link>
-    </NavbarItem>
+    <NavbarLink to={"/wiki"} active={location.pathname.startsWith("/wiki")}>Documentation</NavbarLink>
+    <NavbarLink to={"/downloads"} active={location.pathname.startsWith("/downloads")}>Downloads</NavbarLink>
+    <NavbarItem href={"https://forums.velocitypowered.com"}>Forums</NavbarItem>
+    <NavbarItem href={"https://discord.gg/8cB9Bgf"}>Discord</NavbarItem>
   </>
 }
 
@@ -121,7 +115,7 @@ export default function Navbar({ location, jumbotron }) {
         </NavbarLogo>
 
         <NavbarExpand onClick={flipExpanded}>
-          <IconContext.Provider value={{ size: "1.5rem" }}>
+          <IconContext.Provider value={{ size: "16px" }}>
             <FiMenu />
           </IconContext.Provider>
         </NavbarExpand>

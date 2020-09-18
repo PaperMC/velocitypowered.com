@@ -53,8 +53,8 @@ const Sponsor = styled.aside`
 `
 
 const Why = styled.section`
-  width: 95%;
-  margin: 2rem auto;
+  width: 80%;
+  margin: 2rem auto 3rem auto;
 `
 
 export default function Sponsors({ location }) {

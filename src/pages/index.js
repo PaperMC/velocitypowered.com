@@ -135,6 +135,14 @@ export default function Home({ location }) {
           " questions."} link={"https://discord.gg/8cB9Bgf"}/>
         </ExplainerSection>
       </Explainer>
+      <Explainer>
+        <div>
+          <h2>Who trusts Velocity?</h2>
+          <p>Networks big and small trust Velocity. Here's just a few:</p>
+
+          <p>Velocity powered </p>
+        </div>
+      </Explainer>
     </Layout>
   )
 }

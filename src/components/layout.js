@@ -31,7 +31,7 @@ export default function Layout({ location, jumbotron, children }) {
         
         table {
           width: 100%;
-          padding: 2rem;
+          padding: 1rem;
           background-color: ${theme.tableBackground};
         }
         
