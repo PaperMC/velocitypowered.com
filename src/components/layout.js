@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, {useEffect, useState} from "react"
 import { Global, css } from "@emotion/core"
 import styled from "@emotion/styled"
 import { ThemeProvider, useTheme } from 'emotion-theming'
@@ -54,22 +54,27 @@ function LayoutChildren({ location, jumbotron, children, themeName, setThemeName
 }
 
 export default function Layout(props) {
-  let storedTheme = 'dark'
+  const [ themeName, setThemeName ] = useState('dark')
 
   // Check for localStorage. If we don't have localStorage, we're probably not even in a browser.
-  if (typeof localStorage !== 'undefined') {
-    storedTheme = localStorage.getItem('__velocity_preferred_theme')
-    if (storedTheme == null || !themes.hasOwnProperty(storedTheme)) {
-      if (typeof window !== 'undefined' && window.matchMedia && !window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        // User prefers to be blinded by a light theme. We only aim to please!
-        storedTheme = 'light'
-      } else {
-        storedTheme = 'dark'
+  useEffect(() => {
+    let storedTheme = 'dark'
+    if (typeof localStorage !== 'undefined') {
+      storedTheme = localStorage.getItem('__velocity_preferred_theme')
+      if (storedTheme == null || !themes.hasOwnProperty(storedTheme)) {
+        if (typeof window !== 'undefined' && window.matchMedia && !window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          // User prefers to be blinded by a light theme. We only aim to please!
+          storedTheme = 'light'
+        } else {
+          storedTheme = 'dark'
+        }
       }
     }
-  }
 
-  const [ themeName, setThemeName ] = useState(storedTheme)
+    if (storedTheme !== themeName) {
+      setThemeName(storedTheme)
+    }
+  }, [])
   const theme = themes[themeName]
 
   function savePreferredTheme(themeName) {

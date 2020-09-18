@@ -5,15 +5,15 @@ const themes = {
     titleButton: 'white',
     skipMobileNavbarBorders: false,
     colors: {
-      background: '#111',
+      background: '#121212',
       foreground: '#eee',
 
       jumbotron: '#222',
 
       navbgBorder: '#212426',
-      sidebarBackground: '#111',
+      sidebarBackground: '#121212',
 
-      navbarBg: '#111',
+      navbarBg: '#121212',
       navbarText: '#eee',
 
       primary: '#29b6f6',
@@ -27,14 +27,14 @@ const themes = {
     skipMobileNavbarBorders: true,
     colors: {
       background: '#fff',
-      foreground: '#222',
+      foreground: '#121212',
 
       jumbotron: '#ebebeb',
 
       navbgBorder: '#d9dcde',
       sidebarBackground: '#fff',
 
-      navbarBg: '#212426',
+      navbarBg: '#121212',
       navbarText: '#eee',
 
       primary: '#0288d1',
