@@ -31,7 +31,6 @@ body {
 
 a, a:visited {
     color: var(--primary);
-    text-decoration: none;
 }
 
 table {

@@ -14,7 +14,8 @@ const SidebarContainer = styled.section`
     background: var(--sidebar-background);
     border-right: 1px solid;
     border-color: var(--navbg-border);
-    padding: 1rem;
+    padding: .5rem .5rem 0 0;
+    overflow-y: auto;
   }
   
   @media (min-width: ${stylingGlobals.viewportSizes.desktop}) {
@@ -24,32 +25,81 @@ const SidebarContainer = styled.section`
 
 const SidebarHeader = styled.div`
   text-transform: uppercase;
-  font-weight: bold;
-  font-size: 0.85rem;
-  margin-bottom: 1rem;
+  font-weight: 300;
+  font-size: 1rem;
+  padding: .5rem 0 .5rem 1.5rem;
+  
+  :first-of-type {
+    margin: 0;
+  }
 `
 
-function SidebarSectionChild({ section }) {
+const SidebarLinkTitle = styled.span`
+  align-items: center;
+  display: flex;
+  position: relative;
+  font-size: .9rem;
+  
+  padding: .5rem 0 .5rem 1.5rem;
+  
+  :before {
+    content: "";
+    left: calc(0.5rem);
+    height: 8px;
+    position: absolute;
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+    width: 8px;
+    border-radius: 10px;
+    background-color: ${({ active }) => active ? `var(--primary)` : 'none'};
+  }
+  
+  :hover {
+    background-color: rgba(2, 136, 209, 0.2);
+  }
+`
+
+const SidebarSectionList = styled.ul`
+  list-style-type: none;
+  padding: 0;
+  margin: 0.1rem;
+  
+  :first-of-type {
+    margin-top: 0;
+  }
+`
+
+const SidebarLink = styled(Link)`
+  color: var(--foreground) !important;
+  text-decoration: none;
+`
+
+function SidebarSectionChild({ section, location }) {
   return (
-    <li><Link to={section.url}>{section.title}</Link></li>
+    <li>
+      <SidebarLink to={section.url}>
+        <SidebarLinkTitle active={location.pathname.startsWith(section.url)}>
+          {section.title}
+        </SidebarLinkTitle>
+      </SidebarLink>
+    </li>
   )
 }
 
-function SidebarTopSection({ section }) {
+function SidebarTopSection({ section, location }) {
   return (
     <div>
       <SidebarHeader>{section.title}</SidebarHeader>
-      <ul>
-        {section.children.map((child, idx) => <SidebarSectionChild section={child} key={idx} />)}
-      </ul>
+      <SidebarSectionList>
+        {section.children.map((child, idx) => <SidebarSectionChild section={child} key={idx} location={location} />)}
+      </SidebarSectionList>
     </div>
   )
 }
 
-export default function Sidebar({ sidebar }) {
+export default function Sidebar({ sidebar, location }) {
   return (
     <SidebarContainer>
-      {sidebar.map((section, idx) => <SidebarTopSection key={idx} section={section} /> )}
+      {sidebar.map((section, idx) => <SidebarTopSection key={idx} section={section} location={location} /> )}
     </SidebarContainer>
   )
 }

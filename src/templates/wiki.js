@@ -49,13 +49,13 @@ const Content = styled.section`
 
 const shortlinks = { Caution, Link }
 
-export default function Documentation({ data }) {
+export default function Documentation({ location, data }) {
   const article = data.mdx
   return (
     <>
       <SEO title={article.frontmatter.title} description={article.excerpt} />
       <DocumentationContainer>
-        <Sidebar sidebar={wikiSidebar} />
+        <Sidebar sidebar={wikiSidebar} location={location} />
         <ContentWrapper>
           <Content>
             <h1>{article.frontmatter.title}</h1>

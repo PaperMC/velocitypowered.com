@@ -18,6 +18,10 @@ const NavbarContainer = styled.nav`
   border-bottom: 1px solid;
   border-color: var(--navbg-border);
   z-index: 100;
+  
+  a {
+    text-decoration: none;
+  }
 `
 
 const NavbarList = styled.div`
