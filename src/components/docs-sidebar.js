@@ -5,6 +5,8 @@ import styled from "@emotion/styled"
 import stylingGlobals from "../styles/styling-globals"
 
 const SidebarContainer = styled.section`
+  margin: .5rem .5rem 0 0;
+
   @media (min-width: ${stylingGlobals.viewportSizes.tablet}) {
     position: fixed;
     bottom: 0;
@@ -14,12 +16,12 @@ const SidebarContainer = styled.section`
     background: var(--sidebar-background);
     border-right: 1px solid;
     border-color: var(--navbg-border);
-    padding: .5rem .5rem 0 0;
     overflow-y: auto;
   }
   
   @media (min-width: ${stylingGlobals.viewportSizes.desktop}) {
     width: 18rem;
+    margin: 0 .5rem 0 0;
   }
 `
 
@@ -61,7 +63,7 @@ const SidebarLinkTitle = styled.span`
 const SidebarSectionList = styled.ul`
   list-style-type: none;
   padding: 0;
-  margin: 0.1rem;
+  margin: 0.1rem 0;
   
   :first-of-type {
     margin-top: 0;
