@@ -5,18 +5,20 @@ import styled from "@emotion/styled"
 import stylingGlobals from "../styles/styling-globals"
 
 const SidebarContainer = styled.section`
-  margin: .5rem .5rem 0 0;
+  margin: .5rem 0 0 0;
 
   @media (min-width: ${stylingGlobals.viewportSizes.tablet}) {
     position: fixed;
     bottom: 0;
-    top: 60px;
+    top: 53px;
     height: calc(100vh - 7rem);
     width: 12rem;
     background: var(--sidebar-background);
     border-right: 1px solid;
     border-color: var(--navbg-border);
     overflow-y: auto;
+    
+    padding-top: .5rem;
   }
   
   @media (min-width: ${stylingGlobals.viewportSizes.desktop}) {
