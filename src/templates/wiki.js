@@ -37,14 +37,18 @@ const ContentWrapper = styled.div`
   
   @media (min-width: ${stylingGlobals.viewportSizes.desktop}) {
     margin-left: 20rem;
-    margin-right: 0;
-    width: calc(100vw - 20rem);
+    margin-right: 2rem;
+    width: calc(100vw - 22rem);
   }
 `
 
 const Content = styled.section`
   max-width: 40rem;
   margin: 0 auto;
+  
+  @media (min-width: ${stylingGlobals.viewportSizes.desktop}) {
+    max-width: 60rem;
+  }
 `
 
 const shortlinks = { Caution, Link }
