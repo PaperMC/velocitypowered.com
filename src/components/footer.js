@@ -9,6 +9,8 @@ const FooterContainer = styled.footer`
     position: fixed;
     bottom: 0;
     background: var(--sidebar-background);
+    border-top: 1px solid;
+    border-color: var(--navbg-border);
     font-size: .8rem;
     width: 100%;
   }

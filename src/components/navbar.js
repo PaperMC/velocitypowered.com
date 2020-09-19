@@ -15,6 +15,8 @@ const NavbarContainer = styled.nav`
   width: 100%;
   background-color: var(--navbar-background);
   color: var(--navbar-text);
+  border-bottom: 1px solid;
+  border-color: var(--navbg-border);
   z-index: 100;
 `
 

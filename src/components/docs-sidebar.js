@@ -12,7 +12,8 @@ const SidebarContainer = styled.section`
     height: calc(100vh - 9rem);
     width: 12rem;
     background: var(--sidebar-background);
-    border-right: 1px solid var(--navbg-order);
+    border-right: 1px solid;
+    border-color: var(--navbg-border);
     padding: 1rem;
   }
   
