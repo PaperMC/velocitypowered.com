@@ -11,7 +11,7 @@ const SidebarContainer = styled.section`
     position: fixed;
     bottom: 0;
     top: 60px;
-    height: calc(100vh - 9rem);
+    height: calc(100vh - 7rem);
     width: 12rem;
     background: var(--sidebar-background);
     border-right: 1px solid;
@@ -21,7 +21,7 @@ const SidebarContainer = styled.section`
   
   @media (min-width: ${stylingGlobals.viewportSizes.desktop}) {
     width: 18rem;
-    margin: 0 .5rem 0 0;
+    margin: .5rem 0 0 0;
   }
 `
 
@@ -30,10 +30,6 @@ const SidebarHeader = styled.div`
   font-weight: 300;
   font-size: 1rem;
   padding: .5rem 0 .5rem 1.5rem;
-  
-  :first-of-type {
-    margin: 0;
-  }
 `
 
 const SidebarLinkTitle = styled.span`
