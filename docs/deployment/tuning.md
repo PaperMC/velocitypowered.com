@@ -2,8 +2,9 @@
 title: Tuning Velocity
 ---
 
-Velocity comes with good performance out of the box, but there are ways to improve
-the performance further.
+Velocity comes with good performance out of the box. We go in deep, starting from smart algorithmic
+choices, making strategic usage of native libraries, all the way to the JVM level, optimizing
+the proxy so that the JVM will make better decisions when optimizing the code.
 
 ## Host your servers on x86-64 Linux
 
@@ -16,7 +17,7 @@ of Velocity run on x86-64 Linux.
 
 It is possible for the natives to work on any other Unix-like operating system, and in theory
 it is also possible to port the natives to Windows, but given that most users deploy Velocity on
-Linux, it is unlikely the natives will be supported on any other platform.
+Linux and lack of time and interest, it is unlikely the natives will be supported on any other platform.
 
 aarch64 support is a special case. It is forward-looking, but current aarch64 offerings are not yet
 high-performance, server-grade solutions suitable for Minecraft.
@@ -67,12 +68,14 @@ allocate to the proxy container in total. For instance, if you know the proxy wi
 We also recommend tuning your startup flags. The current recommendation is:
 
 ```
--XX:+UseG1GC -XX:G1HeapRegionSize=4M -XX:+UnlockExperimentalVMOptions -XX:+ParallelRefProcEnabled -XX:+AlwaysPreTouch -XX:MaxInlineLevel=15
+-XX:+UseG1GC -XX:G1HeapRegionSize=4M -XX:+UnlockExperimentalVMOptions -XX:+ParallelRefProcEnabled -XX:+AlwaysPreTouch
 ```
 
 You will add these flags after the `java` command but before the `-jar` parameter.
 
 ### Explanation of the flags
+
+These flags focus on tuning the G1 garbage collector to be more friendly to Velocity's workload.
 
 Before the release of Java 9, the default Java garbage collector was the Parallel GC. This
 is a stop-the-world collector that does its work in parallel. The problem is that its pause
@@ -82,10 +85,9 @@ unexplainable lag spikes).
 The recommended garbage collector for Velocity is the G1 region-based collector. There are
 several reasons for us to recommend G1:
 
-* It strikes the right balance between throughput and pause times.
-* It is compatible with most setups.
+* It strikes the right balance between throughput and pause times. Throughput is roughly how much work the
+  proxy can achieve.
+* It is compatible with most setups (it is available in Java 8, the earliest Java version we support).
 
-The other flag is `-XX:MaxInlineLevel=15`. This tells the HotSpot native code compilers
-(called C1 and C2) how deep they should consider inlining code. Since Velocity's pipeline
-tends to have somewhat deep stacks, this flag will improve performance slightly through
-more aggressive inlining.
+Setups using these flags tend have very low (less than 10 millisecond) GC pauses every few minutes, which is
+very good for Minecraft.

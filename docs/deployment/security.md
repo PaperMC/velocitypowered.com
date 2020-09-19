@@ -90,9 +90,7 @@ each of your servers, and make sure the server only listens for incoming connect
 from the tunnel. There are many different solutions, ranging from VPN solutions
 such as [WireGuard](https://www.wireguard.com), [OpenVPN](https://openvpn.net/), and
 [tinc](https://www.tinc-vpn.org/) to encrypted tunnels such as [spiped](https://www.tarsnap.com/spiped.html).
-
-This guide will not go into details of how to set up each setup - the setup you want
-to use should depend on your individual needs.
+This guide will not go into details of how to set up each of these solutions.
 
 **Advantages**:
 

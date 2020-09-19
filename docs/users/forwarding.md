@@ -15,7 +15,7 @@ To use modern forwarding with any supported server implementation, set the `play
  following the steps in the appropriate section below:
 
 <Caution>
-   Modern forwarding, while more secure than the legacy  BungeeCord forwarding scheme,
+   Modern forwarding, while more secure than the legacy BungeeCord forwarding scheme,
    is incompatible with Minecraft versions below 1.13, Minecraft Forge (both versions
    for Minecraft 1.12.2 and below and for 1.14 and above), and ProtocolSupport. If you
    support or rely on any of these, you will need to use legacy BungeeCord-compatible

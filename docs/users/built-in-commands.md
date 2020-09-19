@@ -51,3 +51,11 @@ When executed from the console, this will gracefully shut down the Velocity
 proxy. All players will be disconnected from the proxy and plugins will have
 a chance to finish up before the proxy shuts down. An optional reason can be
 given.
+
+The /glist command
+------------------
+
+If the user has the ``velocity.command.glist`` permission (by default,
+this is granted to nobody), players can use this command to view the
+number of players currently on the proxy and use `/glist all` to get
+a listing of players per server.
