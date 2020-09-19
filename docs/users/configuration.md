@@ -2,75 +2,83 @@
 title: Configuring Velocity
 ---
 
-Velocity is simple and unambiguous to configure.
+Velocity is designed to be easy to configure and set up. Every Velocity file is stored in `velocity.toml`, located in
+the directory where you started the proxy. Velocity uses the the [TOML](https://github.com/toml-lang/toml) file format,
+as it is easy to understand and avoids pitfalls of YAML and other configuration formats common in the community.
 
-## The configuration file
+## Data types
 
-All Velocity settings in the `velocity.toml` file. This file is located in the directory where you started
-the proxy.
- 
-## The configuration format
+There are a few "special" data types in the Velocity configuration.
 
-Before we continue, it is useful to take a step back and note that Velocity uses the [TOML](https://github.com/toml-lang/toml) format for its
-configuration. TOML is easy to understand, so you should not have difficulty understanding
-Velocity's configuration file.
+### Chat
+
+Chat messages may be provided in legacy color code format or in JSON format.
+
+For Velocity 1.0.x, JSON messages are deserialized as if they were for Minecraft 1.15.2 or lower and RGB chat messages
+are not supported. For Velocity 1.1.0, RGB support (using the `&#rrggbb` format) is available and JSON messages are
+deserialized for Minecraft 1.16.
+
+### Address
+
+An address is a pairing of an IP address or hostname, and a port, separated by a colon (`:`). For instance, `127.0.0.1:25577`
+and `server01.example.com:25565` are valid addresses.
 
 ## Root section
 
 These settings mostly cover the basic, most essential settings of the proxy.
 
-| Setting Name          | Type    | Default                   | Description                                                                                                                                                                                                      |
-|-----------------------|---------|---------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ``config-version``    | String  | ``1.0``                   | This is the current config version used by Velocity. you should not alter this setting.                                                                                                                          |
-| ``bind``              | Address | ``0.0.0.0:25577``         | This tells the proxy to accept connections on a specific IP. By default, Velocity will listen for connections on all IP addresses on the computer on port 25577                                                  |
-| ``motd``              | Chat    | ``&3A Velocity Server``   | This allows you to change the message shown to players when they add your server to their server list. You can use legacy Minecraft color codes or JSON chat.                                                    |
-| ``show-max-players``  | Integer | ``500``                   | This allows you to customize the number of "maximum" players in the  player's server list. Note that Velocity doesn't have a maximum number of players it supports.                                              |
-| ``forwarding-secret`` | String  | Randomly generated string | This setting is used as a secret to ensure that player info forwarded by Velocity comes from your proxy and not from someone pretending to run Velocity. See the "Player info forwarding" section for more info. |
-| ``announce-forge``    | Boolean | ``false``                 | This setting determines whether Velocity should present itself as a Forge/FML-compatible server. By default, this is disabled.                                                                                   |
+| Setting Name          | Type    | Description                                                                                                                                                                                                      |
+|-----------------------|---------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ``config-version``    | String  | This is the current config version used by Velocity. You should not alter this setting.                                                                                                                          |
+| ``bind``              | Address | This tells the proxy to accept connections on a specific IP. By default, Velocity will listen for connections on all IP addresses on the computer on port 25577.                                                 |
+| ``motd``              | Chat    | This allows you to change the message shown to players when they add your server to their server list. You can use legacy Minecraft color codes or JSON chat.                                                    |
+| ``show-max-players``  | Integer | This allows you to customize the number of "maximum" players in the  player's server list. Note that Velocity doesn't have a maximum number of players it supports.                                              |
+| ``forwarding-secret`` | String  | This setting is used as a secret to ensure that player info forwarded by Velocity comes from your proxy and not from someone pretending to run Velocity. See the "Player info forwarding" section for more info. |
+| ``announce-forge``    | Boolean | This setting determines whether Velocity should present itself as a Forge/FML-compatible server. By default, this is disabled.                                                                                   |
 
 
 ## `server` section
 
-| Setting Name  | Type    | Default                             | Description                                                                                                                |
-|---------------|---------|-------------------------------------|----------------------------------------------------------------------------------------------------------------------------|
-| A server name | Address | See the default configuration below | This makes the proxy aware of a server that it can connect to.                                                             |
-| `try`         | Array   | `["lobby"]`                         | This specifies what servers Velocity should try to connect to upon player login and when a player is kicked from a server. |
+| Setting Name  | Type    | Description                                                                                                                |
+|---------------|---------|----------------------------------------------------------------------------------------------------------------------------|
+| A server name | Address | This makes the proxy aware of a server that it can connect to.                                                             |
+| `try`         | Array   | This specifies what servers Velocity should try to connect to upon player login and when a player is kicked from a server. |
 
 
 ## `forced-hosts` section
 
-| Setting Name 	| Type     	| Default                              	| Description                                                                                                                                        	|
-|--------------	|----------	|--------------------------------------	|----------------------------------------------------------------------------------------------------------------------------------------------------	|
-| A host name  	| Hostname 	| See the default configuration below. 	| This configures the proxy to create a forced host for the specified hostname. An array of servers to try for the specified hostname is the value.  	|
+| Setting Name | Type     | Description                                                                                                                                        	|
+|--------------|----------|----------------------------------------------------------------------------------------------------------------------------------------------------	|
+| A host name  | Hostname | This configures the proxy to create a forced host for the specified hostname. An array of servers to try for the specified hostname is the value.  	|
 
 
 ## `advanced` section
 
-| Setting name            	| Type    	| Default 	| Description                                                                                                                                                                                                                                                                                   	|
-|-------------------------	|---------	|---------	|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
-| `compression-threshold` 	| Integer 	| 256     	| This is the minimum size (in bytes) that a packet has before the proxy compresses it. Minecraft uses 256 bytes by default.                                                                                                                                                                    	|
-| `compression-level`     	| Integer 	| -1      	| This setting indicates what `zlib` compression level the proxy should use to compress packets. The default value uses the default zlib level, which is dependent on the zlib version. This number goes from `0` to `9`, where `0` means no compression and `9` indicates maximum compression. 	|
-| `login-ratelimit`       	| Integer 	| 3000    	| This setting determines the minimum amount of time (in milliseconds) that must pass before a connection from the same IP address will be accepted by the proxy. A default value of `0` disables the rate limit.                                                                               	|
-| `connection-timeout`    	| Integer 	| 5000    	| This setting determines how long the proxy will wait to connect to a server before timing out.                                                                                                                                                                                                	|
-| `read-timeout`          	| Integer 	| 300000  	| This setting determines how long the proxy will wait to receive data from the server before timing out. If you use Forge, you may need to increase this setting.                                                                                                                              	|
-| `proxy-protocol`        	| Boolean 	| false   	| This setting determines whether or not Velocity should receive HAProxy PROXY messages. If you don't use HAProxy, leave this setting off.                                                                                                                                                      	|
+| Setting name            | Type    | Description                                                                                                                                                                                              |
+|-------------------------|---------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `compression-threshold` | Integer | This is the minimum size (in bytes) that a packet must be before the proxy compresses it. Minecraft uses 256 bytes by default.                                                                           |
+| `compression-level`     | Integer | This setting indicates what `zlib` compression level the proxy should use to compress packets. The default value uses the default zlib level. 	                                                       |
+| `login-ratelimit`       | Integer | This setting determines the minimum amount of time (in milliseconds) that must pass before a connection from the same IP address will be accepted by the proxy. A value of `0` disables the rate limit.  |
+| `connection-timeout`    | Integer | This setting determines how long the proxy will wait to connect to a server before timing out.                                                                                                           |
+| `read-timeout`          | Integer | This setting determines how long the proxy will wait to receive data from the server before timing out.                                                                                                  |
+| `proxy-protocol`        | Boolean | This setting determines whether or not Velocity should receive HAProxy PROXY messages. If you don't use HAProxy, leave this setting off.                                                                 |
 
 ## `query` section
 
-| Setting name   	| Type    	| Default  	| Description                                                                                                              	|
-|----------------	|---------	|----------	|--------------------------------------------------------------------------------------------------------------------------	|
-| `enabled`      	| Boolean 	| `false`  	| Whether or not Velocity should reply to GameSpy 4 (Minecraft query protocol) requests. You can usually leave this false. 	|
-| `port`         	| Number  	| `25577`  	| Specifies which port that Velocity should listen on for GameSpy 4 (Minecraft query protocol) requests.                   	|
-| `map`          	| String  	| Velocity 	| Specifies the map name to be shown to clients.                                                                           	|
-| `show-plugins` 	| Boolean 	| false    	| Whether or not Velocity plugins are included in the query responses.                                                     	|
+| Setting name   	| Type    	| Description                                                                                                   |
+|----------------	|---------	|--------------------------------------------------------------------------------------------------------------	|
+| `enabled`      	| Boolean 	| Whether or not Velocity should reply to Minecraft query protocol requests. You can usually leave this false. 	|
+| `port`         	| Number  	| Specifies which port that Velocity should listen on for GameSpy 4 (Minecraft query protocol) requests.        |
+| `map`          	| String  	| Specifies the map name to be shown to clients.                                                                |
+| `show-plugins` 	| Boolean 	| Whether or not Velocity plugins are included in the query responses.                                          |
 
 ## `metrics` section
 
-| Setting name  	| Type    	| Default                 	| Description                                                                                                 	|
-|---------------	|---------	|-------------------------	|-------------------------------------------------------------------------------------------------------------	|
-| `enabled`     	| Boolean 	| `true`                  	| Whether or not Velocity should send metrics to bStats.                                                      	|
-| `id`          	| UUID    	| Randomly generated UUID 	| A randomly generated UUID that uniquely identifies your Velocity server. You should not alter this setting. 	|
-| `log-failure` 	| Boolean 	| `false`                 	| Whether or not Velocity should log whenever it fails to connect to bStats.                                  	|
+| Setting name  | Type    | Description                                                                                             |
+|---------------|---------|---------------------------------------------------------------------------------------------------------|
+| `enabled`     | Boolean | Whether or not Velocity should send metrics to bStats.                                                  |
+| `id`          | UUID    | A randomly generated UUID that uniquely identifies your Velocity server. Do not alter this setting. 	|
+| `log-failure` | Boolean | Whether or not Velocity should log whenever it fails to connect to bStats.                              |
 
 
 ## The default configuration
@@ -78,7 +86,6 @@ These settings mostly cover the basic, most essential settings of the proxy.
 Below is the default configuration file for Velocity, `velocity.toml`.
 
 ```toml
-
 # Config version. Do not change this
 config-version = "1.0"
 
@@ -96,22 +103,52 @@ show-max-players = 500
 # Should we authenticate players with Mojang? By default, this is on.
 online-mode = true
 
+# If client's ISP/AS sent from this proxy is different from the one from Mojang's
+# authentication server, the player is kicked. This disallows some VPN and proxy
+# connections but is a weak form of protection.
+prevent-client-proxy-connections = false
+
 # Should we forward IP addresses and other data to backend servers?
 # Available options:
-# - "none":   No forwarding will be done. All players will appear to be connecting from the
-#             proxy and will have offline-mode UUIDs.
-# - "legacy": Forward player IPs and UUIDs in a BungeeCord-compatible format. Use this if
-#             you run servers using Minecraft 1.12 or lower.
-# - "modern": Forward player IPs and UUIDs as part of the login process using Velocity's
-#             native forwarding. Only applicable for Minecraft 1.13 or higher.
+# - "none":        No forwarding will be done. All players will appear to be connecting
+#                  from the proxy and will have offline-mode UUIDs.
+# - "legacy":      Forward player IPs and UUIDs in a BungeeCord-compatible format. Use this
+#                  if you run servers using Minecraft 1.12 or lower.
+# - "bungeeguard": Forward player IPs and UUIDs in a format supported by the BungeeGuard
+#                  plugin. Use this if you run servers using Minecraft 1.12 or lower, and are
+#                  unable to implement network level firewalling (on a shared host).
+# - "modern":      Forward player IPs and UUIDs as part of the login process using
+#                  Velocity's native forwarding. Only applicable for Minecraft 1.13 or higher.
 player-info-forwarding-mode = "NONE"
 
-# If you are using modern IP forwarding, configure an unique secret here.
-forwarding-secret = "redacted"
+# If you are using modern or BungeeGuard IP forwarding, configure an unique secret here.
+forwarding-secret = ""
 
 # Announce whether or not your server supports Forge. If you run a modded server, we
 # suggest turning this on.
+# 
+# If your network runs one modpack consistently, consider using ping-passthrough = "mods"
+# instead for a nicer display in the server list.
 announce-forge = false
+
+# If enabled (default is false) and the proxy is in online mode, Velocity will kick
+# any existing player who is online if a duplicate connection attempt is made.
+kick-existing-players = false
+
+# Should Velocity pass server list ping requests to a backend server?
+# Available options:
+# - "disabled":    No pass-through will be done. The velocity.toml and server-icon.png
+#                  will determine the initial server list ping response.
+# - "mods":        Passes only the mod list from your backend server into the response.
+#                  The first server in your try list (or forced host) with a mod list will be
+#                  used. If no backend servers can be contacted, Velocity won't display any
+#                  mod information.
+# - "description": Uses the description and mod list from the backend server. The first
+#                  server in the try (or forced host) list that responds is used for the
+#                  description and mod list.
+# - "all":         Uses the backend server's response as the proxy response. The Velocity
+#                  configuration is used if no servers could be contacted.
+ping-passthrough = "DISABLED"
 
 [servers]
 # Configure your servers here. Each key represents the server's name, and the value
@@ -122,19 +159,19 @@ minigames = "127.0.0.1:30068"
 
 # In what order we should try servers when a player logs in or is kicked from aserver.
 try = [
-    "lobby"
+  "lobby"
 ]
 
 [forced-hosts]
 # Configure your forced hosts here.
 "lobby.example.com" = [
-    "lobby"
+  "lobby"
 ]
 "factions.example.com" = [
-   "factions"
+  "factions"
 ]
 "minigames.example.com" = [
-    "minigames"
+  "minigames"
 ]
 
 [advanced]
@@ -159,6 +196,27 @@ read-timeout = 30000
 # Enables compatibility with HAProxy.
 proxy-protocol = false
 
+# Enables TCP fast open support on the proxy. Requires the proxy to run on Linux.
+tcp-fast-open = false
+
+# Enables BungeeCord plugin messaging channel support on Velocity.
+bungee-plugin-message-channel = true
+
+# Shows ping requests to the proxy from clients.
+show-ping-requests = false
+
+# By default, Velocity will attempt to gracefully handle situations where the user unexpectedly
+# loses connection to the server without an explicit disconnect message by attempting to fall the
+# user back, except in the case of read timeouts. BungeeCord will disconnect the user instead. You
+# can disable this setting to use the BungeeCord behavior.
+failover-on-unexpected-server-disconnect = true
+
+# Declares the proxy commands to 1.13+ clients.
+announce-proxy-commands = true
+
+# Enables the logging of commands
+log-command-executions = false
+
 [query]
 # Whether to enable responding to GameSpy 4 query responses or not.
 enabled = false
@@ -181,8 +239,23 @@ show-plugins = false
 enabled = true
 
 # A unique, anonymous ID to identify this proxy with.
-id = "9cc04bee-691b-450b-94dc-5f5de5b6847b"
+id = "b4548156-57a5-455a-8807-b7108725680c"
 
 log-failure = false
 
+# Legacy color codes and JSON are accepted in all messages.
+[messages]
+# Prefix when the player gets kicked from a server.
+#   First argument '%s': the server name
+kick-prefix = "&cKicked from %s: "
+
+# Prefix when the player is disconnected from a server.
+#   First argument '%s': the server name
+disconnect-prefix = "&cCan't connect to %s: "
+
+online-mode-only = "&cThis server only accepts connections from online-mode clients.\n\n&7Did you change your username? Sign out of Minecraft, sign back in, and try again."
+no-available-servers = "&cThere are no available servers."
+already-connected = "&cYou are already connected to this proxy!"
+moved-to-new-server-prefix = "&cThe server you were on kicked you: "
+generic-connection-error = "&cAn internal error occurred in your connection."
 ```
