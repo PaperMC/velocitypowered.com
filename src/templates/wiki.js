@@ -32,12 +32,11 @@ const ContentWrapper = styled.div`
   @media (min-width: ${stylingGlobals.viewportSizes.tablet}) {
     margin-left: 15rem;
     margin-right: 1rem;
-    width: calc(100vw - 16rem);
+    width: calc(100vw - 18rem);
   }
   
   @media (min-width: ${stylingGlobals.viewportSizes.desktop}) {
     margin-left: 20rem;
-    margin-right: 2rem;
     width: calc(100vw - 22rem);
   }
 `
