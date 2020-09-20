@@ -3,9 +3,19 @@ import themes from './src/styles/theme'
 import {setupThemeProperties} from './src/theme-util'
 import Layout from "./src/components/layout";
 
+const darkNavbarImg = require('./src/assets/img/velocity-white-cropped.png');
+const darkJumbotronImg = require('./src/assets/img/velocity-white.png');
+const lightNavbarImg = require('./src/assets/img/velocity-blue-cropped.png');
+const lightJumbotronImg = require('./src/assets/img/velocity-blue.png');
+
 const FallbackColors = () => {
   const defaultStyles = `
     html {
+       --dark-jumbotron-logo-url: url(${darkJumbotronImg});
+       --dark-navbar-logo-url: url(${darkNavbarImg});
+       --light-jumbotron-logo-url: url(${lightJumbotronImg});
+       --light-navbar-logo-url: url(${lightNavbarImg});
+    
        --background: ${themes.dark.colors.background};
        --foreground: ${themes.dark.colors.foreground};
        --jumbotron: ${themes.dark.colors.jumbotron};
@@ -16,8 +26,9 @@ const FallbackColors = () => {
        --primary: ${themes.dark.colors.primary};
        --gray: ${themes.dark.colors.gray};
        --table-background: ${themes.dark.tableBackground};
-       --jumbotron-logo-url: url(${themes.dark.logos.jumbotron});
-       --navbar-logo-url: url(${themes.dark.logos.navbar});
+       
+       --jumbotron-logo-url: var(--dark-jumbotron-logo-url);
+       --navbar-logo-url: var(--dark-navbar-logo-url);
     }
   `;
   return <style dangerouslySetInnerHTML={{ __html: defaultStyles}} />
@@ -41,7 +52,6 @@ const MagicScriptTag = () => {
     if (hasMediaQueryPreference) {
       return mql.matches ? 'dark' : 'light';
     }
-    // Our default look is a dark look
     return 'dark';
   }
   const colorMode = getInitialColorMode();

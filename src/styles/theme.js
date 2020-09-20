@@ -1,8 +1,8 @@
 export default {
   dark: {
     logos: {
-      navbar: require('../assets/img/velocity-white-cropped.png'),
-      jumbotron: require('../assets/img/velocity-white.png'),
+      navbar: 'var(--dark-navbar-logo-url)',
+      jumbotron: 'var(--dark-jumbotron-logo-url)',
     },
     logoVariant: 'white',
     tableBackground: '#323232',
@@ -26,8 +26,8 @@ export default {
   },
   light: {
     logos: {
-      navbar: require('../assets/img/velocity-blue-cropped.png'),
-      jumbotron: require('../assets/img/velocity-blue.png'),
+      navbar: 'var(--light-navbar-logo-url)',
+      jumbotron: 'var(--light-jumbotron-logo-url)',
     },
     logoVariant: 'blue',
     tableBackground: '#e1e1e1',
