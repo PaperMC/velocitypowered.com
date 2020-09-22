@@ -28,14 +28,16 @@ Now we have created our project, we need configure our build system.
 
 ### Maven repository
 
-| Name | velocity                                                   |
+||
 |------|------------------------------------------------------------|
+| Name | velocity                                                   |
 | URL  | https://nexus.velocitypowered.com/repository/maven-public/ |
 
 ### Dependency
 
-| Group ID    | com.velocitypowered |
+||
 |-------------|---------------------|
+| Group ID    | com.velocitypowered |
 | Artifact ID | velocity-api        |
 | Version     | 1.1.0-SNAPSHOT      |
 
