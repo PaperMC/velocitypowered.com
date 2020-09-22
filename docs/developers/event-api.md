@@ -3,6 +3,7 @@ title: Working With Events
 ---
 
 Listening to events with Velocity's `@Subscribe` annotation is straightforward. You've already seen one such listener, using the ProxyInitializeEvent in your main class.
+Additional events can be found on the [Javadoc](https://jd.velocitypowered.com/1.1.0/)
 
 ### Adding listening methods
 
