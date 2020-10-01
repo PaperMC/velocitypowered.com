@@ -43,7 +43,7 @@ const JumbotronLogo = styled.div`
   }
 `
 
-const Explainer = styled.section`
+const Explainer = styled.main`
   display: flex;
   width: 95%;
   margin: 0 auto;

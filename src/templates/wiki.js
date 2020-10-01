@@ -12,7 +12,7 @@ import Caution from "../components/warnings/caution";
 
 import stylingGlobals from "../styles/styling-globals"
 
-const DocumentationContainer = styled.article`
+const DocumentationContainer = styled.div`
   display: flex;
   margin: auto;
   
@@ -25,7 +25,7 @@ const DocumentationContainer = styled.article`
   }
 `
 
-const ContentWrapper = styled.div`
+const ContentWrapper = styled.main`
   margin: 0 1rem;
   width: auto;
   

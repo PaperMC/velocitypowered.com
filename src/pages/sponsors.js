@@ -50,7 +50,7 @@ const Sponsor = styled.aside`
   }
 `
 
-const Why = styled.section`
+const Why = styled.main`
   width: 80%;
   margin: 2rem auto 3rem auto;
 `

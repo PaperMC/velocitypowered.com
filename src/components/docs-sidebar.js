@@ -4,7 +4,7 @@ import styled from "@emotion/styled"
 
 import stylingGlobals from "../styles/styling-globals"
 
-const SidebarContainer = styled.section`
+const SidebarContainer = styled.nav`
   margin: .5rem 0 0 0;
 
   @media (min-width: ${stylingGlobals.viewportSizes.tablet}) {

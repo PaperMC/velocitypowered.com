@@ -34,6 +34,9 @@ export default function ThemeSwitcher({ themeName, setThemeName }) {
             checkedIcon={
               <FiSun css={iconCommonCss} color={"#222"} />
             }
+            role="switch"
+            aria-checked={String(checked)}
+            aria-label={checked ? "Toggle dark theme" : "Toggle light theme"}
     />
   </div>
 }

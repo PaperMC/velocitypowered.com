@@ -20,7 +20,7 @@ export default {
       navbarBg: '#121212',
       navbarText: '#eee',
 
-      primary: '#0288d1',
+      primary: '#26aef9',
       gray: '#e1e1e1',
     }
   },
@@ -45,7 +45,7 @@ export default {
       navbarBg: '#121212',
       navbarText: '#eee',
 
-      primary: '#0288d1',
+      primary: '#0e5e8a',
       gray: '#e1e1e1',
     }
   }
