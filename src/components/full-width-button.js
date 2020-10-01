@@ -2,6 +2,10 @@ import React from "react"
 import styled from "@emotion/styled"
 import {Link} from "gatsby";
 
+const NoUnderlinedLink = styled(Link)`
+  text-decoration: none;
+`
+
 const FullWidthButtonContainer = styled.div`
   padding: .75rem;
   margin-bottom: 1rem;
@@ -22,10 +26,10 @@ const FullWidthButtonTitle = styled.div`
 `
 
 export default function FullWidthButton({ title, subtitle, link }) {
-  return <Link to={link}>
+  return <NoUnderlinedLink to={link}>
     <FullWidthButtonContainer>
       <FullWidthButtonTitle>{title}</FullWidthButtonTitle>
       <div>{subtitle}</div>
     </FullWidthButtonContainer>
-  </Link>
+  </NoUnderlinedLink>
 }

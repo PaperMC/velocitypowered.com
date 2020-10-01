@@ -5,6 +5,10 @@ const CautionContainer = styled.div`
   background-color: #9a0007;
   color: white;
   padding: 1rem;
+  
+  a {
+    color: #26aef9;
+  }
 `
 
 export default function Caution({ children }) {
