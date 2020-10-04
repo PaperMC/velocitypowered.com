@@ -94,7 +94,7 @@ In May 2017, I finally thought I'd call it quits. I was already involved in the 
 
 During that time I got dragged in again, to the point where I came out of retirement not long after.
 
-# What Does Velocity do Differently?
+# What Does Velocity do Differently
 
 You've made it to the other side (or perhaps you skipped ahead). Now, let's talk about _what_.
 
