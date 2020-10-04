@@ -69,7 +69,7 @@ RAM=512M
 
 while true
 do
-    java -Xmx${RAM} -Xms${RAM} -jar ${PROXY_JAR}
+    java -XX:+UseG1GC -XX:G1HeapRegionSize=4M -XX:+UnlockExperimentalVMOptions -XX:+ParallelRefProcEnabled -XX:+AlwaysPreTouch -Xmx${RAM} -Xms${RAM} -jar ${PROXY_JAR}
     echo "Velocity exited."
     echo "Starting in 3... (Press [CTRL+C] to stop)"
     sleep 1
@@ -79,6 +79,8 @@ do
     sleep 1
 done
 ```
+
+_Note: This uses Tux's recommended HotSpot Java flags as of 04/25/2020._
 
 When you're done, press <kbd>CTRL+S</kbd> and <kbd>CTRL+X</kbd>. Your start script has now been created, and running `ls` should now show `start.sh`.
 
