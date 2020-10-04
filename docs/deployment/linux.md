@@ -49,10 +49,8 @@ You can find the latest version [on the downloads site](https://www.velocitypowe
 
 As an example, I'll use this command:
 ```shell script
-wget -O proxy.jar https://ci.velocitypowered.com/job/velocity/246/artifact/proxy/build/libs/velocity-proxy-1.0.11-SNAPSHOT-all.jar
+wget -O proxy.jar https://ci.velocitypowered.com/job/velocity-1.1.0/lastSuccessfulBuild/artifact/proxy/build/libs/velocity-proxy-1.1.0-SNAPSHOT-all.jar
 ```
-
-_Please note, this is most likely not the latest version when you're reading this. Copy the latest download link from the downloads site._
 
 ## Running Velocity
 
