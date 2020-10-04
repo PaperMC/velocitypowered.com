@@ -78,7 +78,7 @@ do
 done
 ```
 
-_Note: This uses Tux's recommended HotSpot Java flags as of 04/25/2020._
+[_Note: This uses Tux's recommended HotSpot Java flags as of 04/25/2020.]( https://discord.com/channels/472484458856185878/472485684473626625/703753792243499038)_
 
 When you're done, press <kbd>CTRL+S</kbd> and <kbd>CTRL+X</kbd>. Your start script has now been created, and running `ls` should now show `start.sh`.
 
@@ -111,6 +111,12 @@ screen -S velocity ./start.sh
 ```
 
 This will create a new `screen`, which will automatically run your Velocity script. Now that it's up and running, you can press <kbd>CTRL+A+D</kbd> to exit the screen, and now you can go about your day :)
+
+Remember, if you want to reconnect to your screen, use this command:
+
+```shell script
+screen -r velocity
+```
 
 # Extra Steps
 
