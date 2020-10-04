@@ -2,7 +2,7 @@
 title: Deployment on a Linux Server
 ---
 
-Deploying Velocity on a Linux machine is easy! This guide will walk you through the installation of Velocity.
+This guide will walk you through the installation of Velocity. By the end of the guide, you will have a running instance of Velocity, ready to be configured for your network.
 
 Basic Linux knowledge is assumed.
 
