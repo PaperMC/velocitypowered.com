@@ -122,7 +122,7 @@ screen -r velocity
 
 ## Configuring Velocity
 
-It's great that Velocity is running, but now you need servers to connect to! Refer to the [Configuring Velocity guide found here](https://newsite-staging.velocitypowered.com/wiki/users/configuration/).
+It's great that Velocity is running, but now you need servers to connect to! Refer to the [Configuring Velocity guide found here](/wiki/users/configuration/).
 
 ## Firewall Access
 
