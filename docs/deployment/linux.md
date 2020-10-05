@@ -126,4 +126,9 @@ It's great that Velocity is running, but now you need servers to connect to! Ref
 
 ## Firewall Access
 
-In some cases, your Linux server may be configured to block access on Velocity's running port. Each Linux distribution has its own way of configuring firewall access, which won't be covered here.
+In some cases, your Linux server may be configured to block access on Velocity's running port. Each Linux distribution has its own way of configuring firewall access. Here's a few guides from DigitalOcean on how to configure firewall access on various Linux distributions:
+
+- [CentOS 7](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-using-firewalld-on-centos-7), [CentOS 8](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-using-firewalld-on-centos-8)
+- [Debian 9](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-debian-9), [Debian 10](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-debian-10)
+- [Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-14-04), [Ubuntu 16.04](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-16-04), [Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-18-04), [Ubuntu 20.04](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-20-04)
+ 
