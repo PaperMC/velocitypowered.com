@@ -78,7 +78,7 @@ do
 done
 ```
 
-[_Note: This uses Tux's recommended HotSpot Java flags as of 04/25/2020.]( https://discord.com/channels/472484458856185878/472485684473626625/703753792243499038)_
+_[Note: This uses Tux's recommended HotSpot Java flags as of 04/25/2020.]( https://discord.com/channels/472484458856185878/472485684473626625/703753792243499038)_
 
 When you're done, press <kbd>CTRL+S</kbd> and <kbd>CTRL+X</kbd>. Your start script has now been created, and running `ls` should now show `start.sh`.
 
