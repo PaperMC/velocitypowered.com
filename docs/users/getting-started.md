@@ -87,7 +87,7 @@ Go ahead and type `end` at the console and press enter. The proxy shuts down:
 We now need to configure each server to accept connections from the proxy.
 
 Velocity is a highly configurable proxy. While most users will not need to change everything in the config, there
-are tons of options covered [here](https://www.velocitypowered.com/wiki/users/configuration/) along with an explanation
+are tons of options covered [here](/wiki/users/configuration/) along with an explanation
 on how each option works. To get started, simply open your `velocity.toml` and search for the `[servers]` section. 
 Here is where you will begin adding your servers to Velocity, allowing them to be seen by Velocity.
 
@@ -108,7 +108,7 @@ Velocity to connect to your server. Once you're done, restart your server. Veloc
 This is a minimal setup. Since we're not forwarding IPs and player information, the Minecraft server will
 assume you connected from offline mode and will use a different UUID and display only the default Steve and Alex
 skins. However, Velocity can forward this information onto your Minecraft servers with some extra configuration. See
-[Configuring player information forwarding](https://www.velocitypowered.com/wiki/users/forwarding) to learn how to
+[Configuring player information forwarding](/wiki/users/forwarding) to learn how to
  configure this feature.
 
 
