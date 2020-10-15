@@ -40,6 +40,24 @@ you can expect. Those guidelines are:
 * Disk speed is unimportant. A solid-state drive is nice to have but not strictly required. Likewise, disk
   capacity is unimportant as well.
 
+### Special notes regarding speculative execution security vulnerabilities
+
+Starting in 2018, a number of security vulnerabilities with regard to [speculative execution](https://en.wikipedia.org/wiki/Speculative_execution) used by
+modern CPUs have been discovered.
+
+The mitigations to these vulnerabilities can have painful performance implications, especially on processors
+vulnerable to Meltdown and further compounded if running in a virtual machine. Velocity, as a network application,
+is particularly sensitive to the performance hits that the mitigations introduce.
+
+To minimize these hits, we recommend hosting your proxy on a machine with a CPU that has mitigations against
+Spectre and Meltdown. Processors released in 2019 and onwards typically contain mitigations to protect against
+Spectre and Meltdown.
+
+If you are using a CPU vulnerable to Spectre and/or Meltdown and are willing to risk security for performance, it
+is also possible to disable Spectre/Meltdown mitigations depending on the operating system you use. Note however that
+you disable these security mitigations _at your own risk_. The Velocity project does not recommend that you disable these
+mitigations.
+
 ## Allocate enough heap
 
 Alongside having enough CPU, memory, and network bandwidth, you must also allocate enough

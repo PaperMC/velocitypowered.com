@@ -82,6 +82,10 @@
     "url": "/wiki/technical/",
     "children": [
       {
+        "title": "What Does Velocity Do For Me?",
+        "url": "/wiki/technical/what-does-velocity-do-for-me/"
+      },
+      {
         "title": "Why Not Fork BungeeCord?",
         "url": "/wiki/technical/why-not-fork-bungeecord/"
       }

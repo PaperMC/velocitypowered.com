@@ -2,9 +2,7 @@
 title: Deploying Velocity
 ---
 
-Are you done setting up Velocity and want to get it set up on your shared host
-or server control panel? In this article, we'll go over how to set up Velocity
-on a variety of panels.
+Are you done setting up Velocity and want to get it set up on your shared host or server control panel? In this article, we'll go over how to set up Velocity on a variety of panels.
 
 ## Deploying Velocity on Multicraft
 

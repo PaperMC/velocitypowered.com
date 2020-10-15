@@ -2,8 +2,7 @@
 title: Common Pitfalls
 ---
 
-While we try to make the API a pleasure to use, there are the occasional rough edges
-and you should be cognizant of these.
+While we try to make the API a pleasure to use, there are the occasional rough edges, and you should be aware of them.
 
 ## Accessing the API at construction time
 

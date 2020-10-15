@@ -5,7 +5,7 @@ title: Working With Events
 Listening to events with Velocity's `@Subscribe` annotation is straightforward. You've already seen one such listener, using the ProxyInitializeEvent in your main class.
 Additional events can be found on the [Javadoc](https://jd.velocitypowered.com/1.1.0/)
 
-### Adding listening methods
+## Adding listening methods
 
 To listen to an event, mark the method with `@Subscribe`, like shown. This works similarly to annotation-driven event listening
 in other APIs you may be familiar with; it's the equivalent of Bukkit's/Bungee's @EventHandler and Sponge's @Listener.
@@ -21,7 +21,7 @@ public void onPlayerChat(PlayerChatEvent event) {
     Note well that the import is <code>com.velocitypowered.api.event.Subscribe</code> and <strong>not</strong> in <code>com.google.common.eventbus</code>.
 </Caution>
 
-** Orders **
+## Orders
 
 Every listener has a `PostOrder`. When an event is fired, the order in which listeners are invoked is defined by their `PostOrder`. Listeners using
 `PostOrder.FIRST` are called first, then EARLY, NORMAL, etc.
@@ -37,7 +37,7 @@ public void onPlayerChat(PlayerChatEvent event) {
 
 NORMAL is the default value if you do not specify an order.
 
-### Registering listeners
+## Registering listeners
 
 While your main plugin class is automatically registered, you will need to register with the EventManager any other listeners you have:
 
@@ -76,7 +76,7 @@ public class MyListener {
 }
 ```
 
-### An Alternative Approach
+## Functional-Style Listeners
 
 As an alternative to `@Subscribe`, you can also use the functional `EventHandler` interface and register yours with
 `register(Object plugin, Class<E> eventClass, EventHandler<E> handler)`

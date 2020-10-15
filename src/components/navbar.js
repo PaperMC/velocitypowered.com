@@ -42,7 +42,7 @@ const VelocityNavbarLogo = styled.div`
 
 const NavbarItem = styled.a`
   padding: 18px 10px;
-  background-color: rgba(2, 136, 209, ${( {active} ) => active ? '1' : '0'});
+  background-color: rgba(14, 111, 212, ${( {active} ) => active ? '1' : '0'});
   background-repeat: no-repeat;
   transition: background-color .25s 0s;
   color: var(--navbar-text) !important;

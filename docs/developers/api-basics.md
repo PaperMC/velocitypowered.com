@@ -2,10 +2,9 @@
 title: Velocity Plugin Basics
 ---
 
-Now we will lay the groundwork for your first plugin. We will cover how to create your very first
-Velocity plugin.
+Now we will lay the groundwork for your first plugin. We will cover how to create your very first Velocity plugin.
 
-### Create the plugin class
+## Create the plugin class
 
 Create a new class (let's say `com.example.velocityplugin.VelocityTest`) and paste this in:
 
@@ -65,7 +64,7 @@ do this.
 All you need to do is build your plugin, put it in your `plugins/` directory, and try it! Isn't that nice? In the next
 section you'll learn more about how to use the API.
 
-### Choosing `@Plugin` Information
+## Choosing `@Plugin` Information
 
 Choose your plugin's ID wisely. Other plugins will use this ID to depend on yours. If you change it, you could break compatibility.
 
@@ -96,7 +95,7 @@ public void onProxyInitialization(ProxyInitializeEvent event) {
 }
 ```
 
-### Getting your Plugin's Directory
+## Getting your Plugin's Directory
 
 At some point you may need your plugin's directory. To do this, add `@DataDirectory Path dataDirectory` to your plugin's constructor
 parameters:

@@ -2,7 +2,7 @@
 title: Credits
 ---
 
-# Libraries Used
+## Libraries Used
 
 Velocity uses a number of open-source libraries:
 

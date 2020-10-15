@@ -2,10 +2,9 @@
 title: Dependency Management
 ---
 
-Dependencies are common. You need to hook into another plugin. You don't want to write the same code
-someone else has already solved. Whatever you do, you need a way to manage your dependencies effectively.
+Dependencies are common. You need to hook into another plugin. You don't want to write the same code someone else has already solved. Whatever you do, you need a way to manage your dependencies effectively.
 
-### Plugin dependencies
+## Plugin dependencies
 
 Adding a dependency on another plugin is done with the `@Plugin` annotation in your main class. Let's revisit that briefly:
 
@@ -31,7 +30,7 @@ That's it! Now, your plugin will require *wonderplugin* to load, and when it doe
 
 To specify multiple dependencies, separate them by commas: `dependencies = {@Dependency(id = "wonderplugin"), @Dependency(id = "otherplugin")}`
 
-### Optional plugin dependencies
+## Optional plugin dependencies
 
 To make a dependency optional, add `optional = true`, like shown:
 
@@ -44,7 +43,7 @@ public class VelocityTest {
 
 Your plugin will now load after wonderplugin, but it will not require it.
 
-### External dependencies
+## External dependencies
 
 Dependencies on other libraries aren't handled by Velocity. You will need to add them using your build system. Please remember
 to relocate any dependencies you shade. Failure to relocate will lead to dependency conflicts with other plugins.

@@ -2,9 +2,7 @@
 title: Server Compatibility
 ---
 
-Velocity is compatible with many server implementations. The expectation is that if the
-server generally acts like vanilla, Velocity will work, and we make special provisions for
-modded setups where we can.
+Velocity is compatible with many server implementations. The expectation is that if the server generally acts like vanilla, Velocity will work, and we make special provisions for modded setups where we can.
 
 ## Compatible game versions
 

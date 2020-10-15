@@ -2,9 +2,7 @@
 title: Frequently Asked Questions
 ---
 
-Over the years, we've been asked many of the same questions by users.
-This FAQ attempts to answer as many of these questions from the user
-perspective.
+Over the years, we've been asked many of the same questions by users. This FAQ attempts to answer as many of these questions from the user perspective.
 
 ## What version of Java does Velocity require?
 
@@ -41,13 +39,11 @@ As a first step, you should verify:
 ### Improper Player Information Forwarding Errors
 
 ```
-Can't connect to server lobby: If you wish to use IP forwarding, 
-please enable it in your Bungeecord config as well! 
+Can't connect to server lobby: If you wish to use IP forwarding, please enable it in your Bungeecord config as well! 
 ```
 
 ```
-Can't connect to server lobby: Your server did not send a forwarding request to the proxy. 
-Is it set up correctly?
+Can't connect to server lobby: Your server did not send a forwarding request to the proxy. Is it set up correctly?
 ```
 
 These errors are result of improper configuration. See 

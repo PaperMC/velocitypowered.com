@@ -2,17 +2,13 @@
 title: Built-In Commands
 ---
 
-Velocity includes a few commands in the core of the proxy by default.
-These commands were chosen based on how generally useful they are to
-most users.
+Velocity includes a few commands in the core of the proxy by default. These commands were chosen based on how generally useful they are to most users.
 
-Of course, you can always install plugins to add more commands if you
-want.
+Of course, you can always install plugins to add more commands if you want.
 
 ## The /velocity command
 
-The ``/velocity`` command contains a number of subcommands to help manage
-the proxy.
+The ``/velocity`` command contains a number of subcommands to help manage the proxy.
 
 ### ``/velocity plugins``
 

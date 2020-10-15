@@ -90,14 +90,16 @@ export default function Home() {
       </Jumbotron>
       <Explainer>
         <ExplainerSection>
-          <h2>Why use Velocity?</h2>
+          <h1>Meet Velocity</h1>
           <p>
             Velocity is the next-generation Minecraft proxy focused on scalability and flexibility. It allows server
-            owners to link together multiple Minecraft servers so they may appear as one.
+            owners to link together multiple Minecraft servers so they may appear as one. We power servers big and small.
           </p>
+          <h2>Blazing fast without compromise</h2>
           <p>
-            <strong>Velocity is an independently-developed code base, and is not a fork or a reimplementation of BungeeCord</strong>.
-            There are many similarities but also many differences. You may find this article on our technical wiki to be useful reading.
+            Velocity is blazing fast. We mean it. Fast logins, fast server switches, and our strong focus on
+            extracting the most out of your server's hardware means you can finally have both plugins and a highly
+            optimized proxy &mdash; no compromises required.
           </p>
           <p>Velocity is:</p>
           <ul>
