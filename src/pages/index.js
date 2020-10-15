@@ -115,7 +115,7 @@ export default function Home() {
             </li>
             <li>
               <strong>highly compatible</strong> - works with Paper, Sponge, Forge, Fabric, and all versions of Minecraft
-              from 1.7.2 to 1.16.1
+              from 1.7.2 to 1.16.3
             </li>
             <li>
               <strong>free</strong> - forever, developed as open source software with the support of <Link to={"/sponsors"}>our sponsors</Link>
