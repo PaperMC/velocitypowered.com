@@ -1,5 +1,6 @@
 ---
 title: Welcome to the Velocity Wiki
+language: en
 ---
 
 Velocity is the ridiculously scalable, flexible Minecraft proxy.

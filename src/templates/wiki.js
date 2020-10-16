@@ -73,8 +73,8 @@ export default function Documentation({ location, data }) {
 }
 
 export const query = graphql`
-  query($slug: String!) {
-    mdx(fields: { slug: { eq: $slug } }) {
+  query($slug: String!, $localizedLanguage: String!) {
+    mdx(fields: { slug: { eq: $slug }, language: { eq: $localizedLanguage } }) {
       body
       frontmatter {
         title

@@ -1,5 +1,6 @@
 ---
 title: User's Guide
+language: en
 ---
 
 Welcome to the Velocity User's Guide! This guide includes detailed information

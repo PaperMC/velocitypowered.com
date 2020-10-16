@@ -1,5 +1,6 @@
 ---
 title: Getting Started
+language: en
 ---
 
 This page covers how to install and set up a minimal configuration of Velocity.

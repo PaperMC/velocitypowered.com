@@ -1,5 +1,6 @@
 ---
 title: Creating Your First Plugin
+language: en
 ---
 
 It is very simple to create a plugin for Velocity. This section will teach you how to setup your IDE, your plugin identifiers, and give you an introduction to the basics of the Velocity API.

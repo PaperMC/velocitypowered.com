@@ -1,5 +1,6 @@
 ---
 title: Common Pitfalls
+language: en
 ---
 
 While we try to make the API a pleasure to use, there are the occasional rough edges, and you should be aware of them.

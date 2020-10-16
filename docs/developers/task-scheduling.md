@@ -1,5 +1,6 @@
 ---
 title: Using the Scheduler
+language: en
 ---
 
 The Velocity Scheduler lets you decide when and how your plugin tasks run, allowing fine control over execution.

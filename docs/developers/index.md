@@ -1,5 +1,6 @@
 ---
 title: Developer's Guide
+language: en
 ---
 
 Welcome to the Velocity Developer's Guide! This guide includes information and tutorials

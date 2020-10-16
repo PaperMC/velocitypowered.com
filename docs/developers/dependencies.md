@@ -1,5 +1,6 @@
 ---
 title: Dependency Management
+language: en
 ---
 
 Dependencies are common. You need to hook into another plugin. You don't want to write the same code someone else has already solved. Whatever you do, you need a way to manage your dependencies effectively.

@@ -44,5 +44,15 @@ module.exports = {
     },
     `gatsby-plugin-react-helmet`,
     //`gatsby-plugin-webpack-bundle-analyser-v2`,
+    {
+      resolve: `gatsby-plugin-i18n`,
+      options: {
+        langKeyDefault: 'en',
+        langKeyForNull: 'en',
+        prefixDefault: false,
+        useLangKeyLayout: false,
+        pagesPaths: [ '/src/pages/', `/docs/`, ]
+      },
+    },
   ],
 }

@@ -1,5 +1,6 @@
 ---
 title: Velocity Plugin Basics
+language: en
 ---
 
 Now we will lay the groundwork for your first plugin. We will cover how to create your very first Velocity plugin.
