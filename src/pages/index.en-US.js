@@ -1,5 +1,5 @@
 import React from "react"
-import {Link} from "gatsby";
+import {Link} from "gatsby-theme-localization";
 import styled from "@emotion/styled"
 import FullWidthButton from "../components/full-width-button";
 

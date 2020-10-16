@@ -1,3 +1,8 @@
+---
+title: Player Information Forwarding
+language: en
+---
+
 # Configuring player information forwarding
 
 Velocity supports forwarding information about your players to your servers, such as IP addresses, UUIDs and skins.
@@ -44,15 +49,13 @@ excellent compatibility (supporting version sas old as 1.7.2, released in 2013) 
 also install SpongeForge on your modded server and configure it correctly. However, it is not as secure as the
 Velocity forwarding.
 
-If you need to use BungeeCord-compatible forwarding, simply set your `player-infor-forwarding` setting in `velocity
+If you need to use BungeeCord-compatible forwarding, simply set your `player-info-forwarding` setting in `velocity
 .toml` to `legacy`. You will also need to make sure your server is properly configured to understand the data sent by
 Velocity.
 
 <Caution>
    Legacy forwarding is <strong>fundamentally insecure</strong>. If you must use it,
    you should understand <Link to="/wiki/deployment/security/">how to secure your server properly</Link>.
-   That page reviews all the possible options to secure your server so that nothing
-   aside from the proxy can connect to your server.
 </Caution>
 
 ## Configuring Spigot / Paper

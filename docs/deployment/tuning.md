@@ -1,5 +1,6 @@
 ---
 title: Tuning Velocity
+language: en
 ---
 
 Velocity comes with good performance out of the box. We go in deep, starting from smart algorithmic

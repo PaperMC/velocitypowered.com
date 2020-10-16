@@ -1,5 +1,6 @@
 ---
 title: Securing Your Servers
+language: en
 ---
 
 It is vital that you secure your backend servers. As part of setting up Velocity,

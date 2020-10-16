@@ -1,5 +1,6 @@
 import React from "react"
-import {graphql, Link} from "gatsby";
+import {graphql} from "gatsby"
+import {Link} from "gatsby-theme-localization"
 import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
@@ -73,8 +74,8 @@ export default function Documentation({ location, data }) {
 }
 
 export const query = graphql`
-  query($slug: String!) {
-    mdx(fields: { slug: { eq: $slug } }) {
+  query($slug: String!, $localizedLanguage: String!) {
+    mdx(fields: { slug: { eq: $slug }, language: { eq: $localizedLanguage } }) {
       body
       frontmatter {
         title

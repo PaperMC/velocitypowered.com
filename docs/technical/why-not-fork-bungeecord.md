@@ -1,5 +1,6 @@
 ---
 title: Why Not Fork BungeeCord?
+language: en
 ---
 
 This article is a bit complex. This article really answers four questions that are inter-related and very frequently asked:

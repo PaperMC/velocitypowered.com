@@ -1,5 +1,6 @@
 ---
 title: Frequently Asked Questions
+language: en
 ---
 
 Over the years, we've been asked many of the same questions by users. This FAQ attempts to answer as many of these questions from the user perspective.

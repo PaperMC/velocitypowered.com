@@ -1,5 +1,6 @@
 ---
 title: What Does Velocity Do For Me?
+language: en
 ---
 
 There are many reasons why you should consider Velocity for your next proxy setup.

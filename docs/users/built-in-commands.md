@@ -1,5 +1,6 @@
 ---
 title: Built-In Commands
+language: en
 ---
 
 Velocity includes a few commands in the core of the proxy by default. These commands were chosen based on how generally useful they are to most users.

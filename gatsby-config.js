@@ -44,5 +44,23 @@ module.exports = {
     },
     `gatsby-plugin-react-helmet`,
     //`gatsby-plugin-webpack-bundle-analyser-v2`,
+    {
+      resolve: `gatsby-theme-localization`,
+      options: {
+        languages: ['en-US', 'zh-CN'],
+        namespaces: [],
+        localesDir: './src/locales',
+        allowIndex: false,
+        defaultLng: 'en-US',
+        i18next: {
+          fallbackLng: 'en-US',
+          debug: process.env.NODE_ENV !== 'production'
+        },
+        i18nPlugin: {
+          langKeyDefault: 'en-US',
+          useLangKeyLayout: false
+        }
+      }
+    }
   ],
 }

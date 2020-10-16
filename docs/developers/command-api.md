@@ -1,5 +1,6 @@
 ---
 title: The Command API
+language: en
 ---
 The Command API lets you create commands that can be executed by a player connected to the proxy or the console.
 
