@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import styled from "@emotion/styled"
-import { Link } from "gatsby"
+import { Link } from "gatsby-theme-localization"
 import { IconContext } from "react-icons"
 import { FiMenu } from "react-icons/fi"
 

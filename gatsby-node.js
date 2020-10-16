@@ -3,7 +3,7 @@ const path = require('path')
 const { groupBy, get, unionBy, flatten } = require('lodash')
 
 const supportedLanguages = [
-  'en', // American English
+  'en-US', // American English
   'zh-CN' // Simplified Chinese
 ]
 
@@ -60,10 +60,10 @@ exports.createPages = async ({ graphql, actions }) => {
   }
 
   // first get all known pages for each language
-  const knownPagesByLanguage = groupBy(result.data.allMdx.edges, node => get(node, 'node.fields.language', 'en'))
+  const knownPagesByLanguage = groupBy(result.data.allMdx.edges, node => get(node, 'node.fields.language', 'en-US'))
 
   for (const language of supportedLanguages) {
-    const pages = unionBy(flatten([knownPagesByLanguage[language], knownPagesByLanguage['en']]), page => {
+    const pages = unionBy(flatten([knownPagesByLanguage[language], knownPagesByLanguage['en-US']]), page => {
       return page.node.fields.slug
     })
     console.log(`All ${language} pages: ${JSON.stringify(pages)}`)

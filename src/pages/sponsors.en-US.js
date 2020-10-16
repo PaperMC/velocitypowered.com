@@ -55,7 +55,7 @@ const Why = styled.main`
   margin: 2rem auto 3rem auto;
 `
 
-export default function Sponsors() {
+export default function SponsorsEnUS() {
   return (
     <>
       <SEO title="Our Sponsors" />

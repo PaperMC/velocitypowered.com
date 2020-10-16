@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "@emotion/styled"
-import {Link} from "gatsby";
+import {Link} from "gatsby-theme-localization";
 
 const NoUnderlinedLink = styled(Link)`
   text-decoration: none;

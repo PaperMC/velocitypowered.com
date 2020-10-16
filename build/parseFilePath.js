@@ -59,7 +59,7 @@ module.exports = ({
   const parsedName = name === `index` ? `` : name
 
   return {
-    lang: lang || 'en',
+    lang: lang || 'en-US',
     slug: path.posix.join(`/`, lang, dir, parsedName, trailingSlash ? `/` : ``)
   }
 }

@@ -1,5 +1,6 @@
 import React from "react"
-import {graphql, Link} from "gatsby";
+import {graphql} from "gatsby"
+import {Link} from "gatsby-theme-localization"
 import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
