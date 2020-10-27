@@ -84,15 +84,5 @@
         "url": "/wiki/developers/pitfalls/"
       }
     ]
-  },
-  {
-    "title": "Technical Wiki",
-    "url": "/wiki/technical/",
-    "children": [
-      {
-        "title": "What Does Velocity Do For Me?",
-        "url": "/wiki/technical/what-does-velocity-do-for-me/"
-      }
-    ]
   }
 ]
