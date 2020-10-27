@@ -82,7 +82,7 @@ const VelocityLogo = styled.div`
     height: 200px;
     background-image: var(--jumbotron-logo-url);
     background-size: cover;
-    margin-right: 2rem;
+    margin: auto 2rem auto 0;
   }
 `
 
