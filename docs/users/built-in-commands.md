@@ -26,6 +26,12 @@ If the user has the ``velocity.command.reload`` permission, the proxy
 will read and reconfigure itself from the ``velocity.toml`` on disk. If
 there are problems with parsing the file, no changes will be applied.
 
+### ``/velocity dump``
+
+If the user has the ``velocity.command.plugins`` permission, they can
+use this command to get an anonymized dump of details on the proxy. This
+can be sent to the Velocity Discord to help us provide support.
+
 The /server command
 -------------------
 
