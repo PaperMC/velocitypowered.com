@@ -66,6 +66,11 @@ const ExplainerTidbit = styled.div`
 const ButtonSection = styled.div`
   display: flex;
   margin: 1.5rem 0;
+  
+  @media (max-width: ${stylingGlobals.viewportSizes.phone}) {
+    flex-direction: column;
+    margin: 0;
+  }
 `
 
 const VelocityLogo = styled.div`

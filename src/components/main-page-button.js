@@ -1,30 +1,36 @@
 import React from "react"
 import styled from "@emotion/styled"
 import {Link} from "gatsby";
+import stylingGlobals from "../styles/styling-globals";
 
 const NoUnderlinedLink = styled(Link)`
   display: block;
   text-decoration: none;
   margin-right: 0.5rem;
+  
+  @media (max-width: ${stylingGlobals.viewportSizes.phone}) {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
 `
 
-const FullWidthButtonContainer = styled.div`
+const FullWidthButtonContainer = styled.div(props => `
   padding: .75rem 1rem;
-  text-align: center;
-  background-color: rgb(14, 111, 212);
+  background-color: ${props.demoted ? "var(--gray)" : "rgb(14, 111, 212)"};
   background-repeat: no-repeat;
   background-size: 0 100%;
-  color: #fff;
+  color: ${props.demoted ? "#000" : "#fff"};
   transition: background-color .25s 0s;
   display: flex;
   
   &:hover{
-    background-color: rgba(14, 111, 212, 0.8);
+    background-color: ${props.demoted ? "var(--gray)" : "rgba(14, 111, 212, 0.8);"};
   }
-`
+`)
 
 const FullWidthButtonTitle = styled.div`
   font-size: 1.3rem;
+  font-weight: bold;
 `
 
 const IconContainer = styled.div`
@@ -32,15 +38,21 @@ const IconContainer = styled.div`
 `
 
 const TextContainer = styled.div`
-  margin: auto .5rem;
+  margin: auto auto auto .75rem;
 `
 
-export default function MainPageButton({ title, icon, link }) {
+export default function MainPageButton({ title, icon, subtitle, link, demoted }) {
   return <NoUnderlinedLink to={link}>
-    <FullWidthButtonContainer>
+    <FullWidthButtonContainer demoted={demoted}>
       {icon ? <IconContainer>{icon}</IconContainer> : null}
       <TextContainer>
+        {!demoted ? <>
         <FullWidthButtonTitle>{title}</FullWidthButtonTitle>
+        <div>{subtitle}</div>
+        </> : <>
+          <strong>{title}</strong>
+          <div>{subtitle}</div>
+        </>}
       </TextContainer>
     </FullWidthButtonContainer>
   </NoUnderlinedLink>
