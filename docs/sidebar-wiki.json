@@ -4,6 +4,10 @@
     "url": "/wiki/",
     "children": [
       {
+        "title": "What Does Velocity Do For Me?",
+        "url": "/wiki/users/what-does-velocity-do-for-me/"
+      },
+      {
         "title": "Getting Started",
         "url": "/wiki/users/getting-started/"
       },
@@ -29,7 +33,7 @@
       },
       {
         "title": "Frequently Asked Questions",
-        "url": "/wiki/users/faq"
+        "url": "/wiki/users/faq/"
       }
     ]
   },
@@ -88,10 +92,6 @@
       {
         "title": "What Does Velocity Do For Me?",
         "url": "/wiki/technical/what-does-velocity-do-for-me/"
-      },
-      {
-        "title": "Why Not Fork BungeeCord?",
-        "url": "/wiki/technical/why-not-fork-bungeecord/"
       }
     ]
   }
