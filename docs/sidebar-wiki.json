@@ -8,6 +8,10 @@
         "url": "/wiki/users/getting-started/"
       },
       {
+        "title": "Migration Guide",
+        "url": "/wiki/users/migration/"
+      },
+      {
         "title": "Built-In Commands",
         "url": "/wiki/users/built-in-commands/"
       },
