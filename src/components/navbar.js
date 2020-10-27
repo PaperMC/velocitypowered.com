@@ -49,7 +49,7 @@ const NavbarItem = styled.a`
   display: block;
   
   &:hover{
-    background-color: rgba(2, 136, 209, 1);
+    background-color: rgba(14, 111, 212, 1);
   }
   
   @media (max-width: ${stylingGlobals.viewportSizes.phone}) {
