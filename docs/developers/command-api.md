@@ -19,7 +19,7 @@ import com.velocitypowered.api.command.CommandSource;
 import com.velocitypowered.api.event.Subscribe;
 import com.velocitypowered.api.event.proxy.ProxyInitializeEvent;
 import com.velocitypowered.api.plugin.Plugin;
-import net.kyori.adventure.text.TextComponent;
+import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 
 @Plugin(id = "helloworld")
@@ -29,7 +29,7 @@ public class HelloWorldPlugin {
         LiteralCommandNode<CommandSource> helloNode = LiteralArgumentBuilder
             .<CommandSource>literal("test")
             .executes(context -> {
-                TextComponent message = TextComponent.of("Hello World").color(NamedTextColor.AQUA);
+                Component message = Component.text("Hello World", NamedTextColor.AQUA);
                 context.getSource().sendMessage(message);
                 return 1; // indicates success
             })
@@ -51,7 +51,7 @@ package com.example.velocityplugin;
 
 import com.velocitypowered.api.command.CommandSource;
 import com.velocitypowered.api.command.SimpleCommand;
-import net.kyori.adventure.text.TextComponent;
+import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 
 public final class TestCommand implements SimpleCommand {
@@ -62,7 +62,7 @@ public final class TestCommand implements SimpleCommand {
         // Get the arguments after the command alias
         String[] args = invocation.arguments();
 
-        source.sendMessage(TextComponent.of("Hello World!").color(NamedTextColor.AQUA));
+        source.sendMessage(Component.text("Hello World!").color(NamedTextColor.AQUA));
     }
 }
 ```
@@ -83,13 +83,13 @@ A raw command indicates the proxy to pass the command alias and its arguments di
 package com.example.velocityplugin;
 
 import com.velocitypowered.api.command.RawCommand;
-import net.kyori.adventure.text.TextComponent;
+import net.kyori.adventure.text.Component;
 
 public final class EchoCommand implements RawCommand {
 
     @Override
     public void execute(final Invocation invocation) {
-        invocation.source().sendMessage(TextComponent.of(invocation.arguments()));
+        invocation.source().sendMessage(Component.text(invocation.arguments()));
     }
 }
 ```
