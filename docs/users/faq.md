@@ -21,8 +21,8 @@ to support BungeeCord plugins.
 However, certain plugins may have Velocity ports available or alternatives
 are available. In addition, plugins that support BungeeCord but only require
 that they are installed on the server (nothing on the proxy) typically use
-the BungeeCord plugin messaging channel, which can be supported by BungeeQuack
-for Velocity 1.0.x or natively by Velocity 1.1.0.
+the BungeeCord plugin messaging channel, which is supported natively by
+Velocity 1.1.0.
 
 ## Help, I can't connect to my server!
 

@@ -6,8 +6,7 @@ Velocity is compatible with many server implementations. The expectation is that
 
 ## Compatible game versions
 
-As of this writing, Velocity is compatible with Minecraft 1.7.2 through 1.16.3 (for Velocity 1.1.0).
-For Velocity 1.0.x, Velocity supports Minecraft 1.8 through 1.16.3.
+As of this writing, Velocity is compatible with Minecraft 1.7.2 through 1.16.4.
 
 ## Vanilla setups
 
