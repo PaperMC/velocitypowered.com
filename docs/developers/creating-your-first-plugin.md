@@ -38,7 +38,7 @@ Now we have created our project, we need configure our build system.
 |-------------|-----------------------|
 | Group ID    | `com.velocitypowered` |
 | Artifact ID | `velocity-api`        |
-| Version     | `1.1.0`               |
+| Version     | `1.1.1`               |
 
 ### Javadocs
 
