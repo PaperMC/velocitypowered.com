@@ -56,7 +56,7 @@ export default function Sponsors() {
                           subtitle={'Recommended for most users'}
                           link={`https://versions.velocitypowered.com/download/${LATEST}.jar`} />
           <MainPageButton icon={<FiDownload size={"36px"}/>}
-                          title={`Development (Velocity ${LATEST})`}
+                          title={`Development (Velocity 1.1.x)`}
                           subtitle={'Bleeding edge bug fixes and improvements'}
                           link={`https://versions.velocitypowered.com/download/1.1.x-SNAPSHOT.jar`} />
         </ButtonSection>
