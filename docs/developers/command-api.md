@@ -64,6 +64,11 @@ public final class TestCommand implements SimpleCommand {
 
         source.sendMessage(Component.text("Hello World!").color(NamedTextColor.AQUA));
     }
+    
+    @Override
+    public boolean hasPermission(final Invocation invocation) {
+        return invocation.source().hasPermission("command.test");    
+    }
 }
 ```
 
@@ -90,6 +95,11 @@ public final class EchoCommand implements RawCommand {
     @Override
     public void execute(final Invocation invocation) {
         invocation.source().sendMessage(Component.text(invocation.arguments()));
+    }
+    
+    @Override
+    public boolean hasPermission(final Invocation invocation) {
+        return invocation.source().hasPermission("command.echo");    
     }
 }
 ```
