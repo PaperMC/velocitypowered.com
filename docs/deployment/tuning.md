@@ -86,14 +86,15 @@ allocate to the proxy container in total. For instance, if you know the proxy wi
 We also recommend tuning your startup flags. The current recommendation is:
 
 ```
--XX:+UseG1GC -XX:G1HeapRegionSize=4M -XX:+UnlockExperimentalVMOptions -XX:+ParallelRefProcEnabled -XX:+AlwaysPreTouch
+-XX:+UseG1GC -XX:G1HeapRegionSize=4M -XX:+UnlockExperimentalVMOptions -XX:+ParallelRefProcEnabled -XX:+AlwaysPreTouch -XX:MaxInlineLevel=15
 ```
 
 You will add these flags after the `java` command but before the `-jar` parameter.
 
 ### Explanation of the flags
 
-These flags focus on tuning the G1 garbage collector to be more friendly to Velocity's workload.
+Most of these flags focus on tuning the G1 garbage collector to be more friendly to Velocity's
+workload. One of these flags (`-XX:MaxInlineLevel=15`) tends to improve performance in general.
 
 Before the release of Java 9, the default Java garbage collector was the Parallel GC. This
 is a stop-the-world collector that does its work in parallel. The problem is that its pause
@@ -109,3 +110,16 @@ several reasons for us to recommend G1:
 
 Setups using these flags tend have very low (less than 10 millisecond) GC pauses every few minutes, which is
 very good for Minecraft.
+
+### Other configurations
+
+<Caution>You run these configurations solely at your own risk.</Caution>
+
+Java 11 and Java 12 brought two new garbage collectors for HotSpot: ZGC (Java 11) and Shenandoah (Java 12). Both have
+been declared stable in Java 15.
+
+Velocity is an application that tends to follow the generational hypothesis quite closely. It has also been tuned to
+reduce load on the garbage collector as much as possible. Both ZGC and Shenandoah should work well with Velocity, although
+ZGC did not have important features needed for production use until Jave 14 and versions of Shenandoah for older
+LTS versions of Java are only available from Red Hat (such as in CentOS and Fedora).
+
