@@ -50,8 +50,13 @@ focuses on Forge compatibility, see below for more information.
 
 ### Fabric
 
-Use [FabricProxy](https://www.curseforge.com/minecraft/mc-mods/fabricproxy). FabricProxy supports
-modern Velocity forwarding and legacy BungeeCord forwarding.
+Fabric will simply "work out of the box" with no configuration required. However, we strongly recommend you
+add these mods to your server:
+
+* [CrossStitch](https://www.curseforge.com/minecraft/mc-mods/crossstitch) intends to improve support for
+  certain Minecraft features that are extended by mods, such as custom argument types and more.
+* [FabricProxy](https://www.curseforge.com/minecraft/mc-mods/fabricproxy) enables support for Velocity modern
+  forwarding (recommended) or legacy BungeeCord forwarding (not recommended).
 
 ### Minecraft Forge (1.13 and above)
 
