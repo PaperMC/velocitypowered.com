@@ -70,6 +70,19 @@ This error typically occurs on Spigot-based servers when someone connects with a
 You can fix this issue if you use Paper (or a fork of Paper) 1.12.2 or above by adding the startup flag
  `-Dpaper.disableChannelLimit=true` to the server's startup flags and restarting the server. 
 
+### Argument type identifier XXX unknown
+
+```
+Argument type identifier <namespace>:<name> unknown.
+```
+
+If you receive this message, there are two possibilities. If you run a modded server and are using
+Fabric 1.16+ and above, update to at least Velocity 1.1.2 and install [CrossStitch](https://www.curseforge.com/minecraft/mc-mods/crossstitch).
+(If you are running any other kind of modded server and have it working with Velocity, let us know!)
+
+If you receive this message but run a strictly vanilla server, there is a bug in Velocity. Please report it
+to GitHub,
+
 ### Read time out while switching to a Forge server
 
 Particularly for some very large mod packs, there is an elevated risk of the connection between the player and

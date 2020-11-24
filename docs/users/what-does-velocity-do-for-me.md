@@ -89,8 +89,7 @@ that gives us more issues:
   implement it is not desirable for this reason alone.
 * Paradoxically enough, we would run into more compatibility problems. Many BungeeCord plugins assume that
   they are running on the BungeeCord implementation (or if we're lucky, Waterfall) and code against specific
-  implementation details, which we can't deal with. This would effectively degenerate Velocity into another
-  BungeeCord fork in due time. We want to avoid this fate.
+  implementation details, which we can't deal with. This is an example of [Hyrum's Law](https://www.hyrumslaw.com/).
 
 Just to be clear, however, we do collaborate with the developers of Waterfall. We have shared goals. The primary
 maintainer of the Waterfall project in part pushed me to start work on Velocity.
