@@ -10,7 +10,7 @@ Velocity supports two different methods for forwarding player information to you
    You may choose between modern forwarding and legacy BungeeCord-style forwarding; you are currently
    not able to "mix and match" any of these. This may become supported in a future version of Velocity.
 </Caution>
- 
+
 ## Configuring modern forwarding
 
 `modern` forwarding is a Velocity-native format. It forwards all player information in an efficient binary format and
