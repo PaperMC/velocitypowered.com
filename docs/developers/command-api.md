@@ -43,6 +43,9 @@ public class HelloWorldPlugin {
 
 Brigadier commands have full backwards-compatibility with 1.12.2 and lower versions.
 
+Custom plugin command argument types are not supported in Velocity, as they would require the client to also support
+them. We recommend sticking to the predefined Brigadier types provided.
+
 ### `SimpleCommand`
 Modelled after the convention popularized by Bukkit and BungeeCord, a `SimpleCommand` has three methods: one for when the command is executed, one to provide suggestions for tab completion, and one to check a `CommandSource` has permission to use the command. All methods receive a `SimpleCommand.Invocation` object, which contains the `CommandSource` that executed the command and the arguments as an array of strings. The previous example can also be implemented using this interface:
 
