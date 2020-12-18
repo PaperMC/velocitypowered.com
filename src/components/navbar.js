@@ -85,12 +85,12 @@ const NavbarExpand = styled.div`
   }
 `
 
-function NavbarItemContents({ location }) {
+function NavbarItemContents({ location, onMobileClick }) {
   return <>
-    <NavbarLink to={"/wiki"} active={location.pathname.startsWith("/wiki") ? true : undefined}>Documentation</NavbarLink>
-    <NavbarLink to={"/downloads"} active={location.pathname.startsWith("/downloads") ? true : undefined}>Downloads</NavbarLink>
-    <NavbarItem href={"https://forums.velocitypowered.com"}>Forums</NavbarItem>
-    <NavbarItem href={"https://discord.gg/8cB9Bgf"}>Discord</NavbarItem>
+    <NavbarLink to={"/wiki"} active={location.pathname.startsWith("/wiki") ? true : undefined} onClick={() => onMobileClick()}>Documentation</NavbarLink>
+    <NavbarLink to={"/downloads"} active={location.pathname.startsWith("/downloads") ? true : undefined} onClick={() => onMobileClick()}>Downloads</NavbarLink>
+    <NavbarItem href={"https://forums.velocitypowered.com"} onClick={() => onMobileClick()}>Forums</NavbarItem>
+    <NavbarItem href={"https://discord.gg/8cB9Bgf"} onClick={() => onMobileClick()}>Discord</NavbarItem>
   </>
 }
 
@@ -135,7 +135,7 @@ export default function Navbar({ location, themeName, setThemeName }) {
       </NavbarList>
 
       <MobileNavbarItems mobileShown={mobileMenuExpanded}>
-        <NavbarItemContents location={location} />
+        <NavbarItemContents location={location} onMobileClick={flipExpanded} />
       </MobileNavbarItems>
     </NavbarContainer>
   )

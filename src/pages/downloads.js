@@ -11,18 +11,16 @@ const LATEST = '1.1.2'
 
 const DownloadsJumbotron = styled.div`
   background: var(--jumbotron);
-  width: 100%;
-  padding: 1rem 0;
+  padding: 0.5rem 1rem;
   padding-bottom: 2rem;
   text-align: center;
-  
-  @media (max-width: ${stylingGlobals.viewportSizes.phone}) {
-    padding: 1rem 0;
-  }
 `
 
-const SponsorJumbotronHeader = styled.h1`
-  text-align: center;
+const ImploreDownload = styled.section`
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0;
+  }
 `
 
 const DownloadsContainer = styled.div`
@@ -45,10 +43,10 @@ export default function Sponsors() {
       <SEO title="Downloads" />
 
       <DownloadsJumbotron>
-        <section>
+        <ImploreDownload>
           <h1>Download Velocity</h1>
           <p>Ready to experience Velocity? Download the latest stable version or the latest development version:</p>
-        </section>
+        </ImploreDownload>
 
         <ButtonSection>
           <MainPageButton icon={<FiDownload size={"36px"}/>}
