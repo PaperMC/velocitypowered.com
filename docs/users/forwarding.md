@@ -5,7 +5,7 @@ title: Configuring player information forwarding
 Velocity supports forwarding information about your players to your servers, such as IP addresses, UUIDs and skins. Velocity supports both a custom forwarding format (modern forwarding) that is more secure, and BungeeCord forwarding which has better compatibility but is less secure.
 
 <Caution>
-   You may choose between modern forwarding or legacy BungeeCord-style forwarding; you are currently not able to "mix and match" forwarding modes, and you cannot use both forwarding moddes together.
+   You may choose between modern forwarding or legacy BungeeCord-style forwarding; you are currently not able to "mix and match" forwarding modes, and you cannot use both forwarding modes together.
 </Caution>
 
 ## Configuring modern forwarding
