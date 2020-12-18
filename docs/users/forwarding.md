@@ -2,73 +2,52 @@
 title: Configuring player information forwarding
 ---
 
-Velocity supports forwarding information about your players to your servers, such as IP addresses, UUIDs and skins.
-Velocity supports two different methods for forwarding player information to your servers, which are described in the
- appropriate sections.
+Velocity supports forwarding information about your players to your servers, such as IP addresses, UUIDs and skins. Velocity supports both a custom forwarding format (modern forwarding) that is more secure, and BungeeCord forwarding which has better compatibility but is less secure.
 
 <Caution>
-   You may choose between modern forwarding and legacy BungeeCord-style forwarding; you are currently
-   not able to "mix and match" any of these. This may become supported in a future version of Velocity.
+   You may choose between modern forwarding or legacy BungeeCord-style forwarding; you are currently not able to "mix and match" forwarding modes, and you cannot use both forwarding moddes together.
 </Caution>
 
 ## Configuring modern forwarding
 
-`modern` forwarding is a Velocity-native format. It forwards all player information in an efficient binary format and
-employs a MAC code to make it much more difficult to trick the server into impersonating your Velocity proxy.
-However, it is only available for Minecraft 1.13 or higher.
-
-To use modern forwarding with any supported server implementation, set the `player-info-forwarding` setting in
-`velocity.toml` to `modern`. You then need to ensure your server is properly configured to use velocity forwarding by
- following the steps in the appropriate section below:
+`modern` forwarding is a Velocity-native format. It forwards all player information in an efficient binary format and employs a MAC code to make it much more difficult to trick the server into impersonating your Velocity proxy. However, it is only available for Minecraft 1.13 or higher.
 
 <Caution>
-   Modern forwarding, while more secure than the legacy BungeeCord forwarding scheme,
-   is incompatible with Minecraft versions below 1.13, Minecraft Forge (both versions
-   for Minecraft 1.12.2 and below and for 1.14 and above), and ProtocolSupport. If you
-   support or rely on any of these, you will need to use legacy BungeeCord-compatible
-   forwarding instead.
+   Modern forwarding is incompatible with Minecraft versions below 1.13, Minecraft Forge, and the ProtocolSupport plugin. If you use any of these, you will need to use legacy BungeeCord-compatible forwarding instead.
 </Caution>
 
-## Configuring Paper
+To use modern forwarding with any supported server implementation, set the `player-info-forwarding` setting in `velocity.toml` to `modern`. Then, you need to ensure your server is properly configured to use Velocity forwarding.
 
-You will need build 377 and above for Paper 1.13+ to use modern forwarding.
+### Configuring modern forwarding for Paper
 
-To allow Paper to understand the forwarding player data, in your `paper.yml`, set `settings.velocity-support.enabled
-` to true and `settings.velocity-support.secret` to match the secret in your `velocity.toml`. You must also set 
-`settings.velocity-support.online-mode` to the `online-mode` setting in your `velocity.toml`. Once you're done
-editing `paper.yml`, reboot your server.
+Paper 1.14+ and above, along with Paper 1.13.1/1.13.2 build 377 and above support Velocity modern forwarding natively.
+
+First, you need to disable BungeeCord forwarding if you had it enabled beforehand. Make sure `settings.bungeecord` is set to `false` in your `spigot.yml`.
+
+In `paper.yml`, set `settings.velocity-support.enabled` to true and `settings.velocity-support.secret` to match the secret in your `velocity.toml`. You must also set `settings.velocity-support.online-mode` to the `online-mode` setting in your `velocity.toml`. Once you're done editing `paper.yml`, reboot your server.
  
-## Configuring Fabric
+## Configuring modern forwarding for Fabric
 
-A mod called [FabricProxy](https://www.curseforge.com/minecraft/mc-mods/fabricproxy) allows you to use Velocity
- modern forwarding with a modded server using Fabric.
+A mod called [FabricProxy](https://www.curseforge.com/minecraft/mc-mods/fabricproxy) allows you to use Velocity modern forwarding with a modded server using Fabric.
  
-# Configuring legacy BungeeCord-compatible forwarding
-
-`legacy` forwarding is the player information forwarding protocol that is used by BungeeCord when enabling IP
-forwarding from BungeeCord. Due to this, it is ubiquitous and well-supported by most server implementations. It has
-excellent compatibility (supporting version sas old as 1.7.2, released in 2013) and will work with Forge if you
-also install SpongeForge on your modded server and configure it correctly. However, it is not as secure as the
-Velocity forwarding.
-
-If you need to use BungeeCord-compatible forwarding, simply set your `player-info-forwarding` setting in `velocity.toml`
-to `legacy`. You will also need to make sure your server can accept the forwarded player data sent by Velocity.
+## Configuring legacy BungeeCord-compatible forwarding
 
 <Caution>
-   Legacy forwarding is <strong>fundamentally insecure</strong>. If you must use it,
-   you should understand <Link to="/wiki/deployment/security/">how to secure your server properly</Link>.
-   That page reviews all the possible options to secure your server so that nothing
-   aside from the proxy can connect to your server.
+   Legacy forwarding is <strong>fundamentally insecure</strong>. If you must use it, you should understand <Link to="/wiki/deployment/security/">how to secure your server properly</Link>. That page reviews all the possible options to secure your server so that nothing aside from the proxy can connect to your server.
 </Caution>
 
-## Configuring Spigot / Paper
+`legacy` forwarding is the player information forwarding protocol that is used by BungeeCord when enabling IP forwarding from BungeeCord. Due to this, it is ubiquitous and well-supported by most server implementations. It has excellent compatibility (supporting versions as old as 1.7.2, released in 2013) and will work with Forge if you also install SpongeForge on your modded server and configure it correctly. However, it is not secure.
 
-To make Spigot or Paper understand the data forwarded from Velocity, set `settings.bungeecord` to `true` in your
- `spigot.yml` and then reboot your server.
+If you must use BungeeCord-compatible forwarding, simply set your `player-info-forwarding` setting in `velocity.toml` to `legacy`. You will also need to make sure your server can accept the forwarded player data sent by Velocity.
+
+### Configuring legacy forwarding for Spigot / Paper
+
+To make Spigot or Paper understand the data forwarded from Velocity, set `settings.bungeecord` to `true` in your `spigot.yml` and then reboot your server.
  
-## Configuring Sponge
+### Configuring legacy forwarding for Sponge
 
-To configure Sponge to understand the data forwarded from Velocity, set `modules.bungeecord` to `true` and 
-`bungeecord.ip-forwarding` to true in your `config/sponge/global.conf` file, and then restart your Sponge server.
-                                                                                                              
+To configure Sponge to understand the data forwarded from Velocity, set `modules.bungeecord` to `true` and `bungeecord.ip-forwarding` to true in your `config/sponge/global.conf` file, and then restart your Sponge server.
 
+### Configuring legacy forwarding for Fabric
+
+[FabricProxy](https://www.curseforge.com/minecraft/mc-mods/fabricproxy) allows you to use legacy BungeeCord-style forwarding (along with modern Velocity forwarding) with a modded server using Fabric.
