@@ -113,9 +113,9 @@ export default function Home() {
           </ExplainerTidbit>
 
           <ExplainerTidbit>
-            <h2>Blazing fast, extensible, and secure &mdash; pick three.</h2>
+            <h2>Blazing fast, extensible, and secure &mdash; choose three.</h2>
             <p>
-              Velocity is blazing fast. Fast logins, fast server switches, optimizations to get the most from your server's hardware, and a focus on security means you can finally plugins, a highly optimized proxy, and protection against your backend servers being accessed by malicious users &mdash; no compromises required.
+              Velocity is blazing fast. Fast logins, fast server switches, optimizations to get the most from your server's hardware, and a focus on security means you can finally have plugins, a highly optimized proxy resilient to attacks, and protection against your backend servers being accessed by malicious users &mdash; no compromises required.
             </p>
           </ExplainerTidbit>
 

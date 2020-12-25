@@ -2,94 +2,44 @@
 title: What Does Velocity Do For Me?
 ---
 
-There are many reasons why you should consider Velocity for your next proxy setup. At the same time, however, it is also important to tackle these related questions:
+We believe that Velocity is one of the best proxies for _Minecraft_ around, and there's not much that can top it. However, we do diverge from more established, mainstream solutions in some important ways. That can make Velocity a bit hard to sell. We are frequently asked "why?" so often. This page is our answer to that question.
 
-* _Does Velocity support BungeeCord plugins?_ (The short answer to this is no.)
-* _Why would you even consider making a clean break from BungeeCord?_
-* _What is Velocity's purpose? Why should I use it?_
+## Strong experience
 
-## Why _would_ you use Velocity anyway?
+The founder and primary developer of Velocity (Tux) has been active in developing proxy software for _Minecraft: Java Edition_ since 2013. They created the RedisBungee plugin, contributed to BungeeCord from 2014 to 2017, and also founded the Waterfall project and led it from 2016 to 2017. In fact, the current maintainer of Waterfall helped encourage them to start a brand new proxy from the ground up!
 
-There is a very solid case for using Velocity today.
+## Leading performance
 
-### Improved performance
+Velocity powers several highly-populated Minecraft networks, while using fewer resources than the competition. The recipe to the sauce is simple.
 
-High performance has been a goal of the Velocity project since day 1. We have made several design decisions that have
-allowed us to improve performance.
+### No entity ID rewriting
 
-* No entity ID rewriting is done. This decision, although initially made for simplicity, also improves performance (since
-  the proxy has to do little extra work) and improves mod compatibility.
-* We carefully optimized packet handling to reduce wasteful work done by the proxy from packets that pass through the
-  proxy unmodified.
-* We use [a compression library](https://github.com/ebiggers/libdeflate) with more than 2x better compression
-  speed than regular zlib.
-* We've gone down deep, making modifications to improve the job that Java does in compiling the proxy code for higher
-  performance.
-* We have far more freedom to make performance improvements "under the hood" compared to BungeeCord due to different
-  versioning and internal stability policies.
-* In case the speed provided out-of-the-box is not good enough, you can easily tweak several performance-related settings
-  in `velocity.toml`.
+When a Minecraft client connects to another Minecraft server, the server will send back an ID that uniquely identifies a specific player connection. This ID is used in packets that target the player that the server may send. But what happens when they're actually connecting a proxy that has the ability to change what server the player is connected to?
 
-In any event, all of this boils down to Velocity being able to get more out of the hardware you give it. The takeaway is
-that Velocity uses less memory and CPU whilst increasing proxy throughput.
+Other proxy solutions try to solve this problem by rewriting entity IDs that reference the current player, changing it from the entity ID assigned by the server the player is currently connected to, to the entity ID that the player got when they connected to the first server they connected to through the proxy. This approach is often complicated, leads to bugs, reduces performance, breaks mods, and ultimately cannot be a complete solution.
 
-### Improved security
+However, the Minecraft client actually supports changing its entity ID with a special packet sequence. Velocity takes advantage of this and forces the client to change its entity ID. This approach improves performance, improves mod compatibility, and reduces issues caused by incomplete entity ID rewrites.
 
-Another goal of the Velocity project from day 1 has been a focus on security. Velocity's emphasis on security includes
-using a safe programming language (Java), limiting the use of unsafe C code, and a proactive approach to closing potential
-avenues to denial-of-service attacks.
+### Going deep
 
-Some security innovations of the Velocity project include:
+Velocity goes deeper than optimizing the handling of the Minecraft protocol. Smart handling of the protocol produces incredible performance gains but for more performance, we need to go much deeper.
 
-* Improved player info forwarding for Minecraft 1.13+ that requires the server and proxy to know a pre-arranged
-  key.
-* Full, unobtrusive, easily-maintainable patches for "proxy crashing" exploits
+One way in which we drastically improve performance and throughput is by improving the speed of compressing packets to be sent to the client. On supported platforms (Linux x86_64 and aarch64), Velocity is able to replace the zlib library (which implements the compression algorithm used by the Minecraft protocol) with [libdeflate](https://github.com/ebiggers/libdeflate) which is twice as fast as zlib while delivering a similar compression ratio.
 
-### Best-in-class modding support
+Velocity also employs several tricks to get the JIT (just-in-time) compiler on our side. Those tricks require deep understanding of how Java works, but we put in the work to apply those tricks which translate to increased performance.
 
-Velocity is fully compatible with Minecraft Forge (1.7 through 1.12.2) and Fabric and actively works with the wider Minecraft
-modding community.
+### Internal stability policies
 
-### Comparison of Velocity's improvements against BungeeCord / Waterfall
+Finally, Velocity does not attempt to maintain a stable internal API between minor and major releases. This allows Velocity to be more flexible and still deliver performance improvements and new features with each release. For instance, Velocity 1.1.0 delivered massive performance improvements and added many significant new features by breaking parts of the internal API while still keeping full compatibility with older plugins. Compare to BungeeCord which is often very conservative about API breaks and when it does so, provides little notice of the break, and even when doing a break, does not take the opportunity to seriously improve the API being broken (for instance, adding RGB support to `ChatColor`).
 
-BungeeCord must retain backwards compatibility with almost every plugin developed for it, going as far back as 2012.
-This alone denies the opportunity for BungeeCord to use many of the performance optimizations in Velocity. In addition,
-it does not implement any of the optimizations Velocity has made.
+### Control is in your hands
 
-While "proxy crashing" exploits are fixed in BungeeCord and Waterfall, Velocity modern forwarding is unique
-to Velocity and provides a safe, mod-friendly solution to player info forwarding. It is also "secured by default" and can
-be configured without a firewall and is reasonably safe in shared hosting configrations.
+We take pride in tuning Velocity to be the most performant proxy, but in case the speed provided out-of-the-box is not good enough, you can easily tweak several performance-related settings in `velocity.toml`.
 
-BungeeCord does not support Forge past 1.12.2 and Forge support has been neglected in BungeeCord.
+## Improved security
 
-## Why not just improve BungeeCord? Why not contribute to Waterfall?
+Velocity also features more security features, some of which are unique to Velocity. We proactively foreclose as many denial-of-service attacks as soon as possible and feature a unique player info forwarding systen for Minecraft 1.13+ that requires the server and proxy to know a pre-arranged  key.
 
-The developer of Velocity has been active in developing proxy software for _Minecraft: Java Edition_ since 2013.
-They are responsible for several contributions to BungeeCord and they also founded the Waterfall project in 2016. Simply
-put, you are not going to find many people who are as experienced as they are.
+## Standards and mod support
 
-There are several reasons why we can't just "improve BungeeCord":
-
-* BungeeCord is very conservative with regard to API changes. If it breaks some plugin developed 5 years ago
-  from an inactive developer, you can forget about it.
-* The changes that _do_ change the API are often quite particular and niche use cases and changing the API in substantial
-  ways is frowned upon (witness the support for RGB colors in `ChatColor`).
-* BungeeCord is actively hostile to continued support for Minecraft modding.
-* The BungeeCord API, in our opinion, is in need of a severe overhaul. We have seen new modding APIs for _Minecraft_ since the first
-  version of BungeeCord released in 2012. It's well past time to incorporate some of their lessons.
-
-Okay, so why not just improve Waterfall, Paper's fork of BungeeCord? Waterfall, while an improvement upon BungeeCord,
-must still retain full BungeeCord compatibility and thus cannot make the fundamental changes to improve performance,
-stability, and security without breaking compatibility with BungeeCord.
-
-Alright, so we nixed contributing to BungeeCord and to Waterfall. Why not implement the BungeeCord API? Unfortunately,
-that gives us more issues:
-
-* As said earlier, the BungeeCord API is, in our opinion, in need of a severe overhaul. Having Velocity
-  implement it is not desirable for this reason alone.
-* Paradoxically enough, we would run into more compatibility problems. Many BungeeCord plugins assume that
-  they are running on the BungeeCord implementation (or if we're lucky, Waterfall) and code against specific
-  implementation details, which we can't deal with. This is an example of [Hyrum's Law](https://www.hyrumslaw.com/).
-
-Just to be clear, however, we do collaborate with the developers of Waterfall. We have shared goals. The primary
-maintainer of the Waterfall project in part pushed me to start work on Velocity.
+Unlike certain platforms which only provide lip service to the modding community (and can be at time hostile to them), Velocity embraces the richness of the platform Minecraft provides. As just a small example, we have a Fabric mod that [helps bridge the gap between Velocity itself and mods that extend the Minecraft protocol](https://www.curseforge.com/minecraft/mc-mods/crossstitch) and feature full Forge support for 1.7 through 1.12.2, with support for newe versions in development. Velocity also supports emerging standard libraries in the community such as Kyori's [Adventure](https://github.com/KyoriPowered/adventure) library. We collaborate with the Minecraft modding community.

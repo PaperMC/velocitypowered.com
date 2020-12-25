@@ -4,10 +4,6 @@
     "url": "/wiki/",
     "children": [
       {
-        "title": "What Does Velocity Do For Me?",
-        "url": "/wiki/users/what-does-velocity-do-for-me/"
-      },
-      {
         "title": "Getting Started",
         "url": "/wiki/users/getting-started/"
       },
@@ -30,10 +26,23 @@
       {
         "title": "Player Information Forwarding",
         "url": "/wiki/users/forwarding/"
-      },
+      }
+    ]
+  },
+  {
+    "title": "Fast Facts",
+    "children": [
       {
         "title": "Frequently Asked Questions",
         "url": "/wiki/users/faq/"
+      },
+      {
+        "title": "What Does Velocity Do For Me?",
+        "url": "/wiki/users/what-does-velocity-do-for-me/"
+      },
+      {
+        "title": "Comparing to the Competition",
+        "url": "/wiki/users/comparisons-to-other-proxies/"
       }
     ]
   },

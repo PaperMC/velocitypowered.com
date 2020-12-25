@@ -43,3 +43,10 @@ td {
     text-align: left;
     padding: .5rem;
 }
+
+blockquote {
+    font-style: italic;
+    border-left: 8px solid var(--gray);
+    padding-left: 1rem;
+    margin-left: 0;
+}
