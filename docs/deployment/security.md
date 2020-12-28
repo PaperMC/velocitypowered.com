@@ -18,7 +18,8 @@ combined as needed.
 ## Operating System Firewalls
 
 When properly configured, using the firewall facilities provided by your server's
-operating system is a highly effective way to protect your servers.
+operating system is a highly effective way to protect your servers. The Velocity project
+**strongly recommends the use of a firewall**.
 
 Instructions for your operating system may vary. Solutions for major server OSes include:
 
@@ -41,8 +42,13 @@ Instructions for your operating system may vary. Solutions for major server OSes
 ## Velocity Modern Forwarding
 
 If your server only supports Minecraft 1.13 and above, Velocity's modern forwarding
-can take care of both securing your server and forwarding player information to your
-servers.
+can forward player information to your servers and provide a second layer of protection
+against someone trying to impersonate as your proxy.
+
+<Caution>
+  Velocity modern forwarding is not a replacement for a firewall. We strongly recommend
+  using a firewall with any Minecraft proxy setup.
+</Caution>
 
 **Advantages**:
 
