@@ -38,7 +38,7 @@ Now we have created our project, we need configure our build system.
 |-------------|-----------------------|
 | Group ID    | `com.velocitypowered` |
 | Artifact ID | `velocity-api`        |
-| Version     | `1.1.1`               |
+| Version     | `1.1.3`               |
 
 ### Javadocs
 
@@ -66,7 +66,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.velocitypowered:velocity-api:1.1.0-SNAPSHOT'
+    compile 'com.velocitypowered:velocity-api:1.1.3'
 }
 ```
 
@@ -75,8 +75,8 @@ won't be processed to create the `velocity-plugin.json` file.
 
 ```
 dependencies {
-    compile 'com.velocitypowered:velocity-api:1.1.0-SNAPSHOT'
-    annotationProcessor 'com.velocitypowered:velocity-api:1.1.0-SNAPSHOT'
+    compile 'com.velocitypowered:velocity-api:1.1.3'
+    annotationProcessor 'com.velocitypowered:velocity-api:1.1.3'
 }
 ```
 
@@ -96,7 +96,7 @@ Add the following to your `pom.xml`:
     <dependency>
         <groupId>com.velocitypowered</groupId>
         <artifactId>velocity-api</artifactId>
-        <version>1.1.0-SNAPSHOT</version>
+        <version>1.1.3</version>
         <scope>provided</scope>
     </dependency>
 </dependencies>
