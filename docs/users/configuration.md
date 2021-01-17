@@ -61,7 +61,7 @@ These settings mostly cover the basic, most essential settings of the proxy.
 | `connection-timeout`    | Integer | This setting determines how long the proxy will wait to connect to a server before timing out.                                                                                                           |
 | `read-timeout`          | Integer | This setting determines how long the proxy will wait to receive data from the server before timing out.                                                                                                  |
 | `proxy-protocol`        | Boolean | This setting determines whether or not Velocity should receive HAProxy PROXY messages. If you don't use HAProxy, leave this setting off.                                                                 |
-| `tcp-fast-open`         | Boolean | This setting allows you to enable TCP Fast Open support in Velocity. Your proxy must run on Linux for this setting to apply. |
+| `tcp-fast-open`         | Boolean | This setting allows you to enable TCP Fast Open support in Velocity. Your proxy must run on Linux kernel >=4.14 for this setting to apply. |
 | `bungee-plugin-message-channel` | Boolean | This setting allows you to enable or disable support for the BungeeCord plugin messaging channel. |
 | `show-ping-requests`    | Boolean | This setting allows you to log ping requests sent by clients to the proxy. |
 | `announce-proxy-commands` | Boolean | This setting allows you to enable or disable explicitly sending proxy commands to the client (for Minecraft 1.13+ tab completion). |
