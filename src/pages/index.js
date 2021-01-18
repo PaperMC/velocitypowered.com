@@ -122,7 +122,7 @@ export default function Home() {
           <ExplainerTidbit>
             <h2>Always there for you.</h2>
             <p>
-              Velocity powers some of the world's largest Minecraft networks along with numerous small networks. Velocity can scale to thousands of players per proxy instance. Best of all, it works with Paper, Sponge, Forge, Fabric, and all versions of Minecraft from 1.7.2 to 1.16.4.
+              Velocity powers some of the world's largest Minecraft networks along with numerous small networks. Velocity can scale to thousands of players per proxy instance. Best of all, it works with Paper, Sponge, Forge, Fabric, and all versions of Minecraft from 1.7.2 to 1.16.5.
             </p>
           </ExplainerTidbit>
         </ExplainerSection>
