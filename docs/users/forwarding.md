@@ -2,10 +2,14 @@
 title: Configuring player information forwarding
 ---
 
-Velocity supports forwarding information about your players to your servers, such as IP addresses, UUIDs and skins. Velocity supports both a custom forwarding format (modern forwarding) that is more secure, and BungeeCord forwarding which has better compatibility but is less secure.
+Velocity supports forwarding information about your players to your servers, such as IP addresses, UUIDs and skins. Velocity supports three forwarding formats:
+
+* **Velocity modern forwarding** is a custom forwarding format (modern forwarding) that is more secure.
+* **BungeeCord forwarding** (also known as _legacy forwarding_) which has better compatibility but is less secure.
+* **BungeeGuard**, which is the same as BungeeCord forwarding but includes a secret key. It is better than BungeeCord forwarding alone, but it is less ideal than Velocity modern forwarding.
 
 <Caution>
-   You may choose between modern forwarding or legacy BungeeCord-style forwarding; you are currently not able to "mix and match" forwarding modes, and you cannot use both forwarding modes together.
+   You may choose between only one of these forwarding formats. It is not currently possible to "mix and match" forwarding modes or use all the forwarding formats together. In general, if you are supporting clients using Minecraft 1.13 and newer only, use Velocity modern forwarding, else you must use BungeeCord forwarding.
 </Caution>
 
 ## Configuring modern forwarding
@@ -40,13 +44,15 @@ A mod called [FabricProxy](https://www.curseforge.com/minecraft/mc-mods/fabricpr
 
 If you must use BungeeCord-compatible forwarding, simply set your `player-info-forwarding` setting in `velocity.toml` to `legacy`. You will also need to make sure your server can accept the forwarded player data sent by Velocity.
 
+To add some security, particularly for proxies hosted on shared hosting, Velocity optionally supports the [BungeeGuard](https://www.spigotmc.org/resources/bungeeguard.79601/) plugin. To use it, set the `player-info-forwarding` setting in `velocity.toml` to `bungeeguard`, then add the value in `forwarding-secret` to the token section in the BungeeGuard configuration.
+
 ### Configuring legacy forwarding for Spigot / Paper
 
 To make Spigot or Paper understand the data forwarded from Velocity, set `settings.bungeecord` to `true` in your `spigot.yml` and then reboot your server.
  
 ### Configuring legacy forwarding for Sponge
 
-To configure Sponge to understand the data forwarded from Velocity, set `modules.bungeecord` to `true` and `bungeecord.ip-forwarding` to true in your `config/sponge/global.conf` file, and then restart your Sponge server.
+To configure Sponge to understand the data forwarded from Velocity, you will need to stop the server first, set `modules.bungeecord` to `true` and `bungeecord.ip-forwarding` to true in your `config/sponge/global.conf` file, and then restart your Sponge server.
 
 ### Configuring legacy forwarding for Fabric
 
