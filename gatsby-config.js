@@ -10,6 +10,7 @@ module.exports = {
     title: `Velocity`,
     description: `The ridiculously scalable, flexible Minecraft proxy.`,
     author: `Velocity Contributors`,
+    siteUrl: `https://velocitypowered.com`,
   },
   plugins: [
     'gatsby-plugin-emotion',
@@ -40,6 +41,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`
     //`gatsby-plugin-webpack-bundle-analyser-v2`,
   ],
 }
