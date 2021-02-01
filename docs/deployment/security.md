@@ -41,7 +41,7 @@ If your server only supports Minecraft 1.13 and above, Velocity's modern forward
 
 **Advantages**:
 
-* Get player info forwarding "for free"
+* Get player info forwarding for free
 * Secure on a shared host, provided the host has implemented proper protections
 * Works if you host your server on multiple physical servers
 

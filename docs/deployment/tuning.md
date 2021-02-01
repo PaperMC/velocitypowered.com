@@ -36,14 +36,9 @@ The general rule of thumb is that you allocate 512MB per 500 players, plus some 
 
 ### Special notes for containers
 
-**If you use a containerized setup (such as using Kubernetes, Pterodactyl, or Docker directly),
-you should not allocate the entirety of your memory allocation to the heap!** Doing so _will_
-likely cause the proxy to be killed by the kernel's out-of-memory killer, which will result in
-your proxy going down, likely at the worst possible time.
+**If you use a containerized setup (such as using Kubernetes, Pterodactyl, or Docker directly), you should not allocate the entirety of your memory allocation to the heap!** Doing so _will_ likely cause the proxy to be killed by the kernel's out-of-memory killer, which will result in your proxy going down, likely at the worst possible time.
 
-A safe (albeit conservative) setting for the heap would be to allocate half of the memory you
-allocate to the proxy container in total. For instance, if you know the proxy will need to hold
-1,000 players, then allocate 4GB to the container and give the proxy 2GB of heap.
+A safe (albeit conservative) setting for the heap would be to allocate half of the memory you allocate to the proxy container in total. For instance, if you know the proxy will need to hold 1,000 players, then allocate 4GB to the container and give the proxy 2GB of heap.
 
 ## Tune your startup flags
 

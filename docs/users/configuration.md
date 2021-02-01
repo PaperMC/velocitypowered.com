@@ -44,13 +44,11 @@ These settings mostly cover the basic, most essential settings of the proxy.
 | A server name | Address | This makes the proxy aware of a server that it can connect to.                                                             |
 | `try`         | Array   | This specifies what servers Velocity should try to connect to upon player login and when a player is kicked from a server. |
 
-
 ## `forced-hosts` section
 
 | Setting Name | Type     | Description                                                                                                                                        	|
 |--------------|----------|----------------------------------------------------------------------------------------------------------------------------------------------------	|
 | A host name  | Hostname | This configures the proxy to create a forced host for the specified hostname. An array of servers to try for the specified hostname is the value.  	|
-
 
 ## `advanced` section
 
