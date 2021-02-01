@@ -11,9 +11,13 @@ will need to install it before you continue. Velocity requires Java 8 or newer.
 
 We recommend using the HotSpot-based Java 11 builds from [AdoptOpenJDK](https://adoptopenjdk.net/).
 
+<Caution>
+    Future versions of Velocity will require Java 11. <a href="https://forums.velocitypowered.com/t/future-releases-of-velocity-will-require-java-11-or-higher/561">See the announcement for more details</a>.
+</Caution>
+
 ## Downloading Velocity
 
-Head over to the <Link to="/downloads">downloads</Link> page to get the latest version of Velocity.
+Head over to the <Link to="/downloads">downloads</Link> page to get the latest version of Velocity. We recommend getting the latest stable version. After downloading Velocity, move the JAR file to a dedicated folder for just the proxy or upload it to your server.
 
 ## Launching Velocity for the first time
 
@@ -32,14 +36,17 @@ java -Xms512M -Xmx512M -XX:+UseG1GC -XX:G1HeapRegionSize=4M -XX:+UnlockExperimen
 pause
 ```
 
-Once saved, double-check the `start.bat` file. If it worked, you should now receive a
-console.
+<Caution>
+    Make sure to change the <code>velocity.jar</code> to the name of the Velocity JAR that you downloaded, or rename the Velocity JAR to <code>velocity.jar</code>.
+</Caution>
+
+Once saved, double-click the `start.bat` file. If it worked, you should now receive a console similar to the output in the next section.
 
 ### Launching Velocity under macOS or Linux
 
 Create a `start.sh` with the following contents in the same directory where you intend
-to place the proxy files. (You may do this using a file transfer client, or using a text
-editor running on the machine.)
+to place the proxy files. You may do this using a file transfer client, or using a text
+editor running on the host.
 
 ```shell
 #!/bin/sh
@@ -47,9 +54,7 @@ editor running on the machine.)
 java -Xms1G -Xmx1G -XX:+UseG1GC -XX:G1HeapRegionSize=4M -XX:+UnlockExperimentalVMOptions -XX:+ParallelRefProcEnabled -XX:+AlwaysPreTouch -XX:MaxInlineLevel=15 -jar velocity*.jar
 ```
 
-Once saved, open a terminal (or log into the machine) if you haven't already, navigate to the
-directory where you have placed the Velocity JAR file and the `start.sh` file. Then run
-`chmod +x start.sh` and then `./start.sh`. If it worked, you should now receive a proxy console.
+Once saved, open a terminal (or log into the machine) if you haven't already, navigate to the directory where you have placed the Velocity JAR file and the `start.sh` file. Then run `chmod +x start.sh` and then `./start.sh`. If it worked, you should now receive a console similar to the output in the next section.
 
 ## After launch
 
@@ -64,10 +69,7 @@ Here's a sample of what you'll see once we've started the proxy:
 [12:04:59 INFO]: Done (0.48s)!
 ```
 
-In essence, we've now launched Velocity and are ready to set it up our `velocity.toml`.
-It is now time to modify the configuration and properly set up your servers.
-
-Go ahead and type `end` at the console and press enter. The proxy shuts down:
+Velocity has launched, and you are now ready to configure the proxy completely. Go ahead and type `end` at the console and press enter. The proxy will shut down:
 
 ```plain
 > end
@@ -75,33 +77,36 @@ Go ahead and type `end` at the console and press enter. The proxy shuts down:
 [12:05:02 INFO]: Closing endpoint /0:0:0:0:0:0:0:0%0:25577
 ```
 
+If you used the Windows batch script from earlier, the window will ask you to press a key. You can either press a key or close the command window.
+
 ### Configuring your servers
 
 We now need to configure each server to accept connections from the proxy.
 
-Velocity is a highly configurable proxy. While most users will not need to change everything in the config, there
-are tons of options covered [here](/wiki/users/configuration/) along with an explanation
-on how each option works. To get started, simply open your `velocity.toml` and search for the `[servers]` section. 
-Here is where you will begin adding your servers to Velocity, allowing them to be seen by Velocity.
+Velocity is a highly configurable proxy. While most users will not need to change everything in the config, there are tons of options covered [on the configuration wiki page](/wiki/users/configuration/) along with an explanation on how each option works. However, in this section we will do the bare minimum to get the proxy up and running.
 
-Here's a sample of what the `[servers]` section should look like initially.
+Open the `velocity.toml` file in a text editor and search for the `[servers]` section. This section specifies the servers that Velocity can connect to. Here's what the `[servers]` section will look like initially:
 
 ```plain
 [servers]
-lobby = "127.0.0.1:30066
+# Configure your servers here. Each key represents the server's name, and the value
+# represents the IP address of the server to connect to.
+lobby = "127.0.0.1:30066"
 factions = "127.0.0.1:30067"
 minigames = "127.0.0.1:30068"
+
+# In what order we should try servers when a player logs in or is kicked from a server.
+try = [
+  "lobby"
+]
 ``` 
 
-Go ahead and put your servers in this file, and then restart Velocity. Once you've done that, you will need to open
-the `server.properties` file for each of your servers and set the `online-mode` setting to `false`. This allows
-Velocity to connect to your server. Once you're done, restart your server. Velocity should now be ready for use.
-  
+On the left side, you will specify a name for the server (for example, `lobby`) and on right is a string indicating the IP address and port for the server. You will now need to add your servers to the list. You can change the list of servers as needed.
 
-This is a minimal setup. Since we're not forwarding IPs and player information, the Minecraft server will
-assume you connected from offline mode and will use a different UUID and display only the default Steve and Alex
-skins. However, Velocity can forward this information onto your Minecraft servers with some extra configuration. See
-[Configuring player information forwarding](/wiki/users/forwarding) to learn how to
- configure this feature.
+The `try` setting is special. It is a list of servers Velocity should try to connect the player to when the player first logs onto the proxy or gets kicked from a server. If you decided to change the name of the `lobby` server, then you should replace `lobby` in this list with the name you chose for the first server the player should log into first.
 
+<Caution>
+    The following setup is generic and is intended to apply to any Minecraft server. This setup is not only not ergonomic (players will lack skins, proper UUIDs, and all connections will appear to come from the proxy) but also <strong>dangerously insecure</strong>. After you place your servers in offline mode, you <strong>must</strong> follow the "Player Information Forwarding" and "Securing Your Servers" topics to complete your setup.
+</Caution>
 
+Open the `server.properties` file for each of your servers and set the `online-mode` setting to `false`. This allows Velocity to connect to your server. Once you're done, restart your server. While Velocity is now ready for use, you will almost certainly want to <Link to="/wiki/deployment/security/">secure your servers</Link> and <Link to="/wiki/users/forwarding/">configure player information forwarding</Link>.
