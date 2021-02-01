@@ -11,7 +11,7 @@ To listen to an event, mark the method with `@Subscribe`, like shown. This works
 in other APIs you may be familiar with; it's the equivalent of Bukkit's/Bungee's @EventHandler and Sponge's @Listener.
 
 ```java
-@Subscribe(
+@Subscribe
 public void onPlayerChat(PlayerChatEvent event) {
 	// do stuff
 }
