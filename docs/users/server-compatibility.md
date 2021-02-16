@@ -16,7 +16,7 @@ Velocity is best-tested with implementations derived from the vanilla server by 
 
 The Mojang vanilla software is in a complicated position. It is useful as we often produce protocol updates using the Mojang server for testing, but in production setups, the lack of player info forwarding support can induce subtle client problems.
 
-If you plan to run a vanilla server, **the Velocity team strongly recommends that you use Fabric with the FabricProxy mod**. Fabric and FabricProxy do not by themselves change the vanilla experience, and your server will remain compatible with vanilla clients. If you are unable (or unwilling) to run Fabric, [VanillaCord](https://github.com/ME1312/VanillaCord) allows you to use legacy BungeeCord forwarding.
+If you plan to run a vanilla server, **the Velocity team strongly recommends that you use Fabric with the FabricProxy-Lite mod**. Fabric and FabricProxy-Lite do not by themselves change the vanilla experience, and your server will remain compatible with vanilla clients. If you are unable (or unwilling) to run Fabric, [VanillaCord](https://github.com/ME1312/VanillaCord) allows you to use legacy BungeeCord forwarding.
 
 ### Spigot
 
