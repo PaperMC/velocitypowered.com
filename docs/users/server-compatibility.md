@@ -26,7 +26,7 @@ Spigot does not support Velocity's modern forwarding, but does support legacy Bu
 
 ### Paper
 
-The Velocity project recommends using Paper for running a public server. Velocity works with all versions of Paper from 1.7.10 to the latest 1.16.3 version.
+The Velocity project recommends using Paper for running a public server. Velocity works with all versions of Paper from 1.7.10 to the latest 1.16.5 version.
 
 You can use Velocity's modern forwarding if you run Paper 1.13.2 or higher. If you use Paper 1.12.2 or lower, you must use legacy BungeeCord-style forwarding.
 
