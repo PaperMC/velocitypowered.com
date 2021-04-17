@@ -48,7 +48,7 @@ If your server only supports Minecraft 1.13 and above, Velocity's modern forward
 **Disadvantages**:
 
 * Only works for Minecraft 1.13 and above
-* Requires Paper 1.13 or above, or FabricProxy if you use Fabric
+* Requires Paper 1.13 or above, or FabricProxy-Lite if you use Fabric
 * Relies on the forwarding secret being kept secret
 
 ## Binding To `localhost`
