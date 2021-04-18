@@ -9,10 +9,6 @@
 
 @import '~normalize.css';
 
-* {
-    transition: all 150ms ease-in-out !important
-}
-
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
