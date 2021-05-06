@@ -6,7 +6,7 @@ Presumably, you've read up about what Velocity can do for you. But how does it s
 
 ## BungeeCord and derivatives
 
-We can't treat the full history of Minecraft proxy software with justice &ndash; we recommend [Me4502's excellent article](https://matthewmiller.dev/blog/decade-of-minecraft-multiplayer/) that covers the multiplayer Minecraft world in great detail. Needless to say, Velocity was influenced by a desire to avoid all the faults we perceived that needed to be resolved with BungeeCord.
+We can't treat the full history of Minecraft proxy software with justice &ndash; we recommend [Me4502's excellent article](https://madelinemiller.dev/blog/decade-of-minecraft-multiplayer/) that covers the multiplayer Minecraft world in great detail. Needless to say, Velocity was influenced by a desire to avoid all the faults we perceived that needed to be resolved with BungeeCord.
 
 ### BungeeCord itself
 
