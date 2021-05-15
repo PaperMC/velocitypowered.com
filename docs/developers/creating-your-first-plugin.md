@@ -99,8 +99,9 @@ dependencies {
 }
 
 ```
-#### Addition for Kotlin developers
-If you use Kotlin language, for annotation processing you need add gradle plugin kapt and replace `annotationProcessor` with `kapt`
+#### For Kotlin developers
+
+If you are writing your plugin in Kotlin, you also need the `kapt` plugin and you'll also need to replace `annotationProcessor` with `kapt`:
 ```
 // Gradle DSL
 plugins {
