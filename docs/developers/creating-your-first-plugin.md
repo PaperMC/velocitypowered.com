@@ -58,6 +58,7 @@ for assistance.
 Add the following to your `build.gradle`:
 
 ```
+// Gradle DSL
 repositories {
     maven {
         name 'velocity'
@@ -68,15 +69,59 @@ repositories {
 dependencies {
     compile 'com.velocitypowered:velocity-api:1.1.5'
 }
+
+// Kotlin DSL
+repositories {
+    maven("https://nexus.velocitypowered.com/repository/maven-public/") {
+        name = "velocity"
+    }
+}
+
+dependencies {
+    compileOnly("com.velocitypowered:velocity-api:1.1.5")
+}
 ```
 
 As of Gradle 5, you must also specify the API dependency as an annotation processor, otherwise plugin annotations
 won't be processed to create the `velocity-plugin.json` file.
 
 ```
+// Gradle DSL
 dependencies {
     compile 'com.velocitypowered:velocity-api:1.1.5'
     annotationProcessor 'com.velocitypowered:velocity-api:1.1.5'
+}
+
+// Kotlin DSL
+dependencies {
+    compileOnly("com.velocitypowered:velocity-api:1.1.5")
+    annotationProcessor("com.velocitypowered:velocity-api:1.1.5")
+}
+
+```
+#### Addition for Kotlin developers
+If you use Kotlin language, for annotation processing you need add gradle plugin kapt and replace `annotationProcessor` with `kapt`
+```
+// Gradle DSL
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version 'your-kotlin-version'
+    id 'org.jetbrains.kotlin.kapt' version 'your-kotlin-version'
+}
+
+dependencies {
+    compile 'com.velocitypowered:velocity-api:1.1.5'
+    kapt 'com.velocitypowered:velocity-api:1.1.5'
+}
+
+// Kotlin DSL
+plugins {
+    kotlin("jvm") version "your-kotlin-version"
+    kotlin("kapt") version "your-kotlin-version"
+}
+
+dependencies {
+    compileOnly("com.velocitypowered:velocity-api:1.1.5")
+    kapt("com.velocitypowered:velocity-api:1.1.5")
 }
 ```
 
