@@ -69,6 +69,10 @@
         "url": "/wiki/developers/creating-your-first-plugin/"
       },
       {
+        "title": "Porting from Velocity 1.x.x",
+        "url": "/wiki/developers/porting-from-velocity-1/"
+      },
+      {
         "title": "API Basics",
         "url": "/wiki/developers/api-basics/"
       },
