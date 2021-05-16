@@ -25,15 +25,6 @@ public void onProxyInitialization(ProxyInitializeEvent event) {
 }
 ```
 
-## Using deprecated `text` 3.x APIs
-
-Velocity 1.1.0 has deprecated the old `text` 3.x API (located under `net.kyori.text`).
-This older version of the Adventure API (located under `net.kyori.adventure`) is only
-included for backwards compatibility and will be removed in a future release of Velocity.
-
-Likewise, the Velocity-specific title and boss bar methods were deprecated in favor of
-the Adventure equivalents.
-
 ## Audience operations not supported
 
 Velocity only supports sending chat messages, action bar messages, titles, and boss bars

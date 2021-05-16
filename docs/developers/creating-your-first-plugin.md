@@ -32,17 +32,29 @@ Now we have created our project, we need configure our build system.
 | Name | `velocity`                                                   |
 | URL  | `https://nexus.velocitypowered.com/repository/maven-public/` |
 
-### Dependency
+### Dependencies
+
+Velocity comes with two artifacts: the API and an annotation processor. We recommend using both.
+
+<Note>
+    Prior to Velocity 2.0.0, the annotation processor and the API artifacts were combined. This is no longer the case in Velocity 2.0.0 and above.
+</Note>
 
 ||
 |-------------|-----------------------|
 | Group ID    | `com.velocitypowered` |
 | Artifact ID | `velocity-api`        |
-| Version     | `1.1.5`               |
+| Version     | `2.0.0`               |
+
+||
+|-------------|---------------------------------|
+| Group ID    | `com.velocitypowered`           |
+| Artifact ID | `velocity-annotation-processor` |
+| Version     | `2.0.0`                         |
 
 ### Javadocs
 
-Javadocs are available at [jd.velocitypowered.com/1.1.0](https://jd.velocitypowered.com/1.1.0).
+Javadocs are available at [jd.velocitypowered.com/2.0.0](https://jd.velocitypowered.com/2.0.0).
 
 ## Set up your build system
 
@@ -66,17 +78,8 @@ repositories {
 }
 
 dependencies {
-    compile 'com.velocitypowered:velocity-api:1.1.5'
-}
-```
-
-As of Gradle 5, you must also specify the API dependency as an annotation processor, otherwise plugin annotations
-won't be processed to create the `velocity-plugin.json` file.
-
-```
-dependencies {
-    compile 'com.velocitypowered:velocity-api:1.1.5'
-    annotationProcessor 'com.velocitypowered:velocity-api:1.1.5'
+    compile 'com.velocitypowered:velocity-api:2.0.0'
+    annotationProcessor 'com.velocitypowered:velocity-annotation-processor:2.0.0'
 }
 ```
 
@@ -96,7 +99,13 @@ Add the following to your `pom.xml`:
     <dependency>
         <groupId>com.velocitypowered</groupId>
         <artifactId>velocity-api</artifactId>
-        <version>1.1.5</version>
+        <version>2.0.0</version>
+        <scope>provided</scope>
+    </dependency>
+    <dependency>
+        <groupId>com.velocitypowered</groupId>
+        <artifactId>velocity-annotation-processor</artifactId>
+        <version>2.0.0</version>
         <scope>provided</scope>
     </dependency>
 </dependencies>

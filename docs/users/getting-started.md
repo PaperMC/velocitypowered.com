@@ -6,14 +6,7 @@ This page covers how to install and set up a minimal configuration of Velocity.
 
 ## Installing Java
 
-Velocity is written in Java, so if you do not already have Java installed, you
-will need to install it before you continue. Velocity requires Java 8 or newer.
-
-We recommend using the HotSpot-based Java 11 builds from [AdoptOpenJDK](https://adoptopenjdk.net/).
-
-<Caution>
-    Future versions of Velocity will require Java 11. <a href="https://forums.velocitypowered.com/t/future-releases-of-velocity-will-require-java-11-or-higher/561">See the announcement for more details</a>.
-</Caution>
+Velocity is written in Java, so if you do not already have Java installed, you will need to install it before you continue. Velocity requires Java 11 or newer. We recommend using the HotSpot-based Java 11 builds from [AdoptOpenJDK](https://adoptopenjdk.net/).
 
 ## Downloading Velocity
 
@@ -21,14 +14,11 @@ Head over to the <Link to="/downloads">downloads</Link> page to get the latest v
 
 ## Launching Velocity for the first time
 
-Once you have downloaded Velocity, we will launch it for the first time to generate the
-configuration file, `velocity.toml`. You can use the start script created to launch Velocity
-once you're done configuring Velocity.
+Once you have downloaded Velocity, we will launch it for the first time to generate the configuration file, `velocity.toml`. You can use the start script created to launch Velocity once you're done configuring Velocity.
 
 ### Launching Velocity under Windows
 
-Create a `start.bat` with the following contents in the same directory where you intend
-to place the proxy files.
+Create a `start.bat` with the following contents in the same directory where you intend to place the proxy files.
 
 ```batch
 @echo off
@@ -44,9 +34,7 @@ Once saved, double-click the `start.bat` file. If it worked, you should now rece
 
 ### Launching Velocity under macOS or Linux
 
-Create a `start.sh` with the following contents in the same directory where you intend
-to place the proxy files. You may do this using a file transfer client, or using a text
-editor running on the host.
+Create a `start.sh` with the following contents in the same directory where you intend to place the proxy files. You may do this using a file transfer client, or using a text editor running on the host.
 
 ```shell
 #!/bin/sh
@@ -61,12 +49,13 @@ Once saved, open a terminal (or log into the machine) if you haven't already, na
 Here's a sample of what you'll see once we've started the proxy:
 
 ```plain
-[12:04:59 INFO]: Booting up Velocity <unknown>...
-[12:04:59 INFO]: Connections will use epoll channels, libdeflate (Linux x86_64) compression, OpenSSL 1.1.x (Linux x86_64) ciphers
-[12:04:59 INFO]: Loading plugins...
-[12:04:59 INFO]: Loaded 0 plugins
-[12:04:59 INFO]: Listening on /0:0:0:0:0:0:0:0%0:25577
-[12:04:59 INFO]: Done (0.48s)!
+[03:46:08 INFO]: Booting up Velocity 2.0.0-SNAPSHOT+g99b3b325...
+[03:46:08 INFO]: Loading localizations...
+[03:46:08 INFO]: Connections will use epoll channels, libdeflate (Linux x86_64) compression, OpenSSL 1.1.x (Linux x86_64) ciphers
+[03:46:08 INFO]: Loading plugins...
+[03:46:08 INFO]: Loaded 0 plugin(s)
+[03:46:08 INFO]: Listening on /0:0:0:0:0:0:0:0%0:25577
+[03:46:08 INFO]: Done (0.48s)!
 ```
 
 Velocity has launched, and you are now ready to configure the proxy completely. Go ahead and type `end` at the console and press enter. The proxy will shut down:
