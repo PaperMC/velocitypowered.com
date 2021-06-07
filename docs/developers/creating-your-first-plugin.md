@@ -38,7 +38,7 @@ Now we have created our project, we need configure our build system.
 |-------------|-----------------------|
 | Group ID    | `com.velocitypowered` |
 | Artifact ID | `velocity-api`        |
-| Version     | `1.1.5`               |
+| Version     | `1.1.6`               |
 
 ### Javadocs
 
@@ -67,7 +67,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.velocitypowered:velocity-api:1.1.5'
+    compile 'com.velocitypowered:velocity-api:1.1.6'
 }
 
 // Kotlin DSL
@@ -88,8 +88,8 @@ won't be processed to create the `velocity-plugin.json` file.
 ```
 // Gradle DSL
 dependencies {
-    compile 'com.velocitypowered:velocity-api:1.1.5'
-    annotationProcessor 'com.velocitypowered:velocity-api:1.1.5'
+    compile 'com.velocitypowered:velocity-api:1.1.6'
+    annotationProcessor 'com.velocitypowered:velocity-api:1.1.6'
 }
 
 // Kotlin DSL
@@ -142,7 +142,7 @@ Add the following to your `pom.xml`:
     <dependency>
         <groupId>com.velocitypowered</groupId>
         <artifactId>velocity-api</artifactId>
-        <version>1.1.5</version>
+        <version>1.1.6</version>
         <scope>provided</scope>
     </dependency>
 </dependencies>
