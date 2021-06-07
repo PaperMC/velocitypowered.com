@@ -6,7 +6,7 @@ Velocity is compatible with many Minecraft server implementations. The expectati
 
 ## Compatible game versions
 
-As of this writing, Velocity is compatible with Minecraft 1.7.2 through 1.16.5.
+As of this writing, Velocity is compatible with Minecraft 1.7.2 through 1.17.
 
 ## Vanilla setups
 
@@ -26,7 +26,7 @@ Spigot does not support Velocity's modern forwarding, but does support legacy Bu
 
 ### Paper
 
-The Velocity project recommends using Paper for running a public server. Velocity works with all versions of Paper from 1.7.10 to the latest 1.16.5 version.
+The Velocity project recommends using Paper for running a public server. Velocity works with all versions of Paper from 1.7.10 to the latest 1.17 version.
 
 You can use Velocity's modern forwarding if you run Paper 1.13.2 or higher. If you use Paper 1.12.2 or lower, you must use legacy BungeeCord-style forwarding.
 
