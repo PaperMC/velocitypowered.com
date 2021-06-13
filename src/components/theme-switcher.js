@@ -1,7 +1,7 @@
 import React from "react"
 import Switch from "react-switch"
 import {FiMoon, FiSun} from "react-icons/fi";
-import {css} from "@emotion/core";
+import {css} from "@emotion/react";
 
 const iconCommonCss = css`
   vertical-align: middle;
