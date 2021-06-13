@@ -1,4 +1,4 @@
-export default {
+const styling = {
   dark: {
     logos: {
       navbar: 'var(--dark-navbar-logo-url)',
@@ -50,3 +50,4 @@ export default {
     }
   }
 }
+export default styling

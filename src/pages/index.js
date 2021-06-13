@@ -4,7 +4,7 @@ import MainPageButton from "../components/main-page-button";
 
 import stylingGlobals from "../styles/styling-globals";
 
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 import {FiBook, FiDownload} from "react-icons/fi";
 
 const Jumbotron = styled.div`
@@ -89,7 +89,7 @@ const VelocityLogo = styled.div`
 export default function Home() {
   return (
     <>
-      <SEO title="Welcome to Velocity" />
+      <Seo title="Welcome to Velocity" />
       <Jumbotron>
         <JumbotronLogo>
           <VelocityLogo />

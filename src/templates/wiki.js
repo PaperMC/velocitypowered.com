@@ -3,7 +3,7 @@ import {graphql, Link} from "gatsby";
 import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 import styled from "@emotion/styled"
 import Sidebar from "../components/docs-sidebar";
 import wikiSidebar from "../../docs/sidebar-wiki.json"
@@ -56,7 +56,7 @@ export default function Documentation({ location, data }) {
   const article = data.mdx
   return (
     <>
-      <SEO title={article.frontmatter.title} description={article.excerpt} />
+      <Seo title={article.frontmatter.title} description={article.excerpt} />
       <DocumentationContainer>
         <Sidebar sidebar={wikiSidebar} location={location} />
         <ContentWrapper>

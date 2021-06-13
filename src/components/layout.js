@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react"
 import styled from "@emotion/styled"
-import { ThemeProvider } from 'emotion-theming'
+import { ThemeProvider } from '@emotion/react'
 import Footer from "./footer"
 import Navbar from "./navbar"
 import themes from '../styles/theme';
