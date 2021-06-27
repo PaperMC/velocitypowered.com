@@ -1,13 +1,13 @@
 import React from "react"
 import styled from "@emotion/styled"
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 import MainPageButton from "../components/main-page-button";
 import {Link} from "gatsby";
-import {FiDownload} from "react-icons/all";
+import {FiDownload} from "react-icons/fi";
 import Caution from "../components/warnings/caution";
 import stylingGlobals from "../styles/styling-globals";
 
-const LATEST = '1.1.5'
+const LATEST = '1.1.8'
 
 const DownloadsJumbotron = styled.div`
   background: var(--jumbotron);
@@ -40,7 +40,7 @@ const ButtonSection = styled.section`
 export default function Sponsors() {
   return (
     <>
-      <SEO title="Downloads" />
+      <Seo title="Downloads" />
 
       <DownloadsJumbotron>
         <ImploreDownload>

@@ -4,7 +4,7 @@ import MainPageButton from "../components/main-page-button";
 
 import stylingGlobals from "../styles/styling-globals";
 
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 import {FiBook, FiDownload} from "react-icons/fi";
 
 const Jumbotron = styled.div`
@@ -89,7 +89,7 @@ const VelocityLogo = styled.div`
 export default function Home() {
   return (
     <>
-      <SEO title="Welcome to Velocity" />
+      <Seo title="Welcome to Velocity" />
       <Jumbotron>
         <JumbotronLogo>
           <VelocityLogo />
@@ -122,7 +122,7 @@ export default function Home() {
           <ExplainerTidbit>
             <h2>Always there for you.</h2>
             <p>
-              Velocity powers some of the world's largest Minecraft networks along with numerous small networks. Velocity can scale to thousands of players per proxy instance. Best of all, it works with Paper, Sponge, Forge, Fabric, and all versions of Minecraft from 1.7.2 to 1.16.5.
+              Velocity powers some of the world's largest Minecraft networks along with numerous small networks. Velocity can scale to thousands of players per proxy instance. Best of all, it works with Paper, Sponge, Forge, Fabric, and all versions of Minecraft from 1.7.2 to 1.17.
             </p>
           </ExplainerTidbit>
         </ExplainerSection>

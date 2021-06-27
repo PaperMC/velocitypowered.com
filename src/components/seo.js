@@ -2,6 +2,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import velocityBlues from "../assets/img/velocity-blues-background.png";
+
 function SEO({ description, lang, meta, title }) {
   const { site } = useStaticQuery(
     graphql`
@@ -42,8 +44,12 @@ function SEO({ description, lang, meta, title }) {
           content: `website`,
         },
         {
+          property: 'og:image',
+          content: velocityBlues
+        },
+        {
           name: `twitter:card`,
-          content: `summary`,
+          content: `summary_large_image`,
         },
         {
           name: `twitter:creator`,

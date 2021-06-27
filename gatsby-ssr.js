@@ -3,10 +3,10 @@ import themes from './src/styles/theme'
 import {setupThemeProperties} from './src/theme-util'
 import Layout from "./src/components/layout";
 
-const darkNavbarImg = require('./src/assets/img/velocity-white-cropped.png');
-const darkJumbotronImg = require('./src/assets/img/velocity-white.png');
-const lightNavbarImg = require('./src/assets/img/velocity-blue-cropped.png');
-const lightJumbotronImg = require('./src/assets/img/velocity-blue.png');
+import darkNavbarImg from './src/assets/img/velocity-white-cropped.png';
+import darkJumbotronImg from './src/assets/img/velocity-white.png';
+import lightNavbarImg from './src/assets/img/velocity-blue-cropped.png';
+import lightJumbotronImg from './src/assets/img/velocity-blue.png';
 
 const FallbackColors = () => {
   const defaultStyles = `

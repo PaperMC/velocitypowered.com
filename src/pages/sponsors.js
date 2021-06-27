@@ -6,7 +6,7 @@ import stylingGlobals from "../styles/styling-globals";
 
 import mineteriaLogo from "../assets/img/sponsors/mineteria.png";
 import voldexLogo from "../assets/img/sponsors/voldex.png";
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 
 const SponsorJumbotron = styled.div`
   background: var(--jumbotron);
@@ -58,7 +58,7 @@ const Why = styled.main`
 export default function Sponsors() {
   return (
     <>
-      <SEO title="Our Sponsors" />
+      <Seo title="Our Sponsors" />
       <SponsorJumbotron>
         <SponsorJumbotronHeader>Our Sponsors</SponsorJumbotronHeader>
         <SponsorsStart>
