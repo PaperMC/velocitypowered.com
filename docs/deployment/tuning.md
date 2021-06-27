@@ -15,7 +15,7 @@ You should always make sure to allocate the correct amount of heap, network band
 There is no "one-size-fits-all" hardware recommendation, only general guidelines for the amount of players you can expect:
 
 * Prefer lots of cores but lower clock speeds. Unlike the Minecraft server, Velocity can actually benefit from the extra cores and single-threaded performance is not as important.
-* You should have always have enough memory to run Velocity, including room for JVM overhead and for your operating system. For a rough minimum recommended memory amount, double the size of the proxy heap and then add 2GB. For instance, for a proxy with a 2GB heap, plan on getting at least 6GB of memory.
+* You should always have enough memory to run Velocity, including room for JVM overhead and for your operating system. For a rough minimum recommended memory amount, double the size of the proxy heap and then add 2GB. For instance, for a proxy with a 2GB heap, plan on getting at least 6GB of memory.
 * Disk speed is unimportant. A solid-state drive is nice to have but not strictly required. Likewise, disk capacity is unimportant as well.
 
 ### Special notes regarding speculative execution security vulnerabilities
@@ -52,32 +52,39 @@ You will add these flags after the `java` command but before the `-jar` paramete
 
 ### Explanation of the flags
 
-Most of these flags focus on tuning the G1 garbage collector to be more friendly to Velocity's
-workload. One of these flags (`-XX:MaxInlineLevel=15`) tends to improve performance in general.
+Most of these flags focus on tuning the G1 garbage collector to be more friendly to Velocity's workload. One of these flags (`-XX:MaxInlineLevel=15`) tends to improve performance in general.
 
-Before the release of Java 9, the default Java garbage collector was the Parallel GC. This
-is a stop-the-world collector that does its work in parallel. The problem is that its pause
-times tend to be long, and are not suitable for Minecraft (often showing up as seemingly
-unexplainable lag spikes).
+Before the release of Java 9, the default Java garbage collector was the Parallel GC. This is a stop-the-world collector that does its work in parallel. The problem is that its pause times tend to be long, and are not suitable for Minecraft (often showing up as seemingly unexplainable lag spikes).
 
-The recommended garbage collector for Velocity is the G1 region-based collector. There are
-several reasons for us to recommend G1:
+The recommended garbage collector for Velocity is the G1 region-based collector. There are several reasons for us to recommend G1:
 
-* It strikes the right balance between throughput and pause times. Throughput is roughly how much work the
-  proxy can achieve.
+* It strikes the right balance between throughput and pause times. Throughput is roughly how much work the proxy can achieve.
 * It is compatible with most setups (it is available in Java 8, the earliest Java version we support).
 
-Setups using these flags tend have very low (less than 10 millisecond) GC pauses every few minutes, which is
-very good for Minecraft.
+Setups using these flags tend have very low (less than 10 millisecond) GC pauses every few minutes, which is very good for Minecraft.
 
 ### Other configurations
 
-<Caution>You run these configurations solely at your own risk.</Caution>
+<Caution>Deviating from the configuration we recommend is done solely at your own risk.</Caution>
 
-Java 11 and Java 12 brought two new garbage collectors for HotSpot: ZGC (Java 11) and Shenandoah (Java 12). Both have
-been declared stable in Java 15.
+Velocity is an application that tends to follow the generational hypothesis quite closely. It has also been tuned to reduce load on the garbage collector as much as possible.
 
-Velocity is an application that tends to follow the generational hypothesis quite closely. It has also been tuned to
-reduce load on the garbage collector as much as possible. Both ZGC and Shenandoah should work well with Velocity, although
-ZGC did not have important features needed for production use until Jave 14 and versions of Shenandoah for older
-LTS versions of Java are only available from Red Hat (such as in CentOS and Fedora).
+#### ZGC
+
+ZGC (the Z Garbage Collector), introduced with Java 11 and stabilized with Java 15, has proven to be successful for one large-scale deployment of Velocity.
+
+At its core, ZGC is a concurrent, generation-less garbage collector emphasizing low latency at the expense of throughput. Given the nature of Velocity as a network proxy where low throughput and high throughput are important, we recommend using ZGC with caution, and only if you use Java 15 or above.
+
+The primary tuning flag for ZGC is heap size - if ZGC cannot collect garbage faster than the proxy can allocate it, the threads generating garbage will be temporarily paused, causing the proxy to appear to be laggy. Our heap size recommendations still apply, but prepare to give the proxy more memory if necessary.
+
+#### Shenandoah
+
+Introduced in Java 11 and declared stable in Java 15, Shenandoah is similar to G1 in being a concurrent, generational garbage collector, but it does more work in parallel.
+
+The Velocity team is not aware of any successful deployments of Shenandoah with Velocity in the wild.
+
+#### OpenJ9
+
+OpenJ9 is an alternative to the HotSpot JVM derived from IBM's J9 JVM, focused primarily on cloud workloads. As a result, it behaves very differently from HotSpot. Correspondingly, it has a completely different set of garbage collectors.
+
+The default `gencon` garbage collector should work fine with Velocity.
