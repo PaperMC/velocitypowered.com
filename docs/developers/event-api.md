@@ -88,8 +88,6 @@ As an alternative to `@Subscribe`, you can also use the functional `EventHandler
   });
 ```
 
-The return value of `EventHandler` is an `EventTask` instance, which can be `null` if you do not need to process an event asynchronously. `EventTask` is described in more detail below.
-
 ## Handling events asynchronously
 
 In Velocity 3.0.0, events can now be handled asynchronously. The event system allows a plugin to pause sending an event to every listener, perform some unit of computation or I/O asynchronously, and then resume processing the event. All Velocity events have the ability to be processed asynchronously, however only some will explicitly wait for events to finish being fired before continuing.
@@ -114,7 +112,7 @@ For an annotation-based listener, all that is needed to process an event asynchr
 A functional listener simply needs to implement `AwaitingEventExecutor` and return an `EventTask`:
 
 ```java
-  server.eventManager().register(this, PlayerChatEvent.class, (AwaitingEventExecutor) event -> {
+  server.getEventManager().register(this, PlayerChatEvent.class, (AwaitingEventExecutor) event -> {
     if (mustFurtherProcess(event)) {
       return EventTask.async(() => ...);
     }
@@ -128,7 +126,7 @@ There are two types of event tasks:
 * **Continuation tasks** provide the listener with a callback (known as a `Continuation`) to resume event processing when the (possibly asynchronous) work is completed. To get a continuation-based event task, use `EventTask.withContinuation(Consumer<Continuation>)`. Continuation-based tasks are the closest equivalent for listeners that use BungeeCord `AsyncEvent` intents, but have a slightly different programming model in that each listener still runs sequentially, just that an individual listener can defer passing control onto the next listener until it is done.
 
 <Caution>
-    To retain compatibility with older versions of Velocity, Velocity 3.0.0 runs all event listeners asynchronously. This behavior will change in Polymer and will require you to explicitly provide an event task if you need to perform some work asynchronously. All developers are urged to make the transition now.
+    To retain compatibility with older versions of Velocity, Velocity 3.0.0 runs all event listeners asynchronously. This behavior will change in Polymer and will require you to explicitly provide an event task (or to use continuations) if you need to perform some work asynchronously. All developers are urged to make the transition now.
 </Caution>
 
 ## Creating Events
