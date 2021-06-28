@@ -37,24 +37,24 @@ Now we have created our project, we need configure our build system.
 Velocity comes with two artifacts: the API and an annotation processor. We recommend using both.
 
 <Note>
-    Prior to Velocity 2.0.0, the annotation processor and the API artifacts were combined. This is no longer the case in Velocity 2.0.0 and above.
+    Prior to Velocity 3.0.0, the annotation processor and the API artifacts were combined. This is no longer the case in Velocity 3.0.0 and above.
 </Note>
 
 ||
 |-------------|-----------------------|
 | Group ID    | `com.velocitypowered` |
 | Artifact ID | `velocity-api`        |
-| Version     | `2.0.0`               |
+| Version     | `3.0.0`               |
 
 ||
 |-------------|---------------------------------|
 | Group ID    | `com.velocitypowered`           |
 | Artifact ID | `velocity-annotation-processor` |
-| Version     | `2.0.0`                         |
+| Version     | `3.0.0`                         |
 
 ### Javadocs
 
-Javadocs are available at [jd.velocitypowered.com/2.0.0](https://jd.velocitypowered.com/2.0.0).
+Javadocs are available at [jd.velocitypowered.com/3.0.0](https://jd.velocitypowered.com/3.0.0).
 
 ## Set up your build system
 
@@ -78,8 +78,8 @@ repositories {
 }
 
 dependencies {
-    compile 'com.velocitypowered:velocity-api:2.0.0'
-    annotationProcessor 'com.velocitypowered:velocity-annotation-processor:2.0.0'
+    compile 'com.velocitypowered:velocity-api:3.0.0'
+    annotationProcessor 'com.velocitypowered:velocity-annotation-processor:3.0.0'
 }
 ```
 
@@ -99,13 +99,13 @@ Add the following to your `pom.xml`:
     <dependency>
         <groupId>com.velocitypowered</groupId>
         <artifactId>velocity-api</artifactId>
-        <version>2.0.0</version>
+        <version>3.0.0</version>
         <scope>provided</scope>
     </dependency>
     <dependency>
         <groupId>com.velocitypowered</groupId>
         <artifactId>velocity-annotation-processor</artifactId>
-        <version>2.0.0</version>
+        <version>3.0.0</version>
         <scope>provided</scope>
     </dependency>
 </dependencies>

@@ -2,9 +2,9 @@
 title: Working With Events
 ---
 
-Listening to events with Velocity's `@Subscribe` annotation is straightforward. You've already seen one such listener, using the ProxyInitializeEvent in your main class.  Additional events can be found on the [Javadoc](https://jd.velocitypowered.com/2.0.0/).
+Listening to events with Velocity's `@Subscribe` annotation is straightforward. You've already seen one such listener, using the ProxyInitializeEvent in your main class.  Additional events can be found on the [Javadoc](https://jd.velocitypowered.com/3.0.0/).
 
-## Adding listening methods
+## Creating a listener method
 
 To listen to an event, mark the method with `@Subscribe`, like shown. This works similarly to annotation-driven event listening in other APIs you may be familiar with; it's the equivalent of Bukkit's/Bungee's `@EventHandler` and Sponge's `@Listener`.
 
@@ -16,7 +16,7 @@ public void onPlayerChat(PlayerChatEvent event) {
 ```
 
 <Caution>
-    Note well that the import is <code>com.velocitypowered.api.event.Subscribe</code> and <strong>not</strong> in <code>com.google.common.eventbus</code>.
+    Note that the import is <code>com.velocitypowered.api.event.Subscribe</code> and <em>not</em> in <code>com.google.common.eventbus</code>.
 </Caution>
 
 ## Orders
@@ -32,17 +32,21 @@ public void onPlayerChat(PlayerChatEvent event) {
 }
 ```
 
-NORMAL is the default value if you do not specify an order.
+`NORMAL` is the default value if you do not specify an order.
 
 ## Registering listeners
 
-While your main plugin class is automatically registered, you will need to register with the EventManager any other listeners you have:
+Velocity automatically registers your main plugin class as an event listener. This is handy for initialization and for simple plugins, but for more complex plugins, you will want to separate your event handlers from the main plugin class. To do so, you will need to register with the EventManager any other listeners you have:
+
+The event system supports registering an object as a listener (allowing you to use `@Subscribe` to mark event handlers) or registering functional listeners.
+
+### Registering an object as a listener
 
 ```java
 server.getEventManager().register(plugin, listener);
 ```
 
-Both parameters are `Object`, first the instance of your plugin, second the listener to register. For example:
+Both parameters are `Object`. The first argument is your plugin's object, and the second argument should be the listener to register. For example:
 
 ```java
 @Plugin(id = "myfirstplugin", name = "My Plugin", version = "0.1.0", dependencies = {@Dependency(id = "wonderplugin")})
@@ -59,7 +63,7 @@ public class VelocityTest {
   
   @Subscribe
   public void onInitialize(ProxyInitializeEvent event) {
-    server.eventManager().register(this, new MyListener());
+    server.getEventManager().register(this, new MyListener());
   }
 }
 
@@ -73,12 +77,12 @@ public class MyListener {
 }
 ```
 
-## Functional-Style Listeners
+### Registering a functional-style listener
 
 As an alternative to `@Subscribe`, you can also use the functional `EventHandler` interface and register yours with `register(Object plugin, Class<E> eventClass, EventHandler<E> handler)`:
 
 ```java
-  server.eventManager().register(this, PlayerChatEvent.class, event -> {
+  server.getEventManager().register(this, PlayerChatEvent.class, event -> {
       // do something here
       return null;
   });
@@ -86,13 +90,18 @@ As an alternative to `@Subscribe`, you can also use the functional `EventHandler
 
 The return value of `EventHandler` is an `EventTask` instance, which can be `null` if you do not need to process an event asynchronously. `EventTask` is described in more detail below.
 
-## Handling Events Asynchronously
+## Handling events asynchronously
 
-In Velocity 2.0.0, events can now be handled asynchronously. The event system allows a plugin to pause sending an event to every listener, perform some unit of computation or I/O asynchronously, and then resume processing the event. All Velocity events have the ability to be processed asynchronously, however only some will explicitly wait for events to finish being fired before continuing.
+In Velocity 3.0.0, events can now be handled asynchronously. The event system allows a plugin to pause sending an event to every listener, perform some unit of computation or I/O asynchronously, and then resume processing the event. All Velocity events have the ability to be processed asynchronously, however only some will explicitly wait for events to finish being fired before continuing.
 
-For an annotation-based listener, all that is needed to process an event asynchronously is to return an `EventTask`:
+For an annotation-based listener, all that is needed to process an event asynchronously is to either return an `EventTask` or add a second `Continuation` parameter:
 
 ```java
+  @Subscribe(order = PostOrder.EARLY)
+  public void onLogin(LoginEvent event, Continuation continuation) {
+    doSomeAsyncProcessing().addListener(continuation::resume, continuation::resumeWithException);
+  }
+
   @Subscribe(order = PostOrder.EARLY)
   public EventTask onPlayerChat(PlayerChatEvent event) {
     if (mustFurtherProcess(event)) {
@@ -102,10 +111,10 @@ For an annotation-based listener, all that is needed to process an event asynchr
   }
 ```
 
-A functional listener simply needs to return a `EventTask` instance:
+A functional listener simply needs to implement `AwaitingEventExecutor` and return an `EventTask`:
 
 ```java
-  server.eventManager().register(this, PlayerChatEvent.class, event -> {
+  server.eventManager().register(this, PlayerChatEvent.class, (AwaitingEventExecutor) event -> {
     if (mustFurtherProcess(event)) {
       return EventTask.async(() => ...);
     }
@@ -113,10 +122,14 @@ A functional listener simply needs to return a `EventTask` instance:
   });
 ```
 
-There are two types of event tasks, each of which also comes in a flavor that runs the task asynchronously:
+There are two types of event tasks:
 
-* **Basic tasks** simply run a unit of execution, possibly asynchronously. To get a basic event task use `EventTask.of(Runnable)` for a task not guaranteed to run asynchronously or `EventTask.async(Runnable)` for a task that is guaranteed to run asynchronously. Asynchronous basic event tasks are the closest equivalent for Velocity 1.x.x event listeners and asynchronous events in the Bukkit API, and regular basic event tasks are the closest equivalent for synchronous event listeners in Bukkit and event listeners in BungeeCord for events that don't implement `AsyncEvent`.
-* **Continuation-based tasks** provide the listener with a callback (known as a `Continuation`) to resume event processing when the (possibly asynchronous) work is completed. To get a continuation-based event task, use `EventTask.withContinuation(Consumer<Continuation>)` (which provides no guarantees that the initial stage of the task will run asynchronously) or `EventTask.asyncWithContinuation(Consumer<Continuation>)` (which guarantees that the initial stage of the task will run asynchronously). Continuation-based tasks are the closest equivalent for listeners that use BungeeCord `AsyncEvent` intents, but have a slightly different programming model in that each listener still runs sequentially, just that an individual listener can defer passing control onto the next listener until it is done.
+* **Async tasks** simply run a unit of execution asynchronously. To get a basic event task use `EventTask.async(Runnable)`. Basic event tasks are the closest equivalent for Velocity 1.x.x event listeners and asynchronous events in the Bukkit API.
+* **Continuation tasks** provide the listener with a callback (known as a `Continuation`) to resume event processing when the (possibly asynchronous) work is completed. To get a continuation-based event task, use `EventTask.withContinuation(Consumer<Continuation>)`. Continuation-based tasks are the closest equivalent for listeners that use BungeeCord `AsyncEvent` intents, but have a slightly different programming model in that each listener still runs sequentially, just that an individual listener can defer passing control onto the next listener until it is done.
+
+<Caution>
+    To retain compatibility with older versions of Velocity, Velocity 3.0.0 runs all event listeners asynchronously. This behavior will change in Polymer and will require you to explicitly provide an event task if you need to perform some work asynchronously. All developers are urged to make the transition now.
+</Caution>
 
 ## Creating Events
 
@@ -164,7 +177,7 @@ You'll notice that your events don't need to extend or implement anything. They 
 To fire the event, you'll need to get the server's event manager and use the `fire` method. Note that this returns a `CompletableFuture`, so if you want to continue logic after the event is handled by all listeners, use a callback:
 
 ```java
-server.eventManager().fire(new PrivateMessageEvent(sender, recipient, message)).thenAccept((event) -> {
+server.getEventManager().fire(new PrivateMessageEvent(sender, recipient, message)).thenAccept((event) -> {
   // event has finished firing
   // do some logic dependent on the result
 });

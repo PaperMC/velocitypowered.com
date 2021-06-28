@@ -6,7 +6,7 @@ Over the years, we've been asked many of the same questions by users. This FAQ a
 
 ## What version of Java does Velocity require?
 
-Velocity 2.0.0 requires Java 11 or above.
+Velocity 3.0.0 requires Java 11 or above.
 
 ## Where can I find Velocity plugins?
 
