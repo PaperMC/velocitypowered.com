@@ -36,21 +36,11 @@ Now we have created our project, we need configure our build system.
 
 Velocity comes with two artifacts: the API and an annotation processor. We recommend using both.
 
-<Note>
-    Prior to Velocity 3.0.0, the annotation processor and the API artifacts were combined. This is no longer the case in Velocity 3.0.0 and above.
-</Note>
-
 ||
 |-------------|-----------------------|
 | Group ID    | `com.velocitypowered` |
 | Artifact ID | `velocity-api`        |
 | Version     | `3.0.0`               |
-
-||
-|-------------|---------------------------------|
-| Group ID    | `com.velocitypowered`           |
-| Artifact ID | `velocity-annotation-processor` |
-| Version     | `3.0.0`                         |
 
 ### Javadocs
 
@@ -79,7 +69,7 @@ repositories {
 
 dependencies {
     compile 'com.velocitypowered:velocity-api:3.0.0'
-    annotationProcessor 'com.velocitypowered:velocity-annotation-processor:3.0.0'
+    annotationProcessor 'com.velocitypowered:velocity-api:3.0.0'
 }
 ```
 
@@ -104,7 +94,7 @@ Add the following to your `pom.xml`:
     </dependency>
     <dependency>
         <groupId>com.velocitypowered</groupId>
-        <artifactId>velocity-annotation-processor</artifactId>
+        <artifactId>velocity-api</artifactId>
         <version>3.0.0</version>
         <scope>provided</scope>
     </dependency>
