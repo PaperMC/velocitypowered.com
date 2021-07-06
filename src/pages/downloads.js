@@ -7,7 +7,7 @@ import {FiDownload} from "react-icons/fi";
 import Caution from "../components/warnings/caution";
 import stylingGlobals from "../styles/styling-globals";
 
-const LATEST = '1.1.8'
+const LATEST = '3.0.0'
 
 const DownloadsJumbotron = styled.div`
   background: var(--jumbotron);
@@ -54,9 +54,9 @@ export default function Sponsors() {
                           subtitle={'Recommended for most users'}
                           link={`https://versions.velocitypowered.com/download/${LATEST}.jar`} />
           <MainPageButton icon={<FiDownload size={"36px"}/>}
-                          title={`Development (Velocity 1.1.x)`}
+                          title={`Development (Velocity 3.0.x)`}
                           subtitle={'Bleeding edge bug fixes and improvements'}
-                          link={`https://versions.velocitypowered.com/download/1.1.x-SNAPSHOT.jar`} />
+                          link={`https://versions.velocitypowered.com/download/3.0.x-SNAPSHOT.jar`} />
         </ButtonSection>
       </DownloadsJumbotron>
 
@@ -80,6 +80,19 @@ export default function Sponsors() {
         </p>
 
         <h2>Other versions</h2>
+
+        <h3>Velocity 1.1.9</h3>
+        <Caution>
+          The Velocity 1.1.x series will soon reach its end of life. Updates to Velocity 1.1.x to fix bugs will continue
+          until the release of Minecraft 1.18.
+        </Caution>
+
+        <div style={{ display: 'flex', marginTop: '1rem' }}>
+          <MainPageButton icon={<FiDownload size={"16px"}/>}
+                          title={"Velocity 1.1.9"}
+                          link={`https://versions.velocitypowered.com/download/1.1.9.jar`}
+                          demoted={true} />
+        </div>
 
         <h3>Velocity 1.0.10</h3>
         <Caution>
