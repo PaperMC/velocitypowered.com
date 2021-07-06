@@ -9,7 +9,7 @@ The Velocity Scheduler lets you decide when and how your plugin tasks run, allow
 All scheduling works by using a `TaskBuilder` returned from the `Scheduler`. This fluent builder may be chained to configure the details of the scheduling.
 
 ```java
-server.scheduler()
+server.getScheduler()
   .buildTask(plugin, () -> {
     // do stuff here
   })
@@ -26,7 +26,7 @@ Time arguments are specified as a `long` with a `java.util.concurrent.TimeUnit`.
 Creating a repeating task is similar to a delayed task, but you must also specify `repeat(long, TimeUnit)`. This example will repeat every 5 minutes.
 
 ```java
-server.scheduler()
+server.getScheduler()
   .buildTask(plugin, () -> {
     // do stuff here
   })
@@ -45,7 +45,7 @@ The `schedule()` method returns a `ScheduledTask`, which may then be used to can
 Additionally, `task.status()` returns the current status of the task.
 
 ```java
-ScheduledTask task = server.scheduler()
+ScheduledTask task = server.getScheduler()
   .buildTask(plugin, () -> {
     // do stuff here
   })
