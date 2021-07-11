@@ -92,12 +92,6 @@ Add the following to your `pom.xml`:
         <version>3.0.0</version>
         <scope>provided</scope>
     </dependency>
-    <dependency>
-        <groupId>com.velocitypowered</groupId>
-        <artifactId>velocity-api</artifactId>
-        <version>3.0.0</version>
-        <scope>provided</scope>
-    </dependency>
 </dependencies>
 ```
 
