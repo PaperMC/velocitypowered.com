@@ -70,7 +70,7 @@ Choose your plugin's ID wisely. Other plugins will use this ID to depend on your
 
 The plugin name is somewhat less important. It will be shown to users as the display name of your plugin, but tweaking it will not be catastrophic.
 
-For the version, we recommend sticking to semantic versioning - you can read more about this concept at [semver.org](https://semver.org/). Basically, use 3 numbers in your version, such as 1.4.25. Increment the major number when you make a backwards-incompatible breaking change, increment the minor number when you add functionality in a compatible manner, and increment the patch number when you fix a bug or make an otherwise unnoticeable change in the implementation.
+For the version, we recommend sticking to semantic versioning - you can read more about this concept at [semver.org](https://semver.org/). Basically, use 3 numbers in your version, such as 1.4.25. Increment the major number when you make a backwards-incompatible breaking change, increment the minor number when you add functionality that is backwards compatible, and increment the patch number when you fix a bug or make an otherwise unnoticeable change in the implementation.
 
 You can also describe your plugin's URL, authors, and description in your `@Plugin` annotation. Plugin dependencies are also be specified there, but we'll get to that later.
 

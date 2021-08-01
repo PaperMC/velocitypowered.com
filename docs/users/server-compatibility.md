@@ -54,7 +54,7 @@ Velocity does not support Forge-Bukkit hybrids - they have caused several issues
 
 ## Proxy-behind-proxy (BungeeCord/Waterfall, Velocity, ...)
 
-These setups are _completely unsuppported_. You are best advised to avoid them, as they can cause lots of issues. Most proxy-behind-proxy setups are either illogical in the first place or can be handled more gracefully by better, more scalable and performant solutions.
+These setups are _completely unsupported_. You are best advised to avoid them, as they can cause lots of issues. Most proxy-behind-proxy setups are either illogical in the first place or can be handled more gracefully by better, more scalable and performant solutions.
 
 ## Other Implementations
 

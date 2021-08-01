@@ -38,7 +38,7 @@ We take pride in tuning Velocity to be the most performant proxy, but in case th
 
 ## Improved security
 
-Velocity also features more security features, some of which are unique to Velocity. We proactively foreclose as many denial-of-service attacks as soon as possible and feature a unique player info forwarding systen for Minecraft 1.13+ that requires the server and proxy to know a pre-arranged  key.
+Velocity also features more security features, some of which are unique to Velocity. We proactively foreclose as many denial-of-service attacks as soon as possible and feature a unique player info forwarding system for Minecraft 1.13+ that requires the server and proxy to know a pre-arranged key.
 
 ## Standards and mod support
 
