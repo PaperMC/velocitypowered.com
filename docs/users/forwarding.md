@@ -32,7 +32,7 @@ In `paper.yml`, set `settings.velocity-support.enabled` to true and `settings.ve
  
 ## Configuring modern forwarding for Fabric
 
-A mod called [FabricProxy-Lite](https://www.curseforge.com/minecraft/mc-mods/fabricproxy-lite) allows you to use Velocity modern forwarding with a modded server using Fabric.
+A mod called [FabricProxy-Lite](https://modrinth.com/mod/fabricproxy-lite) allows you to use Velocity modern forwarding with a modded server using Fabric.
  
 ## Configuring legacy BungeeCord-compatible forwarding
 
@@ -56,4 +56,6 @@ To configure Sponge to understand the data forwarded from Velocity, you will nee
 
 ### Configuring legacy forwarding for Fabric
 
-[FabricProxy](https://www.curseforge.com/minecraft/mc-mods/fabricproxy) allows you to use legacy BungeeCord-style forwarding (along with modern Velocity forwarding) with a modded server using Fabric.
+<Caution>
+   There are no longer any actively supported mods that support legacy forwarding. Please use Velocity modern forwarding instead.
+</Caution>

@@ -6,7 +6,7 @@ Velocity is compatible with many Minecraft server implementations. The expectati
 
 ## Compatible game versions
 
-As of this writing, Velocity is compatible with Minecraft 1.7.2 through 1.17.
+As of this writing, Velocity is compatible with Minecraft 1.7.2 through 1.17.1.
 
 ## Vanilla setups
 
@@ -26,7 +26,7 @@ Spigot does not support Velocity's modern forwarding, but does support legacy Bu
 
 ### Paper
 
-The Velocity project recommends using Paper for running a public server. Velocity works with all versions of Paper from 1.7.10 to the latest 1.17 version.
+The Velocity project recommends using Paper for running a public server. Velocity works with all versions of Paper from 1.7.10 to the latest 1.17.1 version.
 
 You can use Velocity's modern forwarding if you run Paper 1.13.2 or higher. If you use Paper 1.12.2 or lower, you must use legacy BungeeCord-style forwarding.
 
@@ -38,9 +38,9 @@ SpongeVanilla is compatible with legacy BungeeCord-style forwarding. Our Sponge 
 
 ### Fabric
 
-Velocity works with Fabric out of the box, but you should add support for player info forwarding using a mod like [FabricProxy](https://www.curseforge.com/minecraft/mc-mods/fabricproxy) (which supports Velocity modern forwarding and the insecure legacy BungeeCord forwarding).
+Velocity works with Fabric out of the box, but you should add support for player info forwarding using a mod like [FabricProxy-Lite](https://modrinth.com/mod/fabricproxy-lite) (which supports Velocity modern forwarding).
 
-In addition, if you intend to run mods that add new content on top of vanilla, you should install [CrossStitch](https://www.curseforge.com/minecraft/mc-mods/crossstitch), which improves support for certain Minecraft features that are extended by mods, such as custom argument types. This mod is officially maintained by the Velocity project.
+In addition, if you intend to run mods that add new content on top of vanilla, you should install [CrossStitch](https://modrinth.com/mod/crossstitch), which improves support for certain Minecraft features that are extended by mods, such as custom argument types. This mod is officially maintained by the Velocity project.
 
 ### Minecraft Forge (1.13 and above)
 
