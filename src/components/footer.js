@@ -24,7 +24,7 @@ export default function Footer() {
   return (
     <FooterContainer>
       <FooterInner>
-        Copyright &copy; 2018-2020 Velocity Contributors.
+        Copyright &copy; 2018-2021 Velocity Contributors.
         This wouldn't be possible without our <Link to={"/sponsors"}>generous sponsors</Link>.
       </FooterInner>
     </FooterContainer>
