@@ -4,7 +4,7 @@ title: Configuring Velocity
 
 Velocity is designed to be easy to configure and set up. Every Velocity file is stored in `velocity.toml`, located in the directory where you started the proxy. Velocity uses the the [TOML](https://github.com/toml-lang/toml) file format, as it is easy to understand and avoids pitfalls of YAML and other configuration formats common in the community.
 
-An up-to-date version of the default configuration can be found on [GitHub](https://github.com/VelocityPowered/Velocity/blob/dev/1.1.0/proxy/src/main/resources/default-velocity.toml).
+An up-to-date version of the default configuration can be found on [GitHub](https://github.com/PaperMC/Velocity/blob/dev/1.1.0/proxy/src/main/resources/default-velocity.toml).
 
 ## Data types
 

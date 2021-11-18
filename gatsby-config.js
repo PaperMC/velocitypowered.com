@@ -32,14 +32,6 @@ module.exports = {
         extensions: [`.mdx`, `.md`],
       }
     },
-    {
-      resolve: `gatsby-plugin-web-font-loader`,
-      options: {
-        google: {
-          families: ['Roboto:300,400,400i,700,700i']
-        },
-      },
-    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sitemap`
     //`gatsby-plugin-webpack-bundle-analyser-v2`,

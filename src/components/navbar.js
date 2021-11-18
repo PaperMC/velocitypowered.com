@@ -90,8 +90,8 @@ function NavbarItemContents({ location, onMobileClick }) {
     <NavbarLink to={"/wiki"} active={!!location.pathname.startsWith("/wiki")} onClick={onMobileClick}>Documentation</NavbarLink>
     <NavbarLink to={"/downloads"} active={location.pathname.startsWith("/downloads")} onClick={onMobileClick}>Downloads</NavbarLink>
     <NavbarItem href={"https://forums.velocitypowered.com"} onClick={onMobileClick}>Forums</NavbarItem>
-    <NavbarItem href={"https://discord.gg/8cB9Bgf"} onClick={onMobileClick}>Discord</NavbarItem>
-    <NavbarItem href={"https://github.com/VelocityPowered/Velocity"} onClick={onMobileClick}>GitHub</NavbarItem>
+    <NavbarItem href={"https://discord.gg/papermc"} onClick={onMobileClick}>Discord</NavbarItem>
+    <NavbarItem href={"https://github.com/PaperMC/Velocity"} onClick={onMobileClick}>GitHub</NavbarItem>
   </>
 }
 

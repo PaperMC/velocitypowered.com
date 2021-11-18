@@ -29,7 +29,7 @@ const FullWidthButtonContainer = styled.div(props => `
 `)
 
 const FullWidthButtonTitle = styled.div`
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 `
 
 const IconContainer = styled.div`

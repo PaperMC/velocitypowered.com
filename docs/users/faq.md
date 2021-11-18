@@ -65,7 +65,7 @@ Argument type identifier <namespace>:<name> unknown.
 
 If you receive this message, there are two possibilities. If you run a modded server and are using Fabric 1.16+ and above, update to at least Velocity 1.1.2 and install [CrossStitch](https://www.curseforge.com/minecraft/mc-mods/crossstitch). (If you are running any other kind of modded server and have it working with Velocity, let us know!)
 
-If you receive this message but run a vanilla server, [please report a bug to the Velocity issue tracker](https://github.com/VelocityPowered/Velocity/issues/new).
+If you receive this message but run a vanilla server, [please report a bug to the Velocity issue tracker](https://github.com/PaperMC/Velocity/issues/new).
 
 ### Read time out while switching to a Forge server
 

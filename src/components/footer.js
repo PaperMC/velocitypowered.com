@@ -1,5 +1,4 @@
 import React from "react"
-import {Link} from "gatsby";
 import styled from "@emotion/styled"
 
 import stylingGlobals from "../styles/styling-globals"
@@ -24,8 +23,8 @@ export default function Footer() {
   return (
     <FooterContainer>
       <FooterInner>
-        Copyright &copy; 2018-2020 Velocity Contributors.
-        This wouldn't be possible without our <Link to={"/sponsors"}>generous sponsors</Link>.
+        Copyright &copy; 2018-{new Date().getFullYear()} PaperMC and Velocity Contributors.&nbsp;
+        <a href="https://opencollective.com/PaperMC">Support PaperMC on Open Collective</a>.
       </FooterInner>
     </FooterContainer>
   )

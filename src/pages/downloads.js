@@ -69,14 +69,14 @@ export default function Sponsors() {
 
         <h3>Join our welcoming community</h3>
         <p>
-          We're on <a href={"https://discord.gg/8cB9Bgf"}>Discord</a>, <a href={"https://github.com/VelocityPowered/Velocity"}>GitHub</a>,
+          We're on <a href={"https://discord.gg/papermc"}>Discord</a>, <a href={"https://github.com/PaperMC/Velocity"}>GitHub</a>,
           and <a href={"https://forums.velocitypowered.com/"}>our forums</a>.
         </p>
 
         <h3>Stuck?</h3>
         <p>
           Check out our extensive <Link to={"/wiki/"}>wiki</Link> &mdash; often the answer will be there. Otherwise come
-          ask us on <a href={"https://discord.gg/8cB9Bgf"}>Discord</a> and we'll be able to help.
+          ask us on <a href={"https://discord.gg/papermc"}>Discord</a> and we'll be able to help.
         </p>
 
         <h2>Other versions</h2>

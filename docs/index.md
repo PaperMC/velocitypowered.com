@@ -28,4 +28,4 @@ already answered in the documentation doesn't help anyone.
 ### 💬 Our Discord
 
 If you have searched the wiki and didn't find the answer to your question, then it is time
-to [join our Discord](https://discord.gg/8cB9Bgf) to ask your question.
+to [join our Discord](https://discord.gg/papermc) to ask your question.
