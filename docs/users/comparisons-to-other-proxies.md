@@ -2,7 +2,7 @@
 title: Comparing With Other Proxies
 ---
 
-Presumably, you've read up about what Velocity can do for you. But how does it stack up against other solutions out there? We're biased, so we'll try to be as honest as possible but fully acknowledging our bias in advance. We are the developers of Velocity and we're trying to convince you to use Velocity, after all.
+Presumably, you've read up about what Velocity can do for you. But how does it stack up against other solutions out there? We're biased, so we'll try to be as honest as possible by fully acknowledging our bias in advance. We are the developers of Velocity and we're trying to convince you to use Velocity, after all.
 
 ## BungeeCord and derivatives
 
