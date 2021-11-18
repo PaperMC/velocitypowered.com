@@ -11,8 +11,7 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "deploy": "gh-pages -d public -b gh-pages -r https://astei:$GH_TOKEN@github.com/VelocityPowered/site.git"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
     "@emotion/react": "^11.4.0",
@@ -41,15 +40,14 @@
   },
   "devDependencies": {
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.22",
-    "gh-pages": "^3.2.0",
     "prettier": "2.3.1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/VelocityPowered/site"
+    "url": "https://github.com/PaperMC/velocitypowered.com"
   },
   "bugs": {
-    "url": "https://github.com/VelocityPowered/site/issues"
+    "url": "https://github.com/PaperMC/velocitypowered.com/issues"
   },
   "browserslist": [
     ">.5%",
