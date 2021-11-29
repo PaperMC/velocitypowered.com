@@ -7,7 +7,8 @@ import {FiDownload} from "react-icons/fi";
 import Caution from "../components/warnings/caution";
 import stylingGlobals from "../styles/styling-globals";
 
-const LATEST = '3.0.1'
+const LATEST = '3.1.0'
+const LATEST_BUILD = 95
 
 const DownloadsJumbotron = styled.div`
   background: var(--jumbotron);
@@ -52,7 +53,7 @@ export default function Sponsors() {
           <MainPageButton icon={<FiDownload size={"36px"}/>}
                           title={`Stable (Velocity ${LATEST})`}
                           subtitle={'Recommended for most users'}
-                          link={`https://versions.velocitypowered.com/download/${LATEST}.jar`} />
+                          link={`https://papermc.io/api/v2/projects/velocity/versions/${LATEST}/builds/${LATEST_BUILD}/downloads/velocity-${LATEST}-${LATEST_BUILD}.jar`} />
           <MainPageButton icon={<FiDownload size={"36px"}/>}
                           title={`Development (Velocity 3.0.x)`}
                           subtitle={'Bleeding edge bug fixes and improvements'}
