@@ -30,6 +30,7 @@ const FullWidthButtonContainer = styled.div(props => `
 
 const FullWidthButtonTitle = styled.div`
   font-size: 1.2rem;
+  font-weight: bold;
 `
 
 const IconContainer = styled.div`
@@ -46,13 +47,8 @@ export default function MainPageButton({ title, icon, subtitle, link, demoted })
     <FullWidthButtonContainer demoted={demoted}>
       {icon ? <IconContainer>{icon}</IconContainer> : null}
       <TextContainer>
-        {!demoted ? <>
-        <FullWidthButtonTitle>{title}</FullWidthButtonTitle>
+        {!demoted ? <FullWidthButtonTitle>{title}</FullWidthButtonTitle> : <div>{title}</div>}
         <div>{subtitle}</div>
-        </> : <>
-          <div>{title}</div>
-          <div>{subtitle}</div>
-        </>}
       </TextContainer>
     </FullWidthButtonContainer>
   </NoUnderlinedLink>

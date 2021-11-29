@@ -55,7 +55,7 @@ export default function Sponsors() {
                           subtitle={'Recommended for most users'}
                           link={`https://papermc.io/api/v2/projects/velocity/versions/${LATEST}/builds/${LATEST_BUILD}/downloads/velocity-${LATEST}-${LATEST_BUILD}.jar`} />
           <MainPageButton icon={<FiDownload size={"36px"}/>}
-                          title={`Development (Velocity 3.0.x)`}
+                          title={`Development (Velocity 3.x.x)`}
                           subtitle={'Bleeding edge bug fixes and improvements'}
                           link={`https://versions.velocitypowered.com/download/3.0.x-SNAPSHOT.jar`} />
         </ButtonSection>
@@ -84,8 +84,8 @@ export default function Sponsors() {
 
         <h3>Velocity 1.1.9</h3>
         <Caution>
-          The Velocity 1.1.x series will soon reach its end of life. Updates to Velocity 1.1.x to fix bugs will continue
-          until the release of Minecraft 1.18.
+          The Velocity 1.1.x series is no longer supported by the Velocity team. You will <strong>not</strong> be able to obtain
+          support. This download is provided for archival and historical purposes only.
         </Caution>
 
         <div style={{ display: 'flex', marginTop: '1rem' }}>
