@@ -7,8 +7,8 @@ import {FiDownload} from "react-icons/fi";
 import Caution from "../components/warnings/caution";
 import stylingGlobals from "../styles/styling-globals";
 
-const LATEST = '3.1.0'
-const LATEST_BUILD = 95
+const LATEST = '3.1.1'
+const LATEST_BUILD = 98
 
 const DownloadsJumbotron = styled.div`
   background: var(--jumbotron);
