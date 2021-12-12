@@ -28,7 +28,8 @@ Unfortunately, that attempt fell to the scythe of [Hyrum's Law](https://www.hyru
 
 Here's Hyrum's law in comic format, in case that eases getting the point across:
 
-[![xkcd #1172](https://imgs.xkcd.com/comics/workflow.png)](https://xkcd.com/1172/)
+> [![xkcd #1172](https://imgs.xkcd.com/comics/workflow.png)](https://xkcd.com/1172/)  
+> ["Workflow"](https://xkcd.com/1172/) from [xkcd](https://xkcd.com/) by Randal Munroe, [licensed](https://xkcd.com/license.html) under [CC BY-NC 2.5](https://creativecommons.org/licenses/by-nc/2.5/)
 
 Most BungeeCord plugins are deeply dependent on the specific behaviors and quirks BungeeCord exposes, which Velocity cannot perfectly emulate. I'll use an example of a video game. One day, a game studio A publishes a video game X that you really like. You run it on operating system Y made by company B, and it works great. Sometime after, studio A goes out of business. You are sad but continue life because at least game X works just fine. One day, company B releases a new version of operating system Y. You upgrade to it and discover that your game doesn't work. Who are you going to blame, company B for breaking the game, or company A for shipping a defective project? Chances are, the average consumer will blame company B. This idea isn't new &mdash; [witness Raymond Chen, who documents the sad compatibility history of Windows, saying essentially the same thing](https://devblogs.microsoft.com/oldnewthing/20110131-00/?p=11633).
 
