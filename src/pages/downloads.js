@@ -80,13 +80,14 @@ export default function Sponsors() {
           ask us on <a href={"https://discord.gg/papermc"}>Discord</a> and we'll be able to help.
         </p>
 
-        <h2>Other versions</h2>
+        <h2>Unsupported versions</h2>
+
+        <Caution>
+          The Velocity 1.x.x series is no longer supported. In addition, due to the <a href="https://www.lunasec.io/docs/blog/log4j-zero-day/">Log4Shell</a>
+          security vulnerability they are also <em>unsafe to run</em>. These builds are for archival and historical purposes only.
+        </Caution>
 
         <h3>Velocity 1.1.9</h3>
-        <Caution>
-          The Velocity 1.1.x series is no longer supported by the Velocity team. You will <strong>not</strong> be able to obtain
-          support. This download is provided for archival and historical purposes only.
-        </Caution>
 
         <div style={{ display: 'flex', marginTop: '1rem' }}>
           <MainPageButton icon={<FiDownload size={"16px"}/>}
@@ -96,10 +97,6 @@ export default function Sponsors() {
         </div>
 
         <h3>Velocity 1.0.10</h3>
-        <Caution>
-          The Velocity 1.0.x series is no longer supported by the Velocity team. You will <strong>not</strong> be able to obtain
-          support. This download is provided for archival and historical purposes only.
-        </Caution>
 
         <div style={{ display: 'flex', marginTop: '1rem' }}>
           <MainPageButton icon={<FiDownload size={"16px"}/>}
