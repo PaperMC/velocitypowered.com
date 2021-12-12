@@ -1,4 +1,5 @@
 import React from "react"
+import { IconContext } from "react-icons/lib"
 import styled from "@emotion/styled"
 import {Link} from "gatsby";
 import stylingGlobals from "../styles/styling-globals";
@@ -15,7 +16,7 @@ const NoUnderlinedLink = styled(Link)`
 `
 
 const FullWidthButtonContainer = styled.div(props => `
-  padding: .75rem 1rem;
+  padding: ${props.demoted ? ".375rem .5rem" : ".75rem 1rem"};
   background-color: ${props.demoted ? "var(--gray)" : "rgb(14, 111, 212)"};
   background-repeat: no-repeat;
   background-size: 0 100%;
@@ -33,19 +34,17 @@ const FullWidthButtonTitle = styled.div`
   font-weight: bold;
 `
 
-const IconContainer = styled.div`
-  margin: auto 0;
-`
-
 const TextContainer = styled.div`
-  margin: auto 0 auto .75rem;
+  margin: auto 0 auto .5rem;
   text-align: left;
 `
 
 export default function MainPageButton({ title, icon, subtitle, link, demoted }) {
   return <NoUnderlinedLink to={link}>
     <FullWidthButtonContainer demoted={demoted}>
-      {icon ? <IconContainer>{icon}</IconContainer> : null}
+      <IconContext.Provider value={{ style: { margin: 'auto 0'} }}>
+        {icon}
+      </IconContext.Provider>
       <TextContainer>
         {!demoted ? <FullWidthButtonTitle>{title}</FullWidthButtonTitle> : <div>{title}</div>}
         <div>{subtitle}</div>

@@ -83,8 +83,9 @@ export default function Sponsors() {
         <h2>Unsupported versions</h2>
 
         <Caution>
-          The Velocity 1.x.x series is no longer supported. In addition, due to the <a href="https://www.lunasec.io/docs/blog/log4j-zero-day/">Log4Shell</a>
-          security vulnerability they are also <em>unsafe to run</em>. These builds are for archival and historical purposes only.
+          The Velocity 1.x.x series is no longer supported. In addition, due to the&nbsp;
+          <a href="https://www.lunasec.io/docs/blog/log4j-zero-day/">Log4Shell</a> security
+          vulnerability they are also <em>unsafe to run</em>. These builds are for archival and historical purposes only.
         </Caution>
 
         <h3>Velocity 1.1.9</h3>
@@ -100,7 +101,7 @@ export default function Sponsors() {
 
         <div style={{ display: 'flex', marginTop: '1rem' }}>
           <MainPageButton icon={<FiDownload size={"16px"}/>}
-                          title={"Legacy (Velocity 1.0.10)"}
+                          title={"Velocity 1.0.10"}
                           link={`https://versions.velocitypowered.com/download/1.0.10.jar`}
                           demoted={true} />
         </div>
