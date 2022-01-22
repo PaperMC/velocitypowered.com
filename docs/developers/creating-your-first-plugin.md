@@ -28,9 +28,9 @@ Now we have created our project, we need configure our build system.
 ### Maven repository
 
 ||
-|------|--------------------------------------------------------------|
-| Name | `velocity`                                                   |
-| URL  | `https://nexus.velocitypowered.com/repository/maven-public/` |
+|------|----------------------------------------------------|
+| Name | `papermc`                                          |
+| URL  | `https://papermc.io/repo/repository/maven-public/` |
 
 ### Dependency
 
@@ -38,7 +38,7 @@ Now we have created our project, we need configure our build system.
 |-------------|-----------------------|
 | Group ID    | `com.velocitypowered` |
 | Artifact ID | `velocity-api`        |
-| Version     | `3.0.1`               |
+| Version     | `3.1.1`               |
 
 ### Javadocs
 
@@ -66,8 +66,8 @@ repositories {
 }
 
 dependencies {
-    compile 'com.velocitypowered:velocity-api:3.0.1'
-    annotationProcessor 'com.velocitypowered:velocity-api:3.0.1'
+    compile 'com.velocitypowered:velocity-api:3.1.1'
+    annotationProcessor 'com.velocitypowered:velocity-api:3.1.1'
 }
 ```
 
@@ -78,8 +78,8 @@ Add the following to your `pom.xml`:
 ```xml
 <repositories>
     <repository>
-        <id>velocity</id>
-        <url>https://nexus.velocitypowered.com/repository/maven-public/</url>
+        <id>papermc</id>
+        <url>https://papermc.io/repo/repository/maven-public/</url>
     </repository>
 </repositories>
 
@@ -87,7 +87,7 @@ Add the following to your `pom.xml`:
     <dependency>
         <groupId>com.velocitypowered</groupId>
         <artifactId>velocity-api</artifactId>
-        <version>3.0.1</version>
+        <version>3.1.1</version>
         <scope>provided</scope>
     </dependency>
 </dependencies>
