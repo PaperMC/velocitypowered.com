@@ -60,8 +60,8 @@ Add the following to your `build.gradle`:
 ```
 repositories {
     maven {
-        name 'velocity'
-        url 'https://nexus.velocitypowered.com/repository/maven-public/'
+        name 'papermc'
+        url 'https://papermc.io/repo/repository/maven-public/'
     }
 }
 
