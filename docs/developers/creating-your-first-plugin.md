@@ -53,7 +53,7 @@ How to set up a build system is outside the scope of this page, but you can look
 ([Gradle](https://docs.gradle.org/current/userguide/userguide.html) or [Maven](https://maven.apache.org/guides/getting-started/index.html))
 for assistance.
 
-### Setting up the dependency with Gradle
+### Setting up the dependency with Gradle (Groovy DSL)
 
 Add the following to your `build.gradle`:
 
@@ -68,6 +68,25 @@ repositories {
 dependencies {
     compile 'com.velocitypowered:velocity-api:3.1.1'
     annotationProcessor 'com.velocitypowered:velocity-api:3.1.1'
+}
+```
+
+### Setting up the dependency with Gradle (Kotlin DSL)
+
+Add the following to your `build.gradle.kts`:
+
+```
+plugins {
+    kotlin("kapt") version "1.6.10"
+}
+
+repositories {
+    maven("https://papermc.io/repo/repository/maven-public/")
+}
+
+dependencies {
+    compileOnly("com.velocitypowered:velocity-api:3.1.1")
+    kapt("com.velocitypowered:velocity-api:3.1.1")
 }
 ```
 
