@@ -28,9 +28,9 @@ Now we have created our project, we need configure our build system.
 ### Maven repository
 
 ||
-|------|--------------------------------------------------------------|
-| Name | `velocity`                                                   |
-| URL  | `https://nexus.velocitypowered.com/repository/maven-public/` |
+|------|----------------------------------------------------|
+| Name | `papermc`                                          |
+| URL  | `https://papermc.io/repo/repository/maven-public/` |
 
 ### Dependency
 
@@ -38,7 +38,7 @@ Now we have created our project, we need configure our build system.
 |-------------|-----------------------|
 | Group ID    | `com.velocitypowered` |
 | Artifact ID | `velocity-api`        |
-| Version     | `3.0.1`               |
+| Version     | `3.1.1`               |
 
 ### Javadocs
 
@@ -53,21 +53,40 @@ How to set up a build system is outside the scope of this page, but you can look
 ([Gradle](https://docs.gradle.org/current/userguide/userguide.html) or [Maven](https://maven.apache.org/guides/getting-started/index.html))
 for assistance.
 
-### Setting up the dependency with Gradle
+### Setting up the dependency with Gradle (Groovy DSL)
 
 Add the following to your `build.gradle`:
 
 ```
 repositories {
     maven {
-        name 'velocity'
-        url 'https://nexus.velocitypowered.com/repository/maven-public/'
+        name 'papermc'
+        url 'https://papermc.io/repo/repository/maven-public/'
     }
 }
 
 dependencies {
-    compile 'com.velocitypowered:velocity-api:3.0.1'
-    annotationProcessor 'com.velocitypowered:velocity-api:3.0.1'
+    compile 'com.velocitypowered:velocity-api:3.1.1'
+    annotationProcessor 'com.velocitypowered:velocity-api:3.1.1'
+}
+```
+
+### Setting up the dependency with Gradle (Kotlin DSL)
+
+Add the following to your `build.gradle.kts`:
+
+```
+plugins {
+    kotlin("kapt") version "1.6.10"
+}
+
+repositories {
+    maven("https://papermc.io/repo/repository/maven-public/")
+}
+
+dependencies {
+    compileOnly("com.velocitypowered:velocity-api:3.1.1")
+    kapt("com.velocitypowered:velocity-api:3.1.1")
 }
 ```
 
@@ -78,8 +97,8 @@ Add the following to your `pom.xml`:
 ```xml
 <repositories>
     <repository>
-        <id>velocity</id>
-        <url>https://nexus.velocitypowered.com/repository/maven-public/</url>
+        <id>papermc</id>
+        <url>https://papermc.io/repo/repository/maven-public/</url>
     </repository>
 </repositories>
 
@@ -87,7 +106,7 @@ Add the following to your `pom.xml`:
     <dependency>
         <groupId>com.velocitypowered</groupId>
         <artifactId>velocity-api</artifactId>
-        <version>3.0.1</version>
+        <version>3.1.1</version>
         <scope>provided</scope>
     </dependency>
 </dependencies>
