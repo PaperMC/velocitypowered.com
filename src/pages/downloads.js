@@ -57,7 +57,7 @@ export default function Sponsors() {
           <MainPageButton icon={<FiDownload size={"36px"}/>}
                           title={`Development (Velocity 3.x.x)`}
                           subtitle={'Bleeding edge bug fixes and improvements'}
-                          link={`https://versions.velocitypowered.com/download/3.0.x-SNAPSHOT.jar`} />
+                          link={`https://papermc.io/downloads#Velocity`} />
         </ButtonSection>
       </DownloadsJumbotron>
 
