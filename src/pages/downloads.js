@@ -53,7 +53,7 @@ export default function Sponsors() {
           <MainPageButton icon={<FiDownload size={"36px"}/>}
                           title={`Stable (Velocity ${LATEST})`}
                           subtitle={'Recommended for most users'}
-                          link={`https://papermc.io/api/v2/projects/velocity/versions/${LATEST}/builds/${LATEST_BUILD}/downloads/velocity-${LATEST}-${LATEST_BUILD}.jar`} />
+                          link={`https://api.papermc.io/v2/projects/velocity/versions/${LATEST}/builds/${LATEST_BUILD}/downloads/velocity-${LATEST}-${LATEST_BUILD}.jar`} />
           <MainPageButton icon={<FiDownload size={"36px"}/>}
                           title={`Development (Velocity 3.x.x)`}
                           subtitle={'Bleeding edge bug fixes and improvements'}
@@ -71,7 +71,7 @@ export default function Sponsors() {
         <h3>Join our welcoming community</h3>
         <p>
           We're on <a href={"https://discord.gg/papermc"}>Discord</a>, <a href={"https://github.com/PaperMC/Velocity"}>GitHub</a>,
-          and <a href={"https://forums.velocitypowered.com/"}>our forums</a>.
+          and <a href={"https://forums.papermc.io/"}>our forums</a>.
         </p>
 
         <h3>Stuck?</h3>
@@ -93,7 +93,7 @@ export default function Sponsors() {
         <div style={{ display: 'flex', marginTop: '1rem' }}>
           <MainPageButton icon={<FiDownload size={"16px"}/>}
                           title={"Velocity 1.1.9"}
-                          link={`https://versions.velocitypowered.com/download/1.1.9.jar`}
+                          link={`https://api.papermc.io/v2/projects/velocity/versions/1.1.9/builds/447/downloads/velocity-1.1.9-447.jar`}
                           demoted={true} />
         </div>
 
@@ -102,7 +102,7 @@ export default function Sponsors() {
         <div style={{ display: 'flex', marginTop: '1rem' }}>
           <MainPageButton icon={<FiDownload size={"16px"}/>}
                           title={"Velocity 1.0.10"}
-                          link={`https://versions.velocitypowered.com/download/1.0.10.jar`}
+                          link={`https://api.papermc.io/v2/projects/velocity/versions/1.0.10/builds/245/downloads/velocity-1.0.10-245.jar`}
                           demoted={true} />
         </div>
       </DownloadsContainer>

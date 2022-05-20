@@ -28,9 +28,9 @@ Now we have created our project, we need configure our build system.
 ### Maven repository
 
 ||
-|------|--------------------------------------------------------------|
-| Name | `velocity`                                                   |
-| URL  | `https://nexus.velocitypowered.com/repository/maven-public/` |
+|------|----------------------------------------------------|
+| Name | `papermc`                                          |
+| URL  | `https://repo.papermc.io/repository/maven-public/` |
 
 ### Dependency
 
@@ -42,7 +42,7 @@ Now we have created our project, we need configure our build system.
 
 ### Javadocs
 
-Javadocs are available at [jd.velocitypowered.com/3.0.0](https://jd.velocitypowered.com/3.0.0).
+Javadocs are available at [jd.papermc.io/velocity/3.0.0](https://jd.papermc.io/velocity/3.0.0).
 
 ## Set up your build system
 
@@ -60,8 +60,8 @@ Add the following to your `build.gradle`:
 ```
 repositories {
     maven {
-        name 'velocity'
-        url 'https://nexus.velocitypowered.com/repository/maven-public/'
+        name 'papermc'
+        url 'https://repo.papermc.io/repository/maven-public/'
     }
 }
 
@@ -78,8 +78,8 @@ Add the following to your `pom.xml`:
 ```xml
 <repositories>
     <repository>
-        <id>velocity</id>
-        <url>https://nexus.velocitypowered.com/repository/maven-public/</url>
+        <id>papermc</id>
+        <url>https://repo.papermc.io/repository/maven-public/</url>
     </repository>
 </repositories>
 
