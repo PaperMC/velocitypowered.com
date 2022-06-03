@@ -21,7 +21,7 @@
     "gatsby": "^3.7.1",
     "gatsby-image": "^3.7.1",
     "gatsby-plugin-emotion": "^6.7.1",
-    "gatsby-plugin-mdx": "^2.7.1",
+    "gatsby-plugin-mdx": "^2.14.1",
     "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
     "gatsby-plugin-react-helmet": "^4.7.1",
     "gatsby-plugin-sharp": "^3.7.1",
