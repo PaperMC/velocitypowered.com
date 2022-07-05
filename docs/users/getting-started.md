@@ -90,7 +90,20 @@ try = [
 ]
 ``` 
 
-On the left side, you will specify a name for the server (for example, `lobby`) and on right is a string indicating the IP address and port for the server. You will now need to add your servers to the list. You can change the list of servers as needed.
+On the left side, you will specify a name for the server (for example, `lobby`) and on right is a string indicating the IP address and port for 
+the server. You will now need to add your servers to the list. See below for more information on which IP address to use when adding servers. You can 
+change the list of servers as needed.
+
+When adding servers, here is a generalized guide to which IP address to use.
+
+- Hosted on same machine, no containerization (i.e pterodactyl)
+
+    - Use `127.0.0.1`
+    
+- Hosted on same machine with Pterodactyl
+
+    - Use `172.18.0.1`
+    - For more information, see the [Pterodactyl Guide](https://pterodactyl.io/community/games/minecraft.html#configuring-a-server-network-bungeecord-waterfall-hexacord-etc)
 
 The `try` setting is special. It is a list of servers Velocity should try to connect the player to when the player first logs onto the proxy or gets kicked from a server. If you decided to change the name of the `lobby` server, then you should replace `lobby` in this list with the name you chose for the first server the player should log into first.
 
