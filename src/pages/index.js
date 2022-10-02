@@ -98,7 +98,7 @@ export default function Home() {
             <p>The modern, next-generation Minecraft server proxy.</p>
             <ButtonSection>
               <MainPageButton icon={<FiDownload size={"32px"}/>} title={"Download Now"} link={"/downloads"} />
-              <MainPageButton icon={<FiBook size={"32px"}/>} title={"Learn More"} link={"/wiki"} />
+              <MainPageButton icon={<FiBook size={"32px"}/>} title={"Learn More"} link={"https://docs.papermc.io/velocity"} />
             </ButtonSection>
           </div>
         </JumbotronLogo>
