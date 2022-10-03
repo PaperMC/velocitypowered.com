@@ -15,13 +15,6 @@ module.exports = {
   plugins: [
     'gatsby-plugin-emotion',
     {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `docs`,
-        path: `${__dirname}/docs/`,
-      },
-    },
-    {
       resolve: `gatsby-plugin-mdx`,
       options: {
         gatsbyRemarkPlugins: [

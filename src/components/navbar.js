@@ -87,7 +87,7 @@ const NavbarExpand = styled.div`
 
 function NavbarItemContents({ location, onMobileClick }) {
   return <>
-    <NavbarLink to={"/wiki"} active={!!location.pathname.startsWith("/wiki")} onClick={onMobileClick}>Documentation</NavbarLink>
+    <NavbarLink href={"https://docs.papermc.io/velocity"} onClick={onMobileClick}>Documentation</NavbarLink>
     <NavbarLink to={"/downloads"} active={location.pathname.startsWith("/downloads")} onClick={onMobileClick}>Downloads</NavbarLink>
     <NavbarItem href={"https://forums.papermc.io/"} onClick={onMobileClick}>Forums</NavbarItem>
     <NavbarItem href={"https://discord.gg/papermc"} onClick={onMobileClick}>Discord</NavbarItem>

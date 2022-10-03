@@ -66,7 +66,7 @@ export default function Sponsors() {
         <p>We're so glad you're on board. Here's a few things you'll want to do:</p>
 
         <h3>Get Velocity set up</h3>
-        <p>Check out our <Link to={"/wiki/users/getting-started/"}>wiki on how get started</Link> with Velocity.</p>
+        <p>Check out our <Link href={"https://docs.papermc.io/velocity/getting-started"}>wiki on how get started</Link> with Velocity.</p>
 
         <h3>Join our welcoming community</h3>
         <p>
@@ -76,7 +76,7 @@ export default function Sponsors() {
 
         <h3>Stuck?</h3>
         <p>
-          Check out our extensive <Link to={"/wiki/"}>wiki</Link> &mdash; often the answer will be there. Otherwise come
+          Check out our extensive <Link href={"https://docs.papermc.io/velocity"}>wiki</Link> &mdash; often the answer will be there. Otherwise come
           ask us on <a href={"https://discord.gg/papermc"}>Discord</a> and we'll be able to help.
         </p>
 
