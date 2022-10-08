@@ -97,7 +97,7 @@ export default function Home() {
             <h1>Velocity</h1>
             <p>The modern, next-generation Minecraft server proxy.</p>
             <ButtonSection>
-              <MainPageButton icon={<FiDownload size={"32px"}/>} title={"Download Now"} link={"/downloads"} />
+              <MainPageButton icon={<FiDownload size={"32px"}/>} title={"Download Now"} link={"https://papermc.io/downloads#Velocity"} />
               <MainPageButton icon={<FiBook size={"32px"}/>} title={"Learn More"} link={"https://docs.papermc.io/velocity"} />
             </ButtonSection>
           </div>
