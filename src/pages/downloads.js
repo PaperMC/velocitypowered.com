@@ -7,9 +7,6 @@ import {FiDownload} from "react-icons/fi";
 import Caution from "../components/warnings/caution";
 import stylingGlobals from "../styles/styling-globals";
 
-const LATEST = '3.1.1'
-const LATEST_BUILD = 98
-
 const DownloadsJumbotron = styled.div`
   background: var(--jumbotron);
   padding: 0.5rem 1rem;
@@ -46,17 +43,13 @@ export default function Sponsors() {
       <DownloadsJumbotron>
         <ImploreDownload>
           <h1>Download Velocity</h1>
-          <p>Ready to experience Velocity? Download the latest stable version or the latest development version:</p>
+          <p>Ready to experience Velocity? Download the latest version:</p>
         </ImploreDownload>
 
         <ButtonSection>
           <MainPageButton icon={<FiDownload size={"36px"}/>}
-                          title={`Stable (Velocity ${LATEST})`}
-                          subtitle={'Recommended for most users'}
-                          link={`https://api.papermc.io/v2/projects/velocity/versions/${LATEST}/builds/${LATEST_BUILD}/downloads/velocity-${LATEST}-${LATEST_BUILD}.jar`} />
-          <MainPageButton icon={<FiDownload size={"36px"}/>}
-                          title={`Development (Velocity 3.x.x)`}
-                          subtitle={'Bleeding edge bug fixes and improvements'}
+                          title={`Latest (Velocity 3.x.x)`}
+                          subtitle={'Latest bug fixes and improvements'}
                           link={`https://papermc.io/downloads#Velocity`} />
         </ButtonSection>
       </DownloadsJumbotron>
