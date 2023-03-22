@@ -97,7 +97,7 @@ export default function Home() {
             <h1>Velocity</h1>
             <p>The modern, next-generation Minecraft server proxy.</p>
             <ButtonSection>
-              <MainPageButton icon={<FiDownload size={"32px"}/>} title={"Download Now"} link={"https://papermc.io/downloads#Velocity"} />
+              <MainPageButton icon={<FiDownload size={"32px"}/>} title={"Download Now"} link={"https://papermc.io/downloads/velocity"} />
               <MainPageButton icon={<FiBook size={"32px"}/>} title={"Learn More"} link={"https://docs.papermc.io/velocity"} />
             </ButtonSection>
           </div>
@@ -122,7 +122,7 @@ export default function Home() {
           <ExplainerTidbit>
             <h2>Always there for you.</h2>
             <p>
-              Velocity powers some of the world's largest Minecraft networks along with numerous small networks. Velocity can scale to thousands of players per proxy instance. Best of all, it works with Paper, Sponge, Forge, Fabric, and all versions of Minecraft from 1.7.2 to 1.19.3.
+              Velocity powers some of the world's largest Minecraft networks along with numerous small networks. Velocity can scale to thousands of players per proxy instance. Best of all, it works with Paper, Sponge, Forge, Fabric, and all versions of Minecraft from 1.7.2 to 1.19.4.
             </p>
           </ExplainerTidbit>
         </ExplainerSection>
